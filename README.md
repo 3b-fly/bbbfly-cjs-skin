@@ -1,4 +1,4 @@
-﻿3b-fly's skins for Controls.js
+﻿3b-fly's skin base for Controls.js
 ===========
 
 ### See
@@ -8,8 +8,8 @@
 
 ### Documentation
 
-- [On-line Documentation](https://3b-fly.github.io/bbbfly-cjs-skin/)
-- [Documentation source](https://github.com/3b-fly/bbbfly-cjs-skin/tree/master/docs/)
+- [On-line Documentation](https://3b-fly.github.io/bbbfly-cjs-morph/)
+- [Documentation source](https://github.com/3b-fly/bbbfly-cjs-morph/tree/master/docs/)
 
 ### Usage
 
@@ -17,15 +17,15 @@
 
   1. Go to MyProject 🡪 Properties 🡪 Controls.js
   2. Click "Add Library..." button
-  3. Paste [https://raw.githubusercontent.com/3b-fly/bbbfly-cjs-skin/master/build/](https://raw.githubusercontent.com/3b-fly/bbbfly-cjs-skin/master/build/) into "Library path / URL" field.
+  3. Paste [https://raw.githubusercontent.com/3b-fly/bbbfly-cjs-morph/master/build/](https://raw.githubusercontent.com/3b-fly/bbbfly-cjs-morph/master/build/) into "Library path / URL" field.
   4. Click "Add" button
   5. Choose type of library intallation
   6. Click "Add" button to finish
 
 - **Controls.js Form Editor**
 
-  1. Download [bbbfly-cjs-skin](https://github.com//3b-fly/bbbfly-cjs-skin/archive/master.zip)
-  2. Unzip build directory into your libraries location and rename it to "bbbfly-cjs-skin".
+  1. Download [bbbfly-cjs-morph](https://github.com//3b-fly/bbbfly-cjs-morph/archive/master.zip)
+  2. Unzip build directory into your libraries location and rename it to "bbbfly-cjs-morph".
   3. Go to Options 🡪 Project Files
   4. Click "Add Library..." button
   5. Fill path to unzipped directory into "Library path / URL" field.
