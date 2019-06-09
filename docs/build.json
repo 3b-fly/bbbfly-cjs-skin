@@ -1,7 +1,11 @@
 {
   "source": {
     "include": [
-      "../README.md"
+      "../README.md",
+      "../package.json",
+      "../src/controls.jsdoc",
+      "../src/core/morph.js",
+      "../src/base/panel.js"
     ]
   },
   "plugins": [
@@ -12,13 +16,13 @@
     "destination": "./"
   },
   "templates": {
-    "applicationName": "bbbfly-cjs-skin",
+    "applicationName": "bbbfly-cjs-morph",
     "sourceLinks": {
-      "../src/": "https://github.com/3b-fly/bbbfly-cjs-skin/blob/master/src/%path%#L%lineno%"
+      "../src/": "https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/%path%#L%lineno%"
     },
     "socialLinks": {
       "Email": "mailto:support@3b-fly.eu",
-      "GitHub": "https://github.com/3b-fly/bbbfly-cjs-skin"
+      "GitHub": "https://github.com/3b-fly/bbbfly-cjs-morph"
     }
   }
 }
