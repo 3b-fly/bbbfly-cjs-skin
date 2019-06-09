@@ -1,0 +1,26 @@
+{
+  "Lib": "bbbfly-cjs-morph",
+  "Version": "1.0.0",
+  "Name": "3b-fly's skin base for Controls.js",
+  "Copyright": "Jan Nejedly",
+  "RequiredLibraries": {
+    "bbbfly-cjs": "2.0.0"
+  },
+  "Packages": {
+    "core": {
+      "DebugFiles": [
+        "debug/core/morph.js"
+      ],
+      "ReleaseFiles": [
+        "release/core/morph.js"
+      ],
+      "Libraries": {
+        "bbbfly-cjs": {
+          "Packages": [
+            "crossbrowser"
+          ]
+        }
+      }
+    }
+  }
+}
