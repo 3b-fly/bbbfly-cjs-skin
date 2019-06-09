@@ -55,18 +55,66 @@ bbbfly.morph.core._getTheme = function(def){
 };
 
 /** @ignore */
-bbbfly.morph._onCreateControl = function(def){
+bbbfly.morph.core._onInit = function(){
+  var url = (ngDEBUG ? 'debug' : 'release');
+  url = ngLibPath('benedikt',url);
+
+  for(var themeId in this._Themes){
+    var theme = this._Themes[themeId];
+    if(!theme){continue;}
+
+    bbbfly.morph.core._recalcImagePaths(theme.Images,url);
+    bbbfly.morph.core._recalcImageSources(theme.ImageDefs,theme.Images);
+  }
+};
+
+/** @ignore */
+bbbfly.morph.core._recalcImagePaths = function(images,url){
+  if(!Array.isArray(images)){return;}
+  if(!String.isString(url)){return;}
+
+  for(var i in images){
+    var imgPath = images[i];
+
+    if(String.isString(imgPath)){
+      images[i] = url+imgPath;
+    }
+  }
+};
+
+bbbfly.morph.core._recalcImageSources = function(def,images){
+  if(!Object.isObject(def)){return;}
+  if(!Array.isArray(images)){return;}
+
+  for(var i in def){
+    var prop = def[i];
+
+    if((i === 'Src')){
+      if(Number.isInteger(prop)){
+        var path = images[prop];
+        if(!String.isString(path)){path = '';}
+
+        def[i] = path;
+      }
+    }
+    else if(Object.isObject(prop)){
+      bbbfly.morph.core._recalcImageSources(prop,images);
+    }
+  }
+};
+
+/** @ignore */
+bbbfly.morph.core._onCreateControl = function(def){
   switch(def.Type){
     case 'bbbfly.morph.ContentFrame':
     case 'bbbfly.morph.TextFrame':
     case 'bbbfly.morph.Separator':
-      var theme = bbbfly.Morph.GetTheme(def);
+      var theme = this.GetTheme(def);
       if(theme && Function.isFunction(theme.OnCreateControl)){
         theme.OnCreateControl(def);
       }
     break;
   }
-  return null;
 };
 
 /**
@@ -112,11 +160,22 @@ bbbfly.Morph = {
    * @param {bbbfly.Morph.Def} def
    * @return {bbbfly.Morph.Theme|null}
    */
-  GetTheme: bbbfly.morph.core._getTheme
+  GetTheme: bbbfly.morph.core._getTheme,
+
+  /** @private */
+  OnInit: bbbfly.morph.core._onInit,
+  /** @private */
+  OnCreateControl: bbbfly.morph.core._onCreateControl
 };
 
 ngUserControls['bbbfly_morph'] = {
-  OnCreateControl: bbbfly.morph._onCreateControl
+  OnInit: function(){
+    bbbfly.Morph.OnInit();
+  },
+  OnCreateControl: function(def){
+    bbbfly.Morph.OnCreateControl(def);
+    return null;
+  }
 };
 
 /**
@@ -132,7 +191,9 @@ ngUserControls['bbbfly_morph'] = {
  * @interface Theme
  * @memberOf bbbfly.Morph
  *
- * @property {string} [ID=undefined]
+ * @property {string} ID
+ * @property {array} Images - Array of image paths
+ * @property {object} ImageDefs - Image definitions
  */
 
 /**
