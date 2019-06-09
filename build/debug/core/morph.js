@@ -80,6 +80,7 @@ bbbfly.morph.core._recalcImageSources = function(def,images){
         var path = images[prop];
         if(!String.isString(path)){path = '';}
 
+        ng_PreloadImage(path);
         def[i] = path;
       }
     }

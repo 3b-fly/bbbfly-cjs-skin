@@ -17,6 +17,11 @@
         "release/core/morph.js"
       ],
       "Libraries": {
+        "controls.js": {
+          "Packages": [
+            "Controls.js"
+          ]
+        },
         "bbbfly-cjs": {
           "Packages": [
             "crossbrowser"
