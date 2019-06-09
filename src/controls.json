@@ -5,7 +5,9 @@
   "Copyright": "Jan Nejedly",
 
   "RequiredLibraries": {
-    "bbbfly-cjs": "2.0.0"
+    "controls.js": "5.0.0",
+    "bbbfly-cjs": "2.0.0",
+    "bbbfly-cjs-controls": "2.0.0"
   },
 
   "Packages": {
@@ -19,6 +21,19 @@
       "Libraries": {
         "bbbfly-cjs": {
           "Packages": ["crossbrowser"]
+        }
+      }
+    },
+    "panel": {
+      "DebugFiles": [
+        "base/panel.js"
+      ],
+      "ReleaseFiles": [
+        "base/panel.js"
+      ],
+      "Libraries": {
+        "bbbfly-cjs-controls": {
+          "Packages": ["panel"]
         }
       }
     }
