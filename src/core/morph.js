@@ -56,13 +56,15 @@ bbbfly.morph.core._getTheme = function(def){
 
 /** @ignore */
 bbbfly.morph.core._onInit = function(){
-  var url = (ngDEBUG ? 'debug/' : 'release/');
-  url = ngLibPath('benedikt',url);
+  var path = (ngDEBUG ? 'debug/' : 'release/');
 
   for(var themeId in this._Themes){
     var theme = this._Themes[themeId];
     if(!theme){continue;}
 
+    var url = String.isString(theme.Lib)
+      ? ngLibPath(theme.Lib,path) : path;
+      
     bbbfly.morph.core._recalcImagePaths(theme.Images,url);
     bbbfly.morph.core._recalcImageSources(theme.ImageDefs,theme.Images);
   }
@@ -193,6 +195,7 @@ ngUserControls['bbbfly_morph'] = {
  * @memberOf bbbfly.Morph
  *
  * @property {string} ID
+ * @property {string} Lib - Library ID
  * @property {array} Images - Array of image paths
  * @property {object} ImageDefs - Image definitions
  */
