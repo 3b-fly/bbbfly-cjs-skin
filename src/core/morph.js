@@ -56,7 +56,7 @@ bbbfly.morph.core._getTheme = function(def){
 
 /** @ignore */
 bbbfly.morph.core._onInit = function(){
-  var url = (ngDEBUG ? 'debug' : 'release');
+  var url = (ngDEBUG ? 'debug/' : 'release/');
   url = ngLibPath('benedikt',url);
 
   for(var themeId in this._Themes){
