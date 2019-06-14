@@ -253,10 +253,19 @@
           object
         </span>
   </span>
+    <ul class="members itemMembers">
+      <span class="subtitle">Members</span>
+        <li data-name="bbbfly.Morph.shade">
+          <a href="bbbfly.Morph.html#.shade">shade</a>
+        </li>
+    </ul>
     <ul class="methods itemMembers">
       <span class="subtitle">Interfaces</span>
-        <li data-name="bbbfly.Morph.Def">
-          <a href="bbbfly.Morph.Def.html">Def</a>
+        <li data-name="bbbfly.Morph.Control">
+          <a href="bbbfly.Morph.Control.html">Control</a>
+        </li>
+        <li data-name="bbbfly.Morph.Definition">
+          <a href="bbbfly.Morph.Definition.html">Definition</a>
         </li>
         <li data-name="bbbfly.Morph.Theme">
           <a href="bbbfly.Morph.Theme.html">Theme</a>
@@ -266,6 +275,9 @@
       <span class="subtitle">Methods</span>
         <li data-name="bbbfly.Morph#GetTheme">
           <a href="bbbfly.Morph.html#GetTheme">GetTheme</a>
+        </li>
+        <li data-name="bbbfly.Morph#RegisterControlType">
+          <a href="bbbfly.Morph.html#RegisterControlType">RegisterControlType</a>
         </li>
         <li data-name="bbbfly.Morph#RegisterTheme">
           <a href="bbbfly.Morph.html#RegisterTheme">RegisterTheme</a>
@@ -288,9 +300,20 @@
         </span>
   </span>
 </li>
-<li class="item" data-name="bbbfly.morph.MemoFrame">
+<li class="item" data-name="bbbfly.morph.ContentPanel">
   <span class="title">
-    <a href="bbbfly.morph.MemoFrame.html">bbbfly.morph.MemoFrame</a>
+    <a href="bbbfly.morph.ContentPanel.html">bbbfly.morph.ContentPanel</a>
+        <span class="type-signature control">
+          control
+        </span>
+        <span class="type-signature class">
+          class
+        </span>
+  </span>
+</li>
+<li class="item" data-name="bbbfly.morph.InputFrame">
+  <span class="title">
+    <a href="bbbfly.morph.InputFrame.html">bbbfly.morph.InputFrame</a>
         <span class="type-signature control">
           control
         </span>
@@ -402,7 +425,7 @@
           <span class="signature">(<span class="optional">def</span>, <span class="optional">ref</span>, <span class="optional">parent</span>)</span>
         </h2>
         <div class="tag-source">
-          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/base/panel.js#L55">base/panel.js, line 55</a>
+          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/base/panel.js#L74">base/panel.js, line 74</a>
         </div>
     </div>
 </dt>
@@ -422,7 +445,7 @@
                   <span class="param-name">def</span>
                 </td>
             <td class="type">
-<span class="param-type">bbbfly.Panel.definition</span>
+<span class="param-type">bbbfly.Frame.Definition</span>
             </td>
             <td class="description last">
                         <span class="optional">optional</span>
@@ -464,6 +487,10 @@
         <h3>Extends</h3>
         <ul>
             <li>bbbfly.Line</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul>
+            <li><a href="bbbfly.Morph.Control.html">bbbfly.Morph.Control</a></li>
         </ul>
         <h3>In Packages</h3>
         <ul>

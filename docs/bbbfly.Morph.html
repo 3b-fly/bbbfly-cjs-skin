@@ -253,10 +253,19 @@
           object
         </span>
   </span>
+    <ul class="members itemMembers">
+      <span class="subtitle">Members</span>
+        <li data-name="bbbfly.Morph.shade">
+          <a href="bbbfly.Morph.html#.shade">shade</a>
+        </li>
+    </ul>
     <ul class="methods itemMembers">
       <span class="subtitle">Interfaces</span>
-        <li data-name="bbbfly.Morph.Def">
-          <a href="bbbfly.Morph.Def.html">Def</a>
+        <li data-name="bbbfly.Morph.Control">
+          <a href="bbbfly.Morph.Control.html">Control</a>
+        </li>
+        <li data-name="bbbfly.Morph.Definition">
+          <a href="bbbfly.Morph.Definition.html">Definition</a>
         </li>
         <li data-name="bbbfly.Morph.Theme">
           <a href="bbbfly.Morph.Theme.html">Theme</a>
@@ -266,6 +275,9 @@
       <span class="subtitle">Methods</span>
         <li data-name="bbbfly.Morph#GetTheme">
           <a href="bbbfly.Morph.html#GetTheme">GetTheme</a>
+        </li>
+        <li data-name="bbbfly.Morph#RegisterControlType">
+          <a href="bbbfly.Morph.html#RegisterControlType">RegisterControlType</a>
         </li>
         <li data-name="bbbfly.Morph#RegisterTheme">
           <a href="bbbfly.Morph.html#RegisterTheme">RegisterTheme</a>
@@ -288,9 +300,20 @@
         </span>
   </span>
 </li>
-<li class="item" data-name="bbbfly.morph.MemoFrame">
+<li class="item" data-name="bbbfly.morph.ContentPanel">
   <span class="title">
-    <a href="bbbfly.morph.MemoFrame.html">bbbfly.morph.MemoFrame</a>
+    <a href="bbbfly.morph.ContentPanel.html">bbbfly.morph.ContentPanel</a>
+        <span class="type-signature control">
+          control
+        </span>
+        <span class="type-signature class">
+          class
+        </span>
+  </span>
+</li>
+<li class="item" data-name="bbbfly.morph.InputFrame">
+  <span class="title">
+    <a href="bbbfly.morph.InputFrame.html">bbbfly.morph.InputFrame</a>
         <span class="type-signature control">
           control
         </span>
@@ -398,7 +421,7 @@
           bbbfly.Morph
         </h2>
         <div class="tag-source">
-          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L131">core/morph.js, line 131</a>
+          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L169">core/morph.js, line 169</a>
         </div>
     </div>
 </dt>
@@ -414,75 +437,101 @@
         </ul>
         <h3>Interfaces</h3>
         <ul>
-            <li><a href="bbbfly.Morph.Def.html">Def</a></li>
+            <li><a href="bbbfly.Morph.Control.html">Control</a></li>
+            <li><a href="bbbfly.Morph.Definition.html">Definition</a></li>
             <li><a href="bbbfly.Morph.Theme.html">Theme</a></li>
         </ul>
+        <h3>Members</h3>
+        <dl>
+<dt>
+  <div class="nameContainer">
+    <h4 class="name" id=".shade">
+  <span class="attribs">
+      <span class="type-signature static">
+        static
+      </span>
+  </span>
+      shade
+  <span class="types">
+      <span class="type-signature enum">
+        enum
+      </span>
+      <span class="type-signature integer">
+        integer
+      </span>
+  </span>
+    </h4>
+  </div>
+</dt>
+<dd class="member-content">
+    <div class="description">Possible values for bbbfly.Morph.Definition.Shade</div>
+<dl class="details">
+    <table class="props" my="test">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr id="property:none">
+                    <td class="name">
+                      <span class="param-name">none</span>
+                    </td>
+                <td class="type">
+<span class="param-type">integer</span>
+                </td>
+                    <td class="default">
+                        0
+                    </td>
+                <td class="description last">
+                </td>
+            </tr>
+            <tr id="property:light">
+                    <td class="name">
+                      <span class="param-name">light</span>
+                    </td>
+                <td class="type">
+<span class="param-type">integer</span>
+                </td>
+                    <td class="default">
+                        1
+                    </td>
+                <td class="description last">
+                </td>
+            </tr>
+            <tr id="property:dark">
+                    <td class="name">
+                      <span class="param-name">dark</span>
+                    </td>
+                <td class="type">
+<span class="param-type">integer</span>
+                </td>
+                    <td class="default">
+                        2
+                    </td>
+                <td class="description last">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</dl>
+<dl class="details">
+</dl>
+</dd>
+        </dl>
         <h3>Methods</h3>
         <dl>
 <dt>
     <div class="nameContainer">
         <h4 id="GetTheme">
           GetTheme
-          <span class="signature">(def)</span><span class="arrow-right"></span><span class="type-signature returnType">{<a href="bbbfly.Morph.Theme.html">bbbfly.Morph.Theme</a>|null}</span>
+          <span class="signature">(themeId)</span><span class="arrow-right"></span><span class="type-signature returnType">{<a href="bbbfly.Morph.Theme.html">bbbfly.Morph.Theme</a>|null}</span>
         </h4>
         <div class="tag-source">
-          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L158">core/morph.js, line 158</a>
-        </div>
-    </div>
-</dt>
-<dd>
-        <h5>Parameters:</h5>
-<table class="params">
-    <thead>
-	<tr>
-		<th>Name</th>
-		<th>Type</th>
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	<tbody>
-        <tr>
-                <td class="name">
-                  <span class="param-name">def</span>
-                </td>
-            <td class="type">
-<span class="param-type"><a href="bbbfly.Morph.Def.html">bbbfly.Morph.Def</a></span>
-            </td>
-            <td class="description last">
-            </td>
-        </tr>
-	</tbody>
-</table>
-<dl class="details">
-</dl>
-    <h5>Returns:</h5>
-<table class="params">
-    <thead>
-    <tr>
-        <th>Type</th>
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td class="type">
-                        <a href="bbbfly.Morph.Theme.html">bbbfly.Morph.Theme</a>
-                         | 
-                        null
-            </td>
-            <td class="description last"></td>
-        </tr>
-    </tbody>
-</table>
-</dd>
-<dt>
-    <div class="nameContainer">
-        <h4 id="RegisterTheme">
-          RegisterTheme
-          <span class="signature">(themeId)</span><span class="arrow-right"></span><span class="type-signature returnType">{boolean}</span>
-        </h4>
-        <div class="tag-source">
-          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L140">core/morph.js, line 140</a>
+          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L197">core/morph.js, line 197</a>
         </div>
     </div>
 </dt>
@@ -522,12 +571,66 @@
     <tbody>
         <tr>
             <td class="type">
-                        boolean
+                        <a href="bbbfly.Morph.Theme.html">bbbfly.Morph.Theme</a>
+                         | 
+                        null
             </td>
-            <td class="description last">If default theme ID was set</td>
+            <td class="description last"></td>
         </tr>
     </tbody>
 </table>
+</dd>
+<dt>
+    <div class="nameContainer">
+        <h4 id="RegisterControlType">
+          RegisterControlType
+          <span class="signature">(type, constr)</span>
+        </h4>
+        <div class="tag-source">
+          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L206">core/morph.js, line 206</a>
+        </div>
+    </div>
+</dt>
+<dd>
+      <div class="description">Modifies passed defintion to make control
+  implement <a href="bbbfly.Morph.Control.html">Control</a> interface
+  and registers control type.</div>
+        <h5>Parameters:</h5>
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		<th>Type</th>
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	<tbody>
+        <tr>
+                <td class="name">
+                  <span class="param-name">type</span>
+                </td>
+            <td class="type">
+<span class="param-type">string</span>
+            </td>
+            <td class="description last">
+                Control type
+            </td>
+        </tr>
+        <tr>
+                <td class="name">
+                  <span class="param-name">constr</span>
+                </td>
+            <td class="type">
+<span class="param-type">function</span>
+            </td>
+            <td class="description last">
+                Control constructor
+            </td>
+        </tr>
+	</tbody>
+</table>
+<dl class="details">
+</dl>
 </dd>
 <dt>
     <div class="nameContainer">
@@ -536,7 +639,7 @@
           <span class="signature">(theme)</span><span class="arrow-right"></span><span class="type-signature returnType">{boolean}</span>
         </h4>
         <div class="tag-source">
-          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L149">core/morph.js, line 149</a>
+          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L188">core/morph.js, line 188</a>
         </div>
     </div>
 </dt>
@@ -579,6 +682,60 @@
                         boolean
             </td>
             <td class="description last">If theme was registered</td>
+        </tr>
+    </tbody>
+</table>
+</dd>
+<dt>
+    <div class="nameContainer">
+        <h4 id="RegisterTheme">
+          RegisterTheme
+          <span class="signature">(themeId)</span><span class="arrow-right"></span><span class="type-signature returnType">{boolean}</span>
+        </h4>
+        <div class="tag-source">
+          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L179">core/morph.js, line 179</a>
+        </div>
+    </div>
+</dt>
+<dd>
+        <h5>Parameters:</h5>
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		<th>Type</th>
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	<tbody>
+        <tr>
+                <td class="name">
+                  <span class="param-name">themeId</span>
+                </td>
+            <td class="type">
+<span class="param-type">string</span>
+            </td>
+            <td class="description last">
+            </td>
+        </tr>
+	</tbody>
+</table>
+<dl class="details">
+</dl>
+    <h5>Returns:</h5>
+<table class="params">
+    <thead>
+    <tr>
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="type">
+                        boolean
+            </td>
+            <td class="description last">If default theme ID was set</td>
         </tr>
     </tbody>
 </table>
