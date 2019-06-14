@@ -7,10 +7,13 @@
 
 var bbbfly = bbbfly || {};
 bbbfly.morph = bbbfly.morph || {};
+bbbfly.morph.ContentPanel = function(def,ref,parent){
+  return ngCreateControlAsType(def,'bbbfly.Panel',ref,parent);
+};
 bbbfly.morph.ContentFrame = function(def,ref,parent){
   return ngCreateControlAsType(def,'bbbfly.Frame',ref,parent);
 };
-bbbfly.morph.MemoFrame = function(def,ref,parent){
+bbbfly.morph.InputFrame = function(def,ref,parent){
   return ngCreateControlAsType(def,'bbbfly.Frame',ref,parent);
 };
 bbbfly.morph.Separator = function(def,ref,parent){
@@ -19,8 +22,14 @@ bbbfly.morph.Separator = function(def,ref,parent){
 ngUserControls = ngUserControls || new Array();
 ngUserControls['bbbfly_morph_panel'] = {
   OnInit: function(){
-    ngRegisterControlType('bbbfly.morph.ContentFrame',bbbfly.morph.ContentFrame);
-    ngRegisterControlType('bbbfly.morph.TextFrame',bbbfly.morph.TextFrame);
-    ngRegisterControlType('bbbfly.morph.Separator',bbbfly.morph.Separator);
+    bbbfly.Morph.RegisterControlType(
+      'bbbfly.morph.ContentFrame',bbbfly.morph.ContentFrame
+    );
+    bbbfly.Morph.RegisterControlType(
+      'bbbfly.morph.InputFrame',bbbfly.morph.InputFrame
+    );
+    bbbfly.Morph.RegisterControlType(
+      'bbbfly.morph.Separator',bbbfly.morph.Separator
+    );
   }
 };

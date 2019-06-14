@@ -14,6 +14,36 @@ bbbfly.morph = bbbfly.morph || {};
 bbbfly.morph.core = {};
 
 /** @ignore */
+bbbfly.morph.core.GetDefTheme = function(def){
+  if(!Object.isObject(def)){return null;}
+
+  var themeId = this._DefaultTheme;
+  if(String.isString(def.Theme)){themeId = def.Theme;}
+
+  if(String.isString(themeId)){
+    var theme = bbbfly.Morph._Themes[themeId];
+    if(theme){return theme;}
+  }
+  else if(bbbfly.Morph._ThemesCnt === 1){
+    for(var themeId in bbbfly.Morph._Themes){
+      var theme = bbbfly.Morph._Themes[themeId];
+      if(theme && (theme.ID === themeId)){
+        return theme;
+      }
+    }
+  }
+  return null;
+};
+
+/** @ignore */
+bbbfly.morph.core.GetDefShade = function(def){
+  if(!Object.isObject(def)){return null;}
+
+  var shade = bbbfly.Morph.shade[def.Shade];
+  return Number.isInteger(shade) ? shade : bbbfly.Morph.shade.none;
+};
+
+/** @ignore */
 bbbfly.morph.core._setDefaultTheme = function(themeId){
   if(!String.isString(themeId)){return false;}
 
@@ -33,25 +63,18 @@ bbbfly.morph.core._registerTheme = function(theme){
 };
 
 /** @ignore */
-bbbfly.morph.core._getTheme = function(def){
-  if(!Object.isObject(def)){return null;}
+bbbfly.morph.core._getTheme = function(themeId){
+  var theme = this._Themes[themeId];
+  return Object.isObject(theme) ? theme : null;
+};
 
-  var themeId = this._DefaultTheme;
-  if(String.isString(def.Theme)){themeId = def.Theme;}
+/** @ignore */
+bbbfly.morph.core._registerControlType = function(type,constr){
+  if(!String.isString(type)){return;}
+  if(!Function.isFunction(constr)){return;}
 
-  if(String.isString(themeId)){
-    var theme = this._Themes[themeId];
-    if(theme){return theme;}
-  }
-  else if(this._ThemesCnt === 1){
-    for(var themeId in this._Themes){
-      var theme = this._Themes[themeId];
-      if(theme && (theme.ID === themeId)){
-        return theme;
-      }
-    }
-  }
-  return null;
+  ngRegisterControlType(type,constr);
+  this._CtrlTypes[type] = constr;
 };
 
 /** @ignore */
@@ -64,7 +87,7 @@ bbbfly.morph.core._onInit = function(){
 
     var url = String.isString(theme.Lib)
       ? ngLibPath(theme.Lib,path) : path;
-      
+
     bbbfly.morph.core._recalcImagePaths(theme.Images,url);
     bbbfly.morph.core._recalcImageSources(theme.ImageDefs,theme.Images);
   }
@@ -84,6 +107,7 @@ bbbfly.morph.core._recalcImagePaths = function(images,url){
   }
 };
 
+/** @ignore */
 bbbfly.morph.core._recalcImageSources = function(def,images){
   if(!Object.isObject(def)){return;}
   if(!Array.isArray(images)){return;}
@@ -108,15 +132,29 @@ bbbfly.morph.core._recalcImageSources = function(def,images){
 
 /** @ignore */
 bbbfly.morph.core._onCreateControl = function(def){
-  switch(def.Type){
-    case 'bbbfly.morph.ContentFrame':
-    case 'bbbfly.morph.TextFrame':
-    case 'bbbfly.morph.Separator':
-      var theme = this.GetTheme(def);
-      if(theme && Function.isFunction(theme.OnCreateControl)){
-        theme.OnCreateControl(def);
-      }
-    break;
+  if(!Object.isObject(def) || !this._CtrlTypes[def.Type]){return;}
+
+  var theme = bbbfly.morph.core.GetDefTheme(def);
+  var shade = bbbfly.morph.core.GetDefShade(def);
+
+  var cn = undefined;
+  if(String.isString(def.BaseClassName)){
+    switch(shade){
+      case bbbfly.Morph.shade.light: cn += 'Light'; break;
+      case bbbfly.Morph.shade.dark: cn += 'Dark'; break;
+    }
+  }
+
+  ng_MergeDef(def,{
+    BaseClassName: cn,
+    Data: {
+      Theme: theme,
+      Shade: shade
+    }
+  });
+
+  if(theme && Function.isFunction(theme.OnCreateControl)){
+    theme.OnCreateControl(def);
   }
 };
 
@@ -129,8 +167,9 @@ bbbfly.morph.core._onCreateControl = function(def){
  * @inpackage core
  */
 bbbfly.Morph = {
-
-/** @private */
+  /** @private */
+  _CtrlTypes: {},
+  /** @private */
   _DefaultTheme: null,
   /** @private */
   _ThemesCnt: 0,
@@ -160,15 +199,40 @@ bbbfly.Morph = {
    * @name GetTheme
    * @memberof bbbfly.Morph#
    *
-   * @param {bbbfly.Morph.Def} def
+   * @param {string} themeId
    * @return {bbbfly.Morph.Theme|null}
    */
   GetTheme: bbbfly.morph.core._getTheme,
+  /**
+   * @function
+   * @name RegisterControlType
+   * @memberof bbbfly.Morph#
+   *
+   * @description
+   *   Modifies passed defintion to make control
+   *   implement {@link bbbfly.Morph.Control|Control} interface
+   *   and registers control type.
+   *
+   * @param {string} type - Control type
+   * @param {function} constr - Control constructor
+   */
+  RegisterControlType: bbbfly.morph.core._registerControlType,
 
   /** @private */
   OnInit: bbbfly.morph.core._onInit,
   /** @private */
   OnCreateControl: bbbfly.morph.core._onCreateControl
+};
+
+/**
+ * @enum {integer}
+ * @description
+ *   Possible values for {@link bbbfly.Morph.Definition.Shade}
+ */
+bbbfly.Morph.shade = {
+  none: 0,
+  light: 1,
+  dark: 2
 };
 
 ngUserControls['bbbfly_morph'] = {
@@ -182,17 +246,20 @@ ngUserControls['bbbfly_morph'] = {
 };
 
 /**
- * @interface Def
+ * @interface Definition
  * @memberOf bbbfly.Morph
  *
  * @description Control definition
  *
  * @property {string} [Theme=undefined]
+ * @property {bbbfly.Morph.shade} [Shade=none]
  */
 
 /**
  * @interface Theme
  * @memberOf bbbfly.Morph
+ *
+ * @description Theme definition
  *
  * @property {string} ID
  * @property {string} Lib - Library ID
@@ -205,5 +272,14 @@ ngUserControls['bbbfly_morph'] = {
  * @name OnCreateControl
  * @memberof bbbfly.Morph.Theme#
  *
- * @param {bbbfly.Morph.Def} def - Control definition
+ * @param {bbbfly.Morph.Definition} def - Control definition
+ */
+
+/**
+ * @interface
+ * @name Control
+ * @memberOf bbbfly.Morph
+ *
+ * @property {string|null} [Theme=null]
+ * @property {bbbfly.Morph.shade} [Shade=none]
  */
