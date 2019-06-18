@@ -18,7 +18,10 @@ bbbfly.morph.core.GetDefTheme = function(def){
   if(!Object.isObject(def)){return null;}
 
   var themeId = this._DefaultTheme;
-  if(String.isString(def.Theme)){themeId = def.Theme;}
+
+  if(String.isString(def.Theme)){
+    themeId = def.Theme;
+  }
 
   if(String.isString(themeId)){
     var theme = bbbfly.Morph._Themes[themeId];
@@ -39,8 +42,8 @@ bbbfly.morph.core.GetDefTheme = function(def){
 bbbfly.morph.core.GetDefShade = function(def){
   if(!Object.isObject(def)){return null;}
 
-  var shade = bbbfly.Morph.shade[def.Shade];
-  return Number.isInteger(shade) ? shade : bbbfly.Morph.shade.none;
+  return (def.Data && Number.isInteger(def.Data.Shade))
+    ? def.Data.Shade : bbbfly.Morph.shade.none;
 };
 
 /** @ignore */
@@ -135,27 +138,16 @@ bbbfly.morph.core._onCreateControl = function(def){
   if(!Object.isObject(def) || !this._CtrlTypes[def.Type]){return;}
 
   var theme = bbbfly.morph.core.GetDefTheme(def);
-  var shade = bbbfly.morph.core.GetDefShade(def);
-
-  var cn = undefined;
-  if(String.isString(def.BaseClassName)){
-    switch(shade){
-      case bbbfly.Morph.shade.light: cn += 'Light'; break;
-      case bbbfly.Morph.shade.dark: cn += 'Dark'; break;
-    }
-  }
-
-  ng_MergeDef(def,{
-    BaseClassName: cn,
-    Data: {
-      Theme: theme,
-      Shade: shade
-    }
-  });
-
   if(theme && Function.isFunction(theme.OnCreateControl)){
     theme.OnCreateControl(def);
   }
+
+  var shade = bbbfly.morph.core.GetDefShade(def);
+
+  ng_MergeDef(def,{
+    Theme: theme,
+    Data: { Shade: shade }
+  });
 };
 
 /**
@@ -178,11 +170,14 @@ bbbfly.Morph = {
 
   /**
    * @function
-   * @name RegisterTheme
+   * @name SetDefaultTheme
    * @memberof bbbfly.Morph#
    *
    * @param {string} themeId
    * @return {boolean} If default theme ID was set
+   *
+   * @see {@link bbbfly.Morph#RegisterTheme|RegisterTheme()}
+   * @see {@link bbbfly.Morph#GetTheme|GetTheme()}
    */
   SetDefaultTheme: bbbfly.morph.core._setDefaultTheme,
   /**
@@ -192,6 +187,9 @@ bbbfly.Morph = {
    *
    * @param {bbbfly.Morph.Theme} theme
    * @return {boolean} If theme was registered
+   *
+   * @see {@link bbbfly.Morph#SetDefaultTheme|SetDefaultTheme()}
+   * @see {@link bbbfly.Morph#GetTheme|GetTheme()}
    */
   RegisterTheme: bbbfly.morph.core._registerTheme,
   /**
@@ -199,8 +197,11 @@ bbbfly.Morph = {
    * @name GetTheme
    * @memberof bbbfly.Morph#
    *
-   * @param {string} themeId
+   * @param {string} themeId - Theme {@link bbbfly.Morph.Theme|ID}
    * @return {bbbfly.Morph.Theme|null}
+   *
+   * @see {@link bbbfly.Morph#SetDefaultTheme|SetDefaultTheme()}
+   * @see {@link bbbfly.Morph#RegisterTheme|RegisterTheme()}
    */
   GetTheme: bbbfly.morph.core._getTheme,
   /**
@@ -227,7 +228,7 @@ bbbfly.Morph = {
 /**
  * @enum {integer}
  * @description
- *   Possible values for {@link bbbfly.Morph.Definition.Shade}
+ *   Possible values for {@link bbbfly.Morph.Control|Shade}
  */
 bbbfly.Morph.shade = {
   none: 0,
@@ -246,13 +247,20 @@ ngUserControls['bbbfly_morph'] = {
 };
 
 /**
- * @interface Definition
+ * @interface
+ * @name Control
  * @memberOf bbbfly.Morph
  *
- * @description Control definition
- *
- * @property {string} [Theme=undefined]
  * @property {bbbfly.Morph.shade} [Shade=none]
+ */
+
+/**
+ * @interface Definition
+ * @memberOf bbbfly.Morph.Control
+ *
+ * @description {@link bbbfly.Morph.Control|Control} definition
+ *
+ * @property {string} [Theme=undefined] - Theme {@link bbbfly.Morph.Theme|ID}
  */
 
 /**
@@ -272,14 +280,5 @@ ngUserControls['bbbfly_morph'] = {
  * @name OnCreateControl
  * @memberof bbbfly.Morph.Theme#
  *
- * @param {bbbfly.Morph.Definition} def - Control definition
- */
-
-/**
- * @interface
- * @name Control
- * @memberOf bbbfly.Morph
- *
- * @property {string|null} [Theme=null]
- * @property {bbbfly.Morph.shade} [Shade=none]
+ * @param {bbbfly.Morph.Control.Definition} def - Control definition
  */
