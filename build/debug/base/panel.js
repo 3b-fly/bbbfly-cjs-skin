@@ -8,15 +8,19 @@
 var bbbfly = bbbfly || {};
 bbbfly.morph = bbbfly.morph || {};
 bbbfly.morph.ContentPanel = function(def,ref,parent){
+  bbbfly.morph.misc.ApplyShade(def);
   return ngCreateControlAsType(def,'bbbfly.Panel',ref,parent);
 };
 bbbfly.morph.ContentFrame = function(def,ref,parent){
+  bbbfly.morph.misc.ApplyFrameShade(def);
   return ngCreateControlAsType(def,'bbbfly.Frame',ref,parent);
 };
 bbbfly.morph.InputFrame = function(def,ref,parent){
+  bbbfly.morph.misc.ApplyFrameShade(def);
   return ngCreateControlAsType(def,'bbbfly.Frame',ref,parent);
 };
 bbbfly.morph.Separator = function(def,ref,parent){
+  bbbfly.morph.misc.ApplyFrameShade(def);
   return ngCreateControlAsType(def,'bbbfly.Line',ref,parent);
 };
 ngUserControls = ngUserControls || new Array();

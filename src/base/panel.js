@@ -24,6 +24,7 @@ bbbfly.morph = bbbfly.morph || {};
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentPanel = function(def,ref,parent){
+  bbbfly.morph.misc.ApplyShade(def);
   return ngCreateControlAsType(def,'bbbfly.Panel',ref,parent);
 };
 
@@ -40,6 +41,7 @@ bbbfly.morph.ContentPanel = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentFrame = function(def,ref,parent){
+  bbbfly.morph.misc.ApplyFrameShade(def);
   return ngCreateControlAsType(def,'bbbfly.Frame',ref,parent);
 };
 
@@ -56,6 +58,7 @@ bbbfly.morph.ContentFrame = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.InputFrame = function(def,ref,parent){
+  bbbfly.morph.misc.ApplyFrameShade(def);
   return ngCreateControlAsType(def,'bbbfly.Frame',ref,parent);
 };
 
@@ -72,6 +75,7 @@ bbbfly.morph.InputFrame = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.Separator = function(def,ref,parent){
+  bbbfly.morph.misc.ApplyFrameShade(def);
   return ngCreateControlAsType(def,'bbbfly.Line',ref,parent);
 };
 
