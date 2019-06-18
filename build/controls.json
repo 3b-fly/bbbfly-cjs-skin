@@ -6,15 +6,18 @@
   "RequiredLibraries": {
     "controls.js": "5.0.0",
     "bbbfly-cjs": "2.0.0",
-    "bbbfly-cjs-controls": "2.0.0"
+    "bbbfly-cjs-controls": "2.0.0",
+    "bbbfly-cjs-morph": "1.0.0"
   },
   "Packages": {
     "core": {
       "DebugFiles": [
-        "debug/core/morph.js"
+        "debug/core/morph.js",
+        "debug/core/misc.js"
       ],
       "ReleaseFiles": [
-        "release/core/morph.js"
+        "release/core/morph.js",
+        "release/core/misc.js"
       ],
       "Libraries": {
         "controls.js": {
@@ -40,6 +43,11 @@
         "bbbfly-cjs-controls": {
           "Packages": [
             "panel"
+          ]
+        },
+        "bbbfly-cjs-morph": {
+          "Packages": [
+            "core"
           ]
         }
       }
