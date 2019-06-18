@@ -264,9 +264,6 @@
         <li data-name="bbbfly.Morph.Control">
           <a href="bbbfly.Morph.Control.html">Control</a>
         </li>
-        <li data-name="bbbfly.Morph.Definition">
-          <a href="bbbfly.Morph.Definition.html">Definition</a>
-        </li>
         <li data-name="bbbfly.Morph.Theme">
           <a href="bbbfly.Morph.Theme.html">Theme</a>
         </li>
@@ -282,11 +279,28 @@
         <li data-name="bbbfly.Morph#RegisterTheme">
           <a href="bbbfly.Morph.html#RegisterTheme">RegisterTheme</a>
         </li>
-        <li data-name="bbbfly.Morph#RegisterTheme">
-          <a href="bbbfly.Morph.html#RegisterTheme">RegisterTheme</a>
+        <li data-name="bbbfly.Morph#SetDefaultTheme">
+          <a href="bbbfly.Morph.html#SetDefaultTheme">SetDefaultTheme</a>
         </li>
     </ul>
 </li>
+    </ul>
+</li>
+<li class="item" data-name="bbbfly.morph.misc">
+  <span class="title">
+    <a href="bbbfly.morph.misc.html">bbbfly.morph.misc</a>
+        <span class="type-signature namespace">
+          namespace
+        </span>
+  </span>
+    <ul class="methods itemMembers">
+      <span class="subtitle">Methods</span>
+        <li data-name="bbbfly.morph.misc.ApplyFrameShade">
+          <a href="bbbfly.morph.misc.html#.ApplyFrameShade">ApplyFrameShade</a>
+        </li>
+        <li data-name="bbbfly.morph.misc.ApplyShade">
+          <a href="bbbfly.morph.misc.html#.ApplyShade">ApplyShade</a>
+        </li>
     </ul>
 </li>
 <li class="item" data-name="bbbfly.morph.ContentFrame">
@@ -421,7 +435,7 @@
           bbbfly.Morph
         </h2>
         <div class="tag-source">
-          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L169">core/morph.js, line 169</a>
+          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L161">core/morph.js, line 161</a>
         </div>
     </div>
 </dt>
@@ -438,7 +452,6 @@
         <h3>Interfaces</h3>
         <ul>
             <li><a href="bbbfly.Morph.Control.html">Control</a></li>
-            <li><a href="bbbfly.Morph.Definition.html">Definition</a></li>
             <li><a href="bbbfly.Morph.Theme.html">Theme</a></li>
         </ul>
         <h3>Members</h3>
@@ -464,7 +477,7 @@
   </div>
 </dt>
 <dd class="member-content">
-    <div class="description">Possible values for bbbfly.Morph.Definition.Shade</div>
+    <div class="description">Possible values for <a href="bbbfly.Morph.Control.html">Shade</a></div>
 <dl class="details">
     <table class="props" my="test">
         <thead>
@@ -531,7 +544,7 @@
           <span class="signature">(themeId)</span><span class="arrow-right"></span><span class="type-signature returnType">{<a href="bbbfly.Morph.Theme.html">bbbfly.Morph.Theme</a>|null}</span>
         </h4>
         <div class="tag-source">
-          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L197">core/morph.js, line 197</a>
+          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L195">core/morph.js, line 195</a>
         </div>
     </div>
 </dt>
@@ -554,11 +567,19 @@
 <span class="param-type">string</span>
             </td>
             <td class="description last">
+                Theme <a href="bbbfly.Morph.Theme.html">ID</a>
             </td>
         </tr>
 	</tbody>
 </table>
 <dl class="details">
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul class="dummy">
+          <li><a href="bbbfly.Morph.html#SetDefaultTheme">SetDefaultTheme()</a></li>
+          <li><a href="bbbfly.Morph.html#RegisterTheme">RegisterTheme()</a></li>
+      </ul>
+    </dd>
 </dl>
     <h5>Returns:</h5>
 <table class="params">
@@ -587,7 +608,7 @@
           <span class="signature">(type, constr)</span>
         </h4>
         <div class="tag-source">
-          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L206">core/morph.js, line 206</a>
+          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L207">core/morph.js, line 207</a>
         </div>
     </div>
 </dt>
@@ -639,7 +660,7 @@
           <span class="signature">(theme)</span><span class="arrow-right"></span><span class="type-signature returnType">{boolean}</span>
         </h4>
         <div class="tag-source">
-          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L188">core/morph.js, line 188</a>
+          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L183">core/morph.js, line 183</a>
         </div>
     </div>
 </dt>
@@ -667,6 +688,13 @@
 	</tbody>
 </table>
 <dl class="details">
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul class="dummy">
+          <li><a href="bbbfly.Morph.html#SetDefaultTheme">SetDefaultTheme()</a></li>
+          <li><a href="bbbfly.Morph.html#GetTheme">GetTheme()</a></li>
+      </ul>
+    </dd>
 </dl>
     <h5>Returns:</h5>
 <table class="params">
@@ -688,12 +716,12 @@
 </dd>
 <dt>
     <div class="nameContainer">
-        <h4 id="RegisterTheme">
-          RegisterTheme
+        <h4 id="SetDefaultTheme">
+          SetDefaultTheme
           <span class="signature">(themeId)</span><span class="arrow-right"></span><span class="type-signature returnType">{boolean}</span>
         </h4>
         <div class="tag-source">
-          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L179">core/morph.js, line 179</a>
+          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/morph.js#L171">core/morph.js, line 171</a>
         </div>
     </div>
 </dt>
@@ -721,6 +749,13 @@
 	</tbody>
 </table>
 <dl class="details">
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul class="dummy">
+          <li><a href="bbbfly.Morph.html#RegisterTheme">RegisterTheme()</a></li>
+          <li><a href="bbbfly.Morph.html#GetTheme">GetTheme()</a></li>
+      </ul>
+    </dd>
 </dl>
     <h5>Returns:</h5>
 <table class="params">

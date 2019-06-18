@@ -5,6 +5,7 @@
       "../package.json",
       "../src/controls.jsdoc",
       "../src/core/morph.js",
+      "../src/core/misc.js",
       "../src/base/panel.js"
     ]
   },
