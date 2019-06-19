@@ -253,7 +253,7 @@ ngUserControls['bbbfly_morph'] = {
  * @name Control
  * @memberOf bbbfly.Morph
  *
- * @property {bbbfly.Morph.Theme} [Theme=undefined]
+ * @property {bbbfly.Morph.Theme} [Theme=null]
  * @property {bbbfly.Morph.shade} [Shade=none]
  * @property {string} [ClassName=undefined]
  */
