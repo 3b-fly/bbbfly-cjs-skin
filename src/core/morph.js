@@ -146,10 +146,10 @@ bbbfly.morph.core._onCreateControl = function(def){
 
   ng_MergeVarReplace(def,{
     Data: {
-      Theme: theme,
+      Theme: theme ? theme.ID : null,
       Shade: shade
     }
-  });
+  },true);
 };
 
 /**
@@ -253,7 +253,7 @@ ngUserControls['bbbfly_morph'] = {
  * @name Control
  * @memberOf bbbfly.Morph
  *
- * @property {bbbfly.Morph.Theme} [Theme=null]
+ * @property {string} [Theme=null] - Theme {@link bbbfly.Morph.Theme|ID}
  * @property {bbbfly.Morph.shade} [Shade=none]
  * @property {string} [ClassName=undefined]
  */

@@ -122,10 +122,10 @@ bbbfly.morph.core._onCreateControl = function(def){
 
   ng_MergeVarReplace(def,{
     Data: {
-      Theme: theme,
+      Theme: theme ? theme.ID : null,
       Shade: shade
     }
-  });
+  },true);
 };
 bbbfly.Morph = {
   _CtrlTypes: {},
