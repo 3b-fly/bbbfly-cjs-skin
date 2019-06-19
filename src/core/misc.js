@@ -19,11 +19,9 @@ bbbfly.morph.misc = {};
 
 /** @ignore */
 bbbfly.morph.misc._getClassName = function(suffix){
-  if(!String.isString(this.ClassName)){
-    return this.GetClassName.callParent(suffix);
-  }
-
   var cn = this.ClassName;
+
+  if(!String.isString(cn)){return '';}
   if(String.isString(suffix)){cn += suffix;}
 
   if(this.Theme && String.isString(this.Theme.Prefix)){
