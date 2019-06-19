@@ -120,9 +120,11 @@ bbbfly.morph.core._onCreateControl = function(def){
 
   var shade = bbbfly.morph.core.GetDefShade(def);
 
-  ng_MergeDef(def,{
-    Theme: theme,
-    Data: { Shade: shade }
+  ng_MergeVarReplace(def,{
+    Data: {
+      Theme: theme,
+      Shade: shade
+    }
   });
 };
 bbbfly.Morph = {

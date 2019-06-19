@@ -19,14 +19,20 @@ bbbfly.morph.misc = {};
 
 /** @ignore */
 bbbfly.morph.misc._getClassName = function(suffix){
-  var cn = this.GetClassName.callParent(suffix);
-  if(!String.isString(suffix)){return cn;}
+  if(!String.isString(this.ClassName)){
+    return this.GetClassName.callParent(suffix);
+  }
 
-  if(String.isString(cn)){
-    switch(this.Shade){
-      case bbbfly.Morph.shade.light: cn += 'Light'; break;
-      case bbbfly.Morph.shade.dark: cn += 'Dark'; break;
-    }
+  var cn = this.ClassName;
+  if(String.isString(suffix)){cn += suffix;}
+
+  if(this.Theme && String.isString(this.Theme.Prefix)){
+    cn = this.Theme.Prefix+cn;
+  }
+
+  switch(this.Shade){
+    case bbbfly.Morph.shade.light: cn += 'Light'; break;
+    case bbbfly.Morph.shade.dark: cn += 'Dark'; break;
   }
   return cn;
 };
@@ -72,4 +78,17 @@ bbbfly.morph.misc.ApplyFrameShade = function(def){
   });
 
   bbbfly.morph.misc.ApplyShade(def);
+};
+
+/**
+ * @function
+ * @name ApplyClassName
+ * @memberOf bbbfly.morph.misc
+ */
+bbbfly.morph.misc.ApplyClassName = function(def,className){
+  if(!Object.isObject(def)){return;}
+
+  ng_MergeDef(def,{
+    Data: { ClassName: className }
+  });
 };

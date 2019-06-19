@@ -144,9 +144,11 @@ bbbfly.morph.core._onCreateControl = function(def){
 
   var shade = bbbfly.morph.core.GetDefShade(def);
 
-  ng_MergeDef(def,{
-    Theme: theme,
-    Data: { Shade: shade }
+  ng_MergeVarReplace(def,{
+    Data: {
+      Theme: theme,
+      Shade: shade
+    }
   });
 };
 
@@ -251,7 +253,9 @@ ngUserControls['bbbfly_morph'] = {
  * @name Control
  * @memberOf bbbfly.Morph
  *
+ * @property {bbbfly.Morph.Theme} [Theme=undefined]
  * @property {bbbfly.Morph.shade} [Shade=none]
+ * @property {string} [ClassName=undefined]
  */
 
 /**
@@ -271,6 +275,8 @@ ngUserControls['bbbfly_morph'] = {
  *
  * @property {string} ID
  * @property {string} Lib - Library ID
+ * @property {string} Prefix - Theme prefix - will be used in classNames
+ *
  * @property {array} Images - Array of image paths
  * @property {object} ImageDefs - Image definitions
  */

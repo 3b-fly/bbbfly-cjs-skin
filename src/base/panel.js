@@ -25,6 +25,7 @@ bbbfly.morph = bbbfly.morph || {};
  */
 bbbfly.morph.ContentPanel = function(def,ref,parent){
   bbbfly.morph.misc.ApplyShade(def);
+  bbbfly.morph.misc.ApplyClassName(def,'ContentPanel');
   return ngCreateControlAsType(def,'bbbfly.Panel',ref,parent);
 };
 
@@ -42,6 +43,7 @@ bbbfly.morph.ContentPanel = function(def,ref,parent){
  */
 bbbfly.morph.ContentFrame = function(def,ref,parent){
   bbbfly.morph.misc.ApplyFrameShade(def);
+  bbbfly.morph.misc.ApplyClassName(def,'ContentFrame');
   return ngCreateControlAsType(def,'bbbfly.Frame',ref,parent);
 };
 
@@ -59,6 +61,7 @@ bbbfly.morph.ContentFrame = function(def,ref,parent){
  */
 bbbfly.morph.InputFrame = function(def,ref,parent){
   bbbfly.morph.misc.ApplyFrameShade(def);
+  bbbfly.morph.misc.ApplyClassName(def,'InputFrame');
   return ngCreateControlAsType(def,'bbbfly.Frame',ref,parent);
 };
 
@@ -76,6 +79,7 @@ bbbfly.morph.InputFrame = function(def,ref,parent){
  */
 bbbfly.morph.Separator = function(def,ref,parent){
   bbbfly.morph.misc.ApplyFrameShade(def);
+  bbbfly.morph.misc.ApplyClassName(def,'Separator');
   return ngCreateControlAsType(def,'bbbfly.Line',ref,parent);
 };
 
@@ -83,6 +87,9 @@ bbbfly.morph.Separator = function(def,ref,parent){
 ngUserControls = ngUserControls || new Array();
 ngUserControls['bbbfly_morph_panel'] = {
   OnInit: function(){
+    bbbfly.Morph.RegisterControlType(
+      'bbbfly.morph.ContentPanel',bbbfly.morph.ContentPanel
+    );
     bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.ContentFrame',bbbfly.morph.ContentFrame
     );
