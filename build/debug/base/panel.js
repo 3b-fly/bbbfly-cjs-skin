@@ -7,6 +7,23 @@
 
 var bbbfly = bbbfly || {};
 bbbfly.morph = bbbfly.morph || {};
+bbbfly.morph.line = {};
+bbbfly.morph.line._getFrame = function(){
+  var frame = this.GetFrame.callParent();
+
+  if(Object.isObject(frame)){
+    switch(this.Orientation){
+      case bbbfly.Line.orientation.horizontal:
+        frame = frame.Horizontal;
+      break;
+      case bbbfly.Line.orientation.vertical:
+        frame = frame.Vertical;
+      break;
+    }
+  }
+
+  return Object.isObject(frame) ? frame : {};
+};
 bbbfly.morph.ContentPanel = function(def,ref,parent){
   bbbfly.morph.misc.ApplyShade(def);
   bbbfly.morph.misc.ApplyClassName(def,'ContentPanel');
@@ -24,6 +41,12 @@ bbbfly.morph.InputFrame = function(def,ref,parent){
 };
 bbbfly.morph.ContentSeparator = function(def,ref,parent){
   bbbfly.morph.misc.ApplyFrameShade(def);
+
+  ng_MergeDef(def,{
+    ControlsPanel: null,
+    Methods: { GetFrame: bbbfly.morph.line._getFrame }
+  });
+
   bbbfly.morph.misc.ApplyClassName(def,'ContentSeparator');
   return ngCreateControlAsType(def,'bbbfly.Line',ref,parent);
 };

@@ -24,7 +24,8 @@ bbbfly.morph.misc._getClassName = function(suffix){
   return cn;
 };
 bbbfly.morph.misc._getFrame = function(){
-  var frame = this.Frame;
+  var frame = Function.isFunction(this.GetFrame.callParent)
+    ? this.GetFrame.callParent() : this.Frame;
 
   if(Object.isObject(frame)){
     switch(this.Shade){
