@@ -51,6 +51,46 @@
           ]
         }
       }
+    },
+    "grid": {
+      "DebugFiles": [
+        "debug/base/grid.js"
+      ],
+      "ReleaseFiles": [
+        "release/base/grid.js"
+      ],
+      "Libraries": {
+        "bbbfly-cjs-controls": {
+          "Packages": [
+            "grid"
+          ]
+        },
+        "bbbfly-cjs-morph": {
+          "Packages": [
+            "core"
+          ]
+        }
+      }
+    },
+    "wrapper": {
+      "DebugFiles": [
+        "debug/base/wrapper.js"
+      ],
+      "ReleaseFiles": [
+        "release/base/wrapper.js"
+      ],
+      "Libraries": {
+        "bbbfly-cjs-controls": {
+          "Packages": [
+            "wrapper"
+          ]
+        },
+        "bbbfly-cjs-morph": {
+          "Packages": [
+            "core"
+          ]
+        }
+      }
     }
   }
 }
