@@ -135,7 +135,7 @@ bbbfly.morph.core._recalcImageAnchor = function(image,anchor){
 
   for(var i in image){
     if(!Number.isInteger(image[i])){continue;}
-    if(!bbbfly.Morph.LTPattern.test(i)){continue;}
+    if(!bbbfly.Renderer.IsImageLTPosition(i)){continue;}
 
     switch(i.slice(-1)){
       case 'L': image[i] += left; break;
@@ -165,7 +165,6 @@ bbbfly.Morph = {
   _DefaultTheme: null,
   _ThemesCnt: 0,
   _Themes: {},
-  LTPattern: new RegExp('^[o]?[h]?[D]?[R]?[I]?[S|G]?[L|T]$'),
   SetDefaultTheme: bbbfly.morph.core._setDefaultTheme,
   RegisterTheme: bbbfly.morph.core._registerTheme,
   GetTheme: bbbfly.morph.core._getTheme,

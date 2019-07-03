@@ -159,7 +159,7 @@ bbbfly.morph.core._recalcImageAnchor = function(image,anchor){
 
   for(var i in image){
     if(!Number.isInteger(image[i])){continue;}
-    if(!bbbfly.Morph.LTPattern.test(i)){continue;}
+    if(!bbbfly.Renderer.IsImageLTPosition(i)){continue;}
 
     switch(i.slice(-1)){
       case 'L': image[i] += left; break;
@@ -204,9 +204,6 @@ bbbfly.Morph = {
   _ThemesCnt: 0,
   /** @private */
   _Themes: {},
-
-  /** @private */
-  LTPattern: new RegExp('^[o]?[h]?[D]?[R]?[I]?[S|G]?[L|T]$'),
 
   /**
    * @function
