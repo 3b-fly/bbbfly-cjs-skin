@@ -103,9 +103,9 @@ bbbfly.morph.core._recalcImageSources = function(image,sources){
   }
 
   var src = image.Src;
-  image.Src = '';
-
   if(Object.isObject(src)){
+    image.Src = '';
+
     if(String.isString(src.Img) && Object.isObject(sources)){
       var source = sources[src.Img];
 
@@ -123,7 +123,7 @@ bbbfly.morph.core._recalcImageSources = function(image,sources){
     }
   }
 
-  if(image.Src){
+  if(String.isString(image.Src) && image.Src){
     ng_PreloadImage(image.Src);
   }
 };
