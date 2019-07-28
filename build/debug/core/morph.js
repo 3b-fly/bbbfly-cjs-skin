@@ -93,33 +93,38 @@ bbbfly.morph.core._recalcImagePaths = function(sources,url){
 };
 bbbfly.morph.core._recalcImageSources = function(image,sources){
   if(!Object.isObject(image)){return;}
-  if(!Object.isObject(sources)){return;}
 
   for(var i in image){
     var prop = image[i];
 
-    if((i === 'Src')){
-      if(!Object.isObject(prop)){continue;}
-
-      var source = sources[prop.Img];
-      if(!Object.isObject(source)){continue;}
-
-      var anchor = prop.Anchor;
-      if(String.isString(anchor) && Object.isObject(source.Anchors)){
-
-        bbbfly.morph.core._recalcImageAnchor(
-          image,source.Anchors[anchor]
-        );
-      }
-
-      var path = source.Path;
-      if(!String.isString(path)){path = '';}
-      ng_PreloadImage(path);
-      image.Src = path;
-    }
-    else if(Object.isObject(prop)){
+    if((i !== 'Src') && Object.isObject(prop)){
       bbbfly.morph.core._recalcImageSources(prop,sources);
     }
+  }
+
+  var src = image.Src;
+  image.Src = '';
+
+  if(Object.isObject(src)){
+    if(String.isString(src.Img) && Object.isObject(sources)){
+      var source = sources[src.Img];
+
+      if(Object.isObject(source)){
+        if(String.isString(src.Anchor) && Object.isObject(source.Anchors)){
+          bbbfly.morph.core._recalcImageAnchor(
+            image,source.Anchors[src.Anchor]
+          );
+        }
+
+        if(String.isString(source.Path)){
+          image.Src = source.Path;
+        }
+      }
+    }
+  }
+
+  if(image.Src){
+    ng_PreloadImage(image.Src);
   }
 };
 bbbfly.morph.core._recalcImageAnchor = function(image,anchor){
