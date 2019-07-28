@@ -92,6 +92,26 @@
           ]
         }
       }
+    },
+    "button": {
+      "DebugFiles": [
+        "debug/base/button.js"
+      ],
+      "ReleaseFiles": [
+        "release/base/button.js"
+      ],
+      "Libraries": {
+        "bbbfly-cjs-controls": {
+          "Packages": [
+            "button"
+          ]
+        },
+        "bbbfly-cjs-morph": {
+          "Packages": [
+            "core"
+          ]
+        }
+      }
     }
   }
 }

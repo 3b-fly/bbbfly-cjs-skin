@@ -40,3 +40,12 @@
  * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:wrapper|bbbfly-cjs-controls (2.0.0): wrapper}
  * @requires {@link package:core|bbbfly-cjs-morph (1.0.0): core}
  */
+
+/**
+ * @package button
+ *
+ * @version 1.0.0
+ *
+ * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:button|bbbfly-cjs-controls (2.0.0): panel}
+ * @requires {@link package:core|bbbfly-cjs-morph (1.0.0): core}
+ */
