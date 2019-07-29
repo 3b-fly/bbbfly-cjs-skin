@@ -17,19 +17,14 @@ bbbfly.morph.ContentButton = function(def,ref,parent){
   bbbfly.morph.misc.ApplyClassName(def,'ContentButton');
   return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
 };
-bbbfly.morph.ContentLink = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyFrameShade(def);
-  bbbfly.morph.misc.ApplyClassName(def,'ContentLink');
-  return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
-};
 bbbfly.morph.LargeContentButton = function(def,ref,parent){
   bbbfly.morph.misc.ApplyFrameShade(def);
   bbbfly.morph.misc.ApplyClassName(def,'LargeContentButton');
   return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
 };
-bbbfly.morph.ContentIcon = function(def,ref,parent){
+bbbfly.morph.ContentFlatButton = function(def,ref,parent){
   bbbfly.morph.misc.ApplyFrameShade(def);
-  bbbfly.morph.misc.ApplyClassName(def,'ContentIcon');
+  bbbfly.morph.misc.ApplyClassName(def,'ContentFlatButton');
   return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
 };
 ngUserControls = ngUserControls || new Array();
@@ -42,13 +37,10 @@ ngUserControls['bbbfly_morph_button'] = {
       'bbbfly.morph.ContentButton',bbbfly.morph.ContentButton
     );
     bbbfly.Morph.RegisterControlType(
-      'bbbfly.morph.ContentLink',bbbfly.morph.ContentLink
-    );
-    bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.LargeContentButton',bbbfly.morph.LargeContentButton
     );
     bbbfly.Morph.RegisterControlType(
-      'bbbfly.morph.ContentIcon',bbbfly.morph.ContentIcon
+      'bbbfly.morph.ContentFlatButton',bbbfly.morph.ContentFlatButton
     );
   }
 };

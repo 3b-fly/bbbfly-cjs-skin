@@ -59,24 +59,6 @@ bbbfly.morph.ContentButton = function(def,ref,parent){
  * @param {object} [ref=undefined] - Reference owner
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
-bbbfly.morph.ContentLink = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyFrameShade(def);
-  bbbfly.morph.misc.ApplyClassName(def,'ContentLink');
-  return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
-};
-
-/**
- * @class
- * @type control
- * @extends bbbfly.Btn
- * @implements bbbfly.Morph.Control
- *
- * @inpackage button
- *
- * @param {bbbfly.Panel.Definition} [def=undefined] - Descendant definition
- * @param {object} [ref=undefined] - Reference owner
- * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
- */
 bbbfly.morph.LargeContentButton = function(def,ref,parent){
   bbbfly.morph.misc.ApplyFrameShade(def);
   bbbfly.morph.misc.ApplyClassName(def,'LargeContentButton');
@@ -95,9 +77,9 @@ bbbfly.morph.LargeContentButton = function(def,ref,parent){
  * @param {object} [ref=undefined] - Reference owner
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
-bbbfly.morph.ContentIcon = function(def,ref,parent){
+bbbfly.morph.ContentFlatButton = function(def,ref,parent){
   bbbfly.morph.misc.ApplyFrameShade(def);
-  bbbfly.morph.misc.ApplyClassName(def,'ContentIcon');
+  bbbfly.morph.misc.ApplyClassName(def,'ContentFlatButton');
   return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
 };
 
@@ -112,13 +94,10 @@ ngUserControls['bbbfly_morph_button'] = {
       'bbbfly.morph.ContentButton',bbbfly.morph.ContentButton
     );
     bbbfly.Morph.RegisterControlType(
-      'bbbfly.morph.ContentLink',bbbfly.morph.ContentLink
-    );
-    bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.LargeContentButton',bbbfly.morph.LargeContentButton
     );
     bbbfly.Morph.RegisterControlType(
-      'bbbfly.morph.ContentIcon',bbbfly.morph.ContentIcon
+      'bbbfly.morph.ContentFlatButton',bbbfly.morph.ContentFlatButton
     );
   }
 };
