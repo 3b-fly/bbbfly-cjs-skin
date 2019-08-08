@@ -5,4 +5,4 @@
  * @license see license in 'LICENSE' file
 */
 
-var bbbfly=bbbfly||{};bbbfly.morph=bbbfly.morph||{};bbbfly.morph.ContentWrapper=function(a,b,c){bbbfly.morph.misc.ApplyFrameShade(a);bbbfly.morph.misc.ApplyClassName(a,"ContentWrapper");return ngCreateControlAsType(a,"bbbfly.Wrapper",b,c)};ngUserControls=ngUserControls||[];ngUserControls.bbbfly_morph_wrapper={OnInit:function(){bbbfly.Morph.RegisterControlType("bbbfly.morph.ContentWrapper",bbbfly.morph.ContentWrapper)}};
+var bbbfly=bbbfly||{};bbbfly.morph=bbbfly.morph||{};bbbfly.morph.ContentWrapper=function(a,b,c){bbbfly.morph.misc.ApplyFrameShade(a);bbbfly.morph.misc.ApplyClassShade(a,"ContentWrapper");return ngCreateControlAsType(a,"bbbfly.Wrapper",b,c)};ngUserControls=ngUserControls||[];ngUserControls.bbbfly_morph_wrapper={OnInit:function(){bbbfly.Morph.RegisterControlType("bbbfly.morph.ContentWrapper",bbbfly.morph.ContentWrapper)}};

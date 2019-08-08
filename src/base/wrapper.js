@@ -25,7 +25,7 @@ bbbfly.morph = bbbfly.morph || {};
  */
 bbbfly.morph.ContentWrapper = function(def,ref,parent){
   bbbfly.morph.misc.ApplyFrameShade(def);
-  bbbfly.morph.misc.ApplyClassName(def,'ContentWrapper');
+  bbbfly.morph.misc.ApplyClassShade(def,'ContentWrapper');
   return ngCreateControlAsType(def,'bbbfly.Wrapper',ref,parent);
 };
 

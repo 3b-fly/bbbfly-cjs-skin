@@ -48,19 +48,18 @@ bbbfly.morph.misc._getFrame = function(){
   return Object.isObject(frame) ? frame : {};
 };
 
-/**
- * @function
- * @name ApplyShade
- * @memberOf bbbfly.morph.misc
- */
-bbbfly.morph.misc.ApplyShade = function(def){
-  if(!Object.isObject(def)){return;}
+/** @ignore */
+bbbfly.morph.misc._getIcon = function(){
+  var icon = Function.isFunction(this.GetIcon.callParent)
+    ? this.GetIcon.callParent() : this.Icon;
 
-  ng_MergeDef(def,{
-    Methods: {
-      GetClassName: bbbfly.morph.misc._getClassName
+  if(Object.isObject(icon)){
+    switch(this.Shade){
+      case bbbfly.Morph.shade.light: icon = icon.Light; break;
+      case bbbfly.Morph.shade.dark: icon = icon.Dark; break;
     }
-  });
+  }
+  return Object.isObject(icon) ? icon : {};
 };
 
 /**
@@ -74,19 +73,31 @@ bbbfly.morph.misc.ApplyFrameShade = function(def){
   ng_MergeDef(def,{
     Methods: { GetFrame: bbbfly.morph.misc._getFrame }
   });
-
-  bbbfly.morph.misc.ApplyShade(def);
 };
 
 /**
  * @function
- * @name ApplyClassName
+ * @name ApplyIconShade
  * @memberOf bbbfly.morph.misc
  */
-bbbfly.morph.misc.ApplyClassName = function(def,className){
+bbbfly.morph.misc.ApplyIconShade = function(def){
   if(!Object.isObject(def)){return;}
 
   ng_MergeDef(def,{
-    Data: { ClassName: className }
+    Methods: { GetIcon: bbbfly.morph.misc._getIcon }
+  });
+};
+
+/**
+ * @function
+ * @name ApplyClassShade
+ * @memberOf bbbfly.morph.misc
+ */
+bbbfly.morph.misc.ApplyClassShade = function(def,className){
+  if(!Object.isObject(def)){return;}
+
+  ng_MergeDef(def,{
+    Data: { ClassName: className },
+    Methods: { GetClassName: bbbfly.morph.misc._getClassName }
   });
 };
