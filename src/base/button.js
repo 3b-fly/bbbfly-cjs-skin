@@ -25,7 +25,7 @@ bbbfly.morph = bbbfly.morph || {};
  */
 bbbfly.morph.ButtonPanel = function(def,ref,parent){
   bbbfly.morph.misc.ApplyFrameShade(def);
-  bbbfly.morph.misc.ApplyClassName(def,'ButtonPanel');
+  bbbfly.morph.misc.ApplyClassShade(def,'ButtonPanel');
   return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
 };
 
@@ -43,7 +43,7 @@ bbbfly.morph.ButtonPanel = function(def,ref,parent){
  */
 bbbfly.morph.ContentButton = function(def,ref,parent){
   bbbfly.morph.misc.ApplyFrameShade(def);
-  bbbfly.morph.misc.ApplyClassName(def,'ContentButton');
+  bbbfly.morph.misc.ApplyClassShade(def,'ContentButton');
   return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
 };
 
@@ -61,7 +61,7 @@ bbbfly.morph.ContentButton = function(def,ref,parent){
  */
 bbbfly.morph.LargeContentButton = function(def,ref,parent){
   bbbfly.morph.misc.ApplyFrameShade(def);
-  bbbfly.morph.misc.ApplyClassName(def,'LargeContentButton');
+  bbbfly.morph.misc.ApplyClassShade(def,'LargeContentButton');
   return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
 };
 
@@ -79,7 +79,63 @@ bbbfly.morph.LargeContentButton = function(def,ref,parent){
  */
 bbbfly.morph.ContentFlatButton = function(def,ref,parent){
   bbbfly.morph.misc.ApplyFrameShade(def);
-  bbbfly.morph.misc.ApplyClassName(def,'ContentFlatButton');
+  bbbfly.morph.misc.ApplyClassShade(def,'ContentFlatButton');
+  return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
+};
+
+/**
+ * @class
+ * @type control
+ * @extends bbbfly.Btn
+ * @implements bbbfly.Morph.Control
+ *
+ * @inpackage button
+ *
+ * @param {bbbfly.Panel.Definition} [def=undefined] - Descendant definition
+ * @param {object} [ref=undefined] - Reference owner
+ * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
+ */
+bbbfly.morph.ContentCheckBox = function(def,ref,parent){
+  bbbfly.morph.misc.ApplyIconShade(def);
+  bbbfly.morph.misc.ApplyFrameShade(def);
+
+  ng_MergeDef(def,{
+    Data: {
+      SelectType: bbbfly.Btn.selecttype.both,
+      AutoSize: bbbfly.Btn.autosize.both
+    },
+    ControlsPanel: null
+  });
+
+  bbbfly.morph.misc.ApplyClassShade(def,'ContentCheckBox');
+  return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
+};
+
+/**
+ * @class
+ * @type control
+ * @extends bbbfly.Btn
+ * @implements bbbfly.Morph.Control
+ *
+ * @inpackage button
+ *
+ * @param {bbbfly.Panel.Definition} [def=undefined] - Descendant definition
+ * @param {object} [ref=undefined] - Reference owner
+ * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
+ */
+bbbfly.morph.ContentRadioButton = function(def,ref,parent){
+  bbbfly.morph.misc.ApplyIconShade(def);
+  bbbfly.morph.misc.ApplyFrameShade(def);
+
+  ng_MergeDef(def,{
+    Data: {
+      SelectType: bbbfly.Btn.selecttype.both,
+      AutoSize: bbbfly.Btn.autosize.both
+    },
+    ControlsPanel: null
+  });
+
+  bbbfly.morph.misc.ApplyClassShade(def,'ContentRadioButton');
   return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
 };
 
@@ -98,6 +154,12 @@ ngUserControls['bbbfly_morph_button'] = {
     );
     bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.ContentFlatButton',bbbfly.morph.ContentFlatButton
+    );
+    bbbfly.Morph.RegisterControlType(
+      'bbbfly.morph.ContentCheckBox',bbbfly.morph.ContentCheckBox
+    );
+    bbbfly.Morph.RegisterControlType(
+      'bbbfly.morph.ContentRadioButton',bbbfly.morph.ContentRadioButton
     );
   }
 };
