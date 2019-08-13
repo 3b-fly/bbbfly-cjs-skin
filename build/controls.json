@@ -112,6 +112,26 @@
           ]
         }
       }
+    },
+    "menu": {
+      "DebugFiles": [
+        "debug/base/menu.js"
+      ],
+      "ReleaseFiles": [
+        "release/base/menu.js"
+      ],
+      "Libraries": {
+        "bbbfly-cjs-controls": {
+          "Packages": [
+            "menu"
+          ]
+        },
+        "bbbfly-cjs-morph": {
+          "Packages": [
+            "core"
+          ]
+        }
+      }
     }
   }
 }

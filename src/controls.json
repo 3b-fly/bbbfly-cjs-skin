@@ -93,6 +93,22 @@
           "Packages": ["core"]
         }
       }
+    },
+    "menu": {
+      "DebugFiles": [
+        "base/menu.js"
+      ],
+      "ReleaseFiles": [
+        "base/menu.js"
+      ],
+      "Libraries": {
+        "bbbfly-cjs-controls": {
+          "Packages": ["menu"]
+        },
+        "bbbfly-cjs-morph": {
+          "Packages": ["core"]
+        }
+      }
     }
   }
 }
