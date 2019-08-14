@@ -24,8 +24,15 @@ bbbfly.morph = bbbfly.morph || {};
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.PopupMenu = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyFrameShade(def);
-  bbbfly.morph.misc.ApplyClassShade(def,'PopupMenu');
+  bbbfly.morph.ngmisc.ApplyFrameShade(def);
+
+  ng_MergeDef(def,{
+    Data: {
+      SubMenuDef: { Type: 'bbbfly.morph.PopupMenu' }
+    }
+  });
+
+  bbbfly.morph.ngmisc.ApplyClassShade(def,'PopupMenu');
   return ngCreateControlAsType(def,'bbbfly.Menu',ref,parent);
 };
 

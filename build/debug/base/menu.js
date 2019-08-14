@@ -8,8 +8,15 @@
 var bbbfly = bbbfly || {};
 bbbfly.morph = bbbfly.morph || {};
 bbbfly.morph.PopupMenu = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyFrameShade(def);
-  bbbfly.morph.misc.ApplyClassShade(def,'PopupMenu');
+  bbbfly.morph.ngmisc.ApplyFrameShade(def);
+
+  ng_MergeDef(def,{
+    Data: {
+      SubMenuDef: { Type: 'bbbfly.morph.PopupMenu' }
+    }
+  });
+
+  bbbfly.morph.ngmisc.ApplyClassShade(def,'PopupMenu');
   return ngCreateControlAsType(def,'bbbfly.Menu',ref,parent);
 };
 ngUserControls = ngUserControls || new Array();
