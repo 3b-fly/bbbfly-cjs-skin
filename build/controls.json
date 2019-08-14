@@ -13,11 +13,13 @@
     "core": {
       "DebugFiles": [
         "debug/core/morph.js",
-        "debug/core/misc.js"
+        "debug/core/misc.js",
+        "debug/core/ngmisc.js"
       ],
       "ReleaseFiles": [
         "release/core/morph.js",
-        "release/core/misc.js"
+        "release/core/misc.js",
+        "release/core/ngmisc.js"
       ],
       "Libraries": {
         "controls.js": {
