@@ -39,13 +39,7 @@ bbbfly.morph.misc._getFrame = function(){
   var frame = Function.isFunction(this.GetFrame.callParent)
     ? this.GetFrame.callParent() : this.Frame;
 
-  if(Object.isObject(frame)){
-    switch(this.Shade){
-      case bbbfly.Morph.shade.light: frame = frame.Light; break;
-      case bbbfly.Morph.shade.dark: frame = frame.Dark; break;
-    }
-  }
-  return Object.isObject(frame) ? frame : {};
+  return bbbfly.morph.misc.GetImgShade(frame,this.Shade);
 };
 
 /** @ignore */
@@ -53,19 +47,33 @@ bbbfly.morph.misc._getIcon = function(){
   var icon = Function.isFunction(this.GetIcon.callParent)
     ? this.GetIcon.callParent() : this.Icon;
 
-  if(Object.isObject(icon)){
-    switch(this.Shade){
-      case bbbfly.Morph.shade.light: icon = icon.Light; break;
-      case bbbfly.Morph.shade.dark: icon = icon.Dark; break;
-    }
+  return bbbfly.morph.misc.GetImgShade(icon,this.Shade);
+};
+
+/**
+ * @function
+ * @name GetImgShade
+ * @memberOf bbbfly.morph.misc
+ *
+ * @param {object} obj
+ * @param {bbbfly.Morph.shade} shade
+ */
+bbbfly.morph.misc.GetImgShade = function(img,shade){
+  if(!Object.isObject(img)){return null;}
+
+  switch(shade){
+    case bbbfly.Morph.shade.light: img = img.Light; break;
+    case bbbfly.Morph.shade.dark: img = img.Dark; break;
   }
-  return Object.isObject(icon) ? icon : {};
+  return Object.isObject(img) ? img : null;
 };
 
 /**
  * @function
  * @name ApplyFrameShade
  * @memberOf bbbfly.morph.misc
+ *
+ * @param {object} def
  */
 bbbfly.morph.misc.ApplyFrameShade = function(def){
   if(!Object.isObject(def)){return;}
@@ -79,6 +87,8 @@ bbbfly.morph.misc.ApplyFrameShade = function(def){
  * @function
  * @name ApplyIconShade
  * @memberOf bbbfly.morph.misc
+ *
+ * @param {object} def
  */
 bbbfly.morph.misc.ApplyIconShade = function(def){
   if(!Object.isObject(def)){return;}
@@ -92,6 +102,9 @@ bbbfly.morph.misc.ApplyIconShade = function(def){
  * @function
  * @name ApplyClassShade
  * @memberOf bbbfly.morph.misc
+ *
+ * @param {object} def
+ * @param {string} className
  */
 bbbfly.morph.misc.ApplyClassShade = function(def,className){
   if(!Object.isObject(def)){return;}

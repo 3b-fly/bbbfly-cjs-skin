@@ -37,15 +37,7 @@ bbbfly.morph.ngmisc._updateClassName = function(recursive){
 
 /** @ignore */
 bbbfly.morph.ngmisc._updateFrame = function(recursive){
-  var frame = this.ShadeFrame;
-
-  if(Object.isObject(frame)){
-    switch(this.Shade){
-      case bbbfly.Morph.shade.light: frame = frame.Light; break;
-      case bbbfly.Morph.shade.dark: frame = frame.Dark; break;
-    }
-  }
-  this.Frame = Object.isObject(frame) ? frame : null;
+  this.Frame = bbbfly.morph.misc.GetImgShade(this.ShadeFrame,this.Shade);
   return this.Update.callParent(recursive);
 };
 
