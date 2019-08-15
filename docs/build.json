@@ -6,10 +6,12 @@
       "../src/controls.jsdoc",
       "../src/core/morph.js",
       "../src/core/misc.js",
+      "../src/core/ngmisc.js",
       "../src/base/button.js",
       "../src/base/grid.js",
       "../src/base/panel.js",
-      "../src/base/wrapper.js"
+      "../src/base/wrapper.js",
+      "../src/base/menu.js"
     ]
   },
   "plugins": [
