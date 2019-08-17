@@ -15,7 +15,8 @@ bbbfly.morph.menu._onGetTreeImg = function(){
   return bbbfly.morph.misc.GetImgShade(img,this.Shade);
 };
 bbbfly.morph.menu._onGetCheckImg = function(menu,item){
-  if(!this.ShowCheckboxes || !item.Checked){return null;}
+  if(!this.ShowCheckboxes || !item){return null;}
+  if(typeof item.Checked === 'undefined'){return null;}
 
   var img = Function.isFunction(this.OnGetCheckImg.callParent)
     ? this.OnGetCheckImg.callParent() : this.CheckImg;
