@@ -88,6 +88,10 @@ bbbfly.morph.core._onInit = function(){
     var theme = this._Themes[themeId];
     if(!theme){continue;}
 
+    if(Function.isFunction(theme.OnInit)){
+      theme.OnInit();
+    }
+
     var url = String.isString(theme.Lib)
       ? ngLibPath(theme.Lib,path) : path;
 
@@ -319,6 +323,12 @@ ngUserControls['bbbfly_morph'] = {
  *
  * @property {object} Sources - Image source file definitions
  * @property {object} Images - Image definitions
+ */
+
+/**
+ * @event
+ * @name OnInit
+ * @memberof bbbfly.Morph.Theme#
  */
 
 /**

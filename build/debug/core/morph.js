@@ -70,6 +70,10 @@ bbbfly.morph.core._onInit = function(){
     var theme = this._Themes[themeId];
     if(!theme){continue;}
 
+    if(Function.isFunction(theme.OnInit)){
+      theme.OnInit();
+    }
+
     var url = String.isString(theme.Lib)
       ? ngLibPath(theme.Lib,path) : path;
 
