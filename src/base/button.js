@@ -24,6 +24,7 @@ bbbfly.morph = bbbfly.morph || {};
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ButtonPanel = function(def,ref,parent){
+  bbbfly.morph.misc.ApplyIconShade(def);
   bbbfly.morph.misc.ApplyFrameShade(def);
   bbbfly.morph.misc.ApplyClassShade(def,'ButtonPanel');
   return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
@@ -42,6 +43,7 @@ bbbfly.morph.ButtonPanel = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentButton = function(def,ref,parent){
+  bbbfly.morph.misc.ApplyIconShade(def);
   bbbfly.morph.misc.ApplyFrameShade(def);
   bbbfly.morph.misc.ApplyClassShade(def,'ContentButton');
   return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
@@ -60,6 +62,7 @@ bbbfly.morph.ContentButton = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.LargeContentButton = function(def,ref,parent){
+  bbbfly.morph.misc.ApplyIconShade(def);
   bbbfly.morph.misc.ApplyFrameShade(def);
   bbbfly.morph.misc.ApplyClassShade(def,'LargeContentButton');
   return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
@@ -78,6 +81,7 @@ bbbfly.morph.LargeContentButton = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentFlatButton = function(def,ref,parent){
+  bbbfly.morph.misc.ApplyIconShade(def);
   bbbfly.morph.misc.ApplyFrameShade(def);
   bbbfly.morph.misc.ApplyClassShade(def,'ContentFlatButton');
   return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
