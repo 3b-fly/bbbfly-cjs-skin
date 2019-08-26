@@ -95,6 +95,33 @@ bbbfly.morph.ContentFlatButton = function(def,ref,parent){
  * @param {object} [ref=undefined] - Reference owner
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
+bbbfly.morph.ContentIconButton = function(def,ref,parent){
+  bbbfly.morph.misc.ApplyIconShade(def);
+  bbbfly.morph.misc.ApplyFrameShade(def);
+
+  ng_MergeDef(def,{
+    Data: {
+      AutoSize: bbbfly.Btn.autosize.both
+    },
+    ControlsPanel: null
+  });
+
+  bbbfly.morph.misc.ApplyClassShade(def,'ContentIconButton');
+  return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
+};
+
+/**
+ * @class
+ * @type control
+ * @extends bbbfly.Btn
+ * @implements bbbfly.Morph.Control
+ *
+ * @inpackage button
+ *
+ * @param {bbbfly.Panel.Definition} [def=undefined] - Descendant definition
+ * @param {object} [ref=undefined] - Reference owner
+ * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
+ */
 bbbfly.morph.ContentCheckBox = function(def,ref,parent){
   bbbfly.morph.misc.ApplyIconShade(def);
   bbbfly.morph.misc.ApplyFrameShade(def);
@@ -154,6 +181,9 @@ ngUserControls['bbbfly_morph_button'] = {
     );
     bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.ContentFlatButton',bbbfly.morph.ContentFlatButton
+    );
+    bbbfly.Morph.RegisterControlType(
+      'bbbfly.morph.ContentIconButton',bbbfly.morph.ContentIconButton
     );
     bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.ContentCheckBox',bbbfly.morph.ContentCheckBox

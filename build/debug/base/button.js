@@ -27,6 +27,20 @@ bbbfly.morph.ContentFlatButton = function(def,ref,parent){
   bbbfly.morph.misc.ApplyClassShade(def,'ContentFlatButton');
   return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
 };
+bbbfly.morph.ContentIconButton = function(def,ref,parent){
+  bbbfly.morph.misc.ApplyIconShade(def);
+  bbbfly.morph.misc.ApplyFrameShade(def);
+
+  ng_MergeDef(def,{
+    Data: {
+      AutoSize: bbbfly.Btn.autosize.both
+    },
+    ControlsPanel: null
+  });
+
+  bbbfly.morph.misc.ApplyClassShade(def,'ContentIconButton');
+  return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
+};
 bbbfly.morph.ContentCheckBox = function(def,ref,parent){
   bbbfly.morph.misc.ApplyIconShade(def);
   bbbfly.morph.misc.ApplyFrameShade(def);
@@ -71,6 +85,9 @@ ngUserControls['bbbfly_morph_button'] = {
     );
     bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.ContentFlatButton',bbbfly.morph.ContentFlatButton
+    );
+    bbbfly.Morph.RegisterControlType(
+      'bbbfly.morph.ContentIconButton',bbbfly.morph.ContentIconButton
     );
     bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.ContentCheckBox',bbbfly.morph.ContentCheckBox
