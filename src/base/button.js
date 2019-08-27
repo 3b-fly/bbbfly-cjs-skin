@@ -104,10 +104,10 @@ bbbfly.morph.ContentIconButton = function(def,ref,parent){
   bbbfly.morph.misc.ApplyFrameShade(def);
 
   ng_MergeDef(def,{
-    Data: {
-      AutoSize: bbbfly.Btn.autosize.both
-    },
-    ControlsPanel: null
+    ControlsPanel: null,
+    Methods: {
+      GetText: function(){return '';}
+    }
   });
 
   bbbfly.morph.misc.ApplyClassShade(def,'ContentIconButton');
