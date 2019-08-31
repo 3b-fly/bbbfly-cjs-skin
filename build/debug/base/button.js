@@ -7,10 +7,24 @@
 
 var bbbfly = bbbfly || {};
 bbbfly.morph = bbbfly.morph || {};
-bbbfly.morph.ButtonPanel = function(def,ref,parent){
+bbbfly.morph.PanelButton = function(def,ref,parent){
   bbbfly.morph.misc.ApplyIconShade(def);
   bbbfly.morph.misc.ApplyFrameShade(def);
-  bbbfly.morph.misc.ApplyClassShade(def,'ButtonPanel');
+  bbbfly.morph.misc.ApplyClassShade(def,'PanelButton');
+  return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
+};
+bbbfly.morph.PanelIconButton = function(def,ref,parent){
+  bbbfly.morph.misc.ApplyIconShade(def);
+  bbbfly.morph.misc.ApplyFrameShade(def);
+
+  ng_MergeDef(def,{
+    ControlsPanel: null,
+    Methods: {
+      GetText: function(){return '';}
+    }
+  });
+
+  bbbfly.morph.misc.ApplyClassShade(def,'IconButtonBanel');
   return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
 };
 bbbfly.morph.ContentButton = function(def,ref,parent){
@@ -79,7 +93,10 @@ ngUserControls = ngUserControls || new Array();
 ngUserControls['bbbfly_morph_button'] = {
   OnInit: function(){
     bbbfly.Morph.RegisterControlType(
-      'bbbfly.morph.ButtonPanel',bbbfly.morph.ButtonPanel
+      'bbbfly.morph.PanelButton',bbbfly.morph.PanelButton
+    );
+    bbbfly.Morph.RegisterControlType(
+      'bbbfly.morph.PanelIconButton',bbbfly.morph.PanelIconButton
     );
     bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.ContentButton',bbbfly.morph.ContentButton
