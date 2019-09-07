@@ -182,18 +182,17 @@ bbbfly.morph.core._onCreateControl = function(def){
   if(!Object.isObject(def) || !this._CtrlTypes[def.Type]){return;}
 
   var theme = bbbfly.morph.core.GetDefTheme(def);
-  if(theme && Function.isFunction(theme.OnCreateControl)){
-    theme.OnCreateControl(def);
-  }
-
-  var shade = bbbfly.morph.core.GetDefShade(def);
-
-  ng_MergeVarReplace(def,{
-    Data: {
-      Theme: theme ? theme.ID : null,
-      Shade: shade
+  if(theme){
+    if(Function.isFunction(theme.OnCreateControl)){
+      theme.OnCreateControl(def);
     }
-  },true);
+
+    ng_MergeVarReplace(def,{
+      Data: {
+        Theme: theme ? theme.ID : null
+      }
+    },true);
+  }
 };
 
 /**
