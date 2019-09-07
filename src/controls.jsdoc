@@ -51,6 +51,15 @@
  */
 
 /**
+ * @package list
+ *
+ * @version 1.0.0
+ *
+ * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:list|bbbfly-cjs-controls (2.0.0): list}
+ * @requires {@link package:core|bbbfly-cjs-morph (1.0.0): core}
+ */
+
+/**
  * @package menu
  *
  * @version 1.0.0

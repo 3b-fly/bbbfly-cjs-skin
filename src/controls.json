@@ -96,7 +96,22 @@
         }
       }
     },
-    "menu": {
+    "list": {
+      "DebugFiles": [
+        "base/list.js"
+      ],
+      "ReleaseFiles": [
+        "base/list.js"
+      ],
+      "Libraries": {
+        "bbbfly-cjs-controls": {
+          "Packages": ["list"]
+        },
+        "bbbfly-cjs-morph": {
+          "Packages": ["core"]
+        }
+      }
+    },"menu": {
       "DebugFiles": [
         "base/menu.js"
       ],
