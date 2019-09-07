@@ -27,7 +27,7 @@ bbbfly.morph.menu._onGetCheckImg = function(menu,item){
   if(typeof item.Checked === 'undefined'){return null;}
 
   var img = Function.isFunction(this.OnGetCheckImg.callParent)
-    ? this.OnGetCheckImg.callParent() : this.CheckImg;
+    ? this.OnGetCheckImg.callParent(menu,item) : this.CheckImg;
 
   return bbbfly.morph.misc.GetImgShade(img,this.Shade);
 };
