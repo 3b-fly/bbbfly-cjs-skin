@@ -11,22 +11,13 @@ var bbbfly = bbbfly || {};
 /** @ignore */
 bbbfly.morph = bbbfly.morph || {};
 
-/**
- * @class
- * @type control
- * @extends bbbfly.Btn
- * @implements bbbfly.Morph.Control
- *
- * @inpackage button
- *
- * @param {bbbfly.Panel.Definition} [def=undefined] - Descendant definition
- * @param {object} [ref=undefined] - Reference owner
- * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
- */
-bbbfly.morph.PanelButton = function(def,ref,parent){
+/** @private */
+bbbfly.morph.Button = function(def,ref,parent,className){
+  if(!String.isString(className)){className = 'Button';}
+
   bbbfly.morph.misc.ApplyIconShade(def);
   bbbfly.morph.misc.ApplyFrameShade(def);
-  bbbfly.morph.misc.ApplyClassShade(def,'PanelButton');
+  bbbfly.morph.misc.ApplyClassShade(def,className);
   return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
 };
 
@@ -42,19 +33,8 @@ bbbfly.morph.PanelButton = function(def,ref,parent){
  * @param {object} [ref=undefined] - Reference owner
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
-bbbfly.morph.PanelIconButton = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyIconShade(def);
-  bbbfly.morph.misc.ApplyFrameShade(def);
-
-  ng_MergeDef(def,{
-    ControlsPanel: null,
-    Methods: {
-      GetText: function(){return '';}
-    }
-  });
-
-  bbbfly.morph.misc.ApplyClassShade(def,'IconButtonBanel');
-  return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
+bbbfly.morph.PanelButton = function(def,ref,parent){
+  return bbbfly.morph.Button(def,ref,parent,'PanelButton');
 };
 
 /**
@@ -70,10 +50,7 @@ bbbfly.morph.PanelIconButton = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentButton = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyIconShade(def);
-  bbbfly.morph.misc.ApplyFrameShade(def);
-  bbbfly.morph.misc.ApplyClassShade(def,'ContentButton');
-  return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
+  return bbbfly.morph.Button(def,ref,parent,'ContentButton');
 };
 
 /**
@@ -89,10 +66,7 @@ bbbfly.morph.ContentButton = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.LargeContentButton = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyIconShade(def);
-  bbbfly.morph.misc.ApplyFrameShade(def);
-  bbbfly.morph.misc.ApplyClassShade(def,'LargeContentButton');
-  return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
+  return bbbfly.morph.Button(def,ref,parent,'LargeContentButton');
 };
 
 /**
@@ -108,10 +82,46 @@ bbbfly.morph.LargeContentButton = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentFlatButton = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyIconShade(def);
-  bbbfly.morph.misc.ApplyFrameShade(def);
-  bbbfly.morph.misc.ApplyClassShade(def,'ContentFlatButton');
-  return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
+  return bbbfly.morph.Button(def,ref,parent,'ContentFlatButton');
+};
+
+/**
+ * @class
+ * @type control
+ * @extends bbbfly.Btn
+ * @implements bbbfly.Morph.Control
+ *
+ * @inpackage button
+ *
+ * @param {bbbfly.Panel.Definition} [def=undefined] - Descendant definition
+ * @param {object} [ref=undefined] - Reference owner
+ * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
+ */
+bbbfly.morph.ContentInputButton = function(def,ref,parent){
+  return bbbfly.morph.Button(def,ref,parent,'ContentInputButton');
+};
+
+/**
+ * @class
+ * @type control
+ * @extends bbbfly.Btn
+ * @implements bbbfly.Morph.Control
+ *
+ * @inpackage button
+ *
+ * @param {bbbfly.Panel.Definition} [def=undefined] - Descendant definition
+ * @param {object} [ref=undefined] - Reference owner
+ * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
+ */
+bbbfly.morph.PanelIconButton = function(def,ref,parent){
+  ng_MergeDef(def,{
+    ControlsPanel: null,
+    Methods: {
+      GetText: function(){return '';}
+    }
+  });
+
+  return bbbfly.morph.Button(def,ref,parent,'IconButtonBanel');
 };
 
 /**
@@ -127,9 +137,6 @@ bbbfly.morph.ContentFlatButton = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentIconButton = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyIconShade(def);
-  bbbfly.morph.misc.ApplyFrameShade(def);
-
   ng_MergeDef(def,{
     ControlsPanel: null,
     Methods: {
@@ -137,8 +144,7 @@ bbbfly.morph.ContentIconButton = function(def,ref,parent){
     }
   });
 
-  bbbfly.morph.misc.ApplyClassShade(def,'ContentIconButton');
-  return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
+  return bbbfly.morph.Button(def,ref,parent,'ContentIconButton');
 };
 
 /**
@@ -154,9 +160,6 @@ bbbfly.morph.ContentIconButton = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentCheckBox = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyIconShade(def);
-  bbbfly.morph.misc.ApplyFrameShade(def);
-
   ng_MergeDef(def,{
     Data: {
       SelectType: bbbfly.Btn.selecttype.both,
@@ -165,8 +168,7 @@ bbbfly.morph.ContentCheckBox = function(def,ref,parent){
     ControlsPanel: null
   });
 
-  bbbfly.morph.misc.ApplyClassShade(def,'ContentCheckBox');
-  return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
+  return bbbfly.morph.Button(def,ref,parent,'ContentCheckBox');
 };
 
 /**
@@ -182,9 +184,6 @@ bbbfly.morph.ContentCheckBox = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentRadioButton = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyIconShade(def);
-  bbbfly.morph.misc.ApplyFrameShade(def);
-
   ng_MergeDef(def,{
     Data: {
       SelectType: bbbfly.Btn.selecttype.both,
@@ -193,8 +192,7 @@ bbbfly.morph.ContentRadioButton = function(def,ref,parent){
     ControlsPanel: null
   });
 
-  bbbfly.morph.misc.ApplyClassShade(def,'ContentRadioButton');
-  return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
+  return bbbfly.morph.Button(def,ref,parent,'ContentRadioButton');
 };
 
 /** @ignore */
@@ -205,9 +203,6 @@ ngUserControls['bbbfly_morph_button'] = {
       'bbbfly.morph.PanelButton',bbbfly.morph.PanelButton
     );
     bbbfly.Morph.RegisterControlType(
-      'bbbfly.morph.PanelIconButton',bbbfly.morph.PanelIconButton
-    );
-    bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.ContentButton',bbbfly.morph.ContentButton
     );
     bbbfly.Morph.RegisterControlType(
@@ -215,6 +210,12 @@ ngUserControls['bbbfly_morph_button'] = {
     );
     bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.ContentFlatButton',bbbfly.morph.ContentFlatButton
+    );
+    bbbfly.Morph.RegisterControlType(
+      'bbbfly.morph.PanelIconButton',bbbfly.morph.PanelIconButton
+    );
+    bbbfly.Morph.RegisterControlType(
+      'bbbfly.morph.ContentInputButton',bbbfly.morph.ContentInputButton
     );
     bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.ContentIconButton',bbbfly.morph.ContentIconButton
