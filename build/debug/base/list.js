@@ -9,9 +9,6 @@ var bbbfly = bbbfly || {};
 bbbfly.morph = bbbfly.morph || {};
 bbbfly.morph.list = {};
 bbbfly.morph.checklist = {};
-bbbfly.morph.list._onUpdated = function(){
-  this.DoSetInvalid(this.Invalid);
-};
 bbbfly.morph.list._onGetRowClassName = function(list,item){
   var cn = '';
   var bcn = list.BaseClassName;
@@ -24,13 +21,6 @@ bbbfly.morph.list._onGetRowClassName = function(list,item){
     cn += 'StaticRow '+bcn;
   }
   return cn + 'Row';
-};
-bbbfly.morph.list._doSetInvalid = function(invalid){
-  var node = this.Elm();
-  if(node){
-    var cn = this.BaseClassName;
-    node.className = invalid ? (cn+' '+cn+'Invalid') : cn;
-  }
 };
 bbbfly.morph.list._onGetTreeImg = function(){
   var img = Function.isFunction(this.OnGetTreeImg.callParent)
@@ -62,15 +52,11 @@ bbbfly.morph.ContentList = function(def,ref,parent){
 
   ng_MergeDef(def,{
     Events: {
-      OnUpdated: bbbfly.morph.list._onUpdated,
       OnGetRowClassName: bbbfly.morph.list._onGetRowClassName
     },
     OverrideEvents: {
       OnGetTreeImg: bbbfly.morph.list._onGetTreeImg,
       OnGetCheckImg: bbbfly.morph.list._onGetCheckImg
-    },
-    Methods: {
-      DoSetInvalid: bbbfly.morph.list._doSetInvalid
     }
   });
 
