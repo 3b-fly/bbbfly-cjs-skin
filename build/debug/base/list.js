@@ -10,17 +10,19 @@ bbbfly.morph = bbbfly.morph || {};
 bbbfly.morph.list = {};
 bbbfly.morph.checklist = {};
 bbbfly.morph.list._onGetRowClassName = function(list,item){
-  var cn = '';
+  var cn = 'Row';
   var bcn = list.BaseClassName;
   if(!String.isString(bcn)){bcn = '';}
 
   if(item.H || list.ItemHeight){
-    cn += 'FixedHRow '+bcn;
+    cn += ' '+bcn+'FixedH';
   }
   if(item.Static){
-    cn += 'StaticRow '+bcn;
+    cn += ' '+bcn+'Static';
   }
-  return cn + 'Row';
+
+  cn += ' '+bcn+'Row';
+  return cn;
 };
 bbbfly.morph.list._onGetTreeImg = function(){
   var img = Function.isFunction(this.OnGetTreeImg.callParent)

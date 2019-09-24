@@ -16,17 +16,19 @@ bbbfly.morph.checklist = {};
 
 /** @ignore */
 bbbfly.morph.list._onGetRowClassName = function(list,item){
-  var cn = '';
+  var cn = 'Row';
   var bcn = list.BaseClassName;
   if(!String.isString(bcn)){bcn = '';}
 
   if(item.H || list.ItemHeight){
-    cn += 'FixedHRow '+bcn;
+    cn += ' '+bcn+'FixedH';
   }
   if(item.Static){
-    cn += 'StaticRow '+bcn;
+    cn += ' '+bcn+'Static';
   }
-  return cn + 'Row';
+
+  cn += ' '+bcn+'Row';
+  return cn;
 };
 
 /** @ignore */
