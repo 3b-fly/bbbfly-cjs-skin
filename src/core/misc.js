@@ -43,6 +43,14 @@ bbbfly.morph.misc._getFrame = function(){
 };
 
 /** @ignore */
+bbbfly.morph.misc._getAnchors = function(){
+  var anchors = Function.isFunction(this.GetAnchors.callParent)
+    ? this.GetAnchors.callParent() : this.Anchors;
+
+  return bbbfly.morph.misc.GetImgShade(anchors,this.Shade);
+};
+
+/** @ignore */
 bbbfly.morph.misc._getIcon = function(){
   var icon = Function.isFunction(this.GetIcon.callParent)
     ? this.GetIcon.callParent() : this.Icon;
@@ -80,6 +88,21 @@ bbbfly.morph.misc.ApplyFrameShade = function(def){
 
   ng_MergeDef(def,{
     Methods: { GetFrame: bbbfly.morph.misc._getFrame }
+  });
+};
+
+/**
+ * @function
+ * @name ApplyAnchorsShade
+ * @memberOf bbbfly.morph.misc
+ *
+ * @param {object} def
+ */
+bbbfly.morph.misc.ApplyAnchorsShade = function(def){
+  if(!Object.isObject(def)){return;}
+
+  ng_MergeDef(def,{
+    Methods: { GetAnchors: bbbfly.morph.misc._getAnchors }
   });
 };
 

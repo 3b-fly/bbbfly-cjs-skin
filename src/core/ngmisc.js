@@ -41,6 +41,12 @@ bbbfly.morph.ngmisc._updateFrame = function(recursive){
   return this.Update.callParent(recursive);
 };
 
+/** @ignore */
+bbbfly.morph.ngmisc._updateAnchors = function(recursive){
+  this.Anchors = bbbfly.morph.misc.GetImgShade(this.ShadeAnchors,this.Shade);
+  return this.Update.callParent(recursive);
+};
+
 /**
  * @function
  * @name ApplyFrameShade
@@ -52,6 +58,22 @@ bbbfly.morph.ngmisc.ApplyFrameShade = function(def){
   ng_MergeDef(def,{
     Data: { ShadeFrame: null },
     Methods: { Update: bbbfly.morph.ngmisc._updateFrame }
+  });
+};
+
+/**
+ * @function
+ * @name ApplyAnchorsShade
+ * @memberOf bbbfly.morph.ngmisc
+ *
+ * @param {object} def
+ */
+bbbfly.morph.ngmisc.ApplyAnchorsShade = function(def){
+  if(!Object.isObject(def)){return;}
+
+  ng_MergeDef(def,{
+    Data: { ShadeAnchors: null },
+    Methods: { Update: bbbfly.morph.ngmisc._updateAnchors }
   });
 };
 

@@ -29,6 +29,12 @@ bbbfly.morph.misc._getFrame = function(){
 
   return bbbfly.morph.misc.GetImgShade(frame,this.Shade);
 };
+bbbfly.morph.misc._getAnchors = function(){
+  var anchors = Function.isFunction(this.GetAnchors.callParent)
+    ? this.GetAnchors.callParent() : this.Anchors;
+
+  return bbbfly.morph.misc.GetImgShade(anchors,this.Shade);
+};
 bbbfly.morph.misc._getIcon = function(){
   var icon = Function.isFunction(this.GetIcon.callParent)
     ? this.GetIcon.callParent() : this.Icon;
@@ -49,6 +55,13 @@ bbbfly.morph.misc.ApplyFrameShade = function(def){
 
   ng_MergeDef(def,{
     Methods: { GetFrame: bbbfly.morph.misc._getFrame }
+  });
+};
+bbbfly.morph.misc.ApplyAnchorsShade = function(def){
+  if(!Object.isObject(def)){return;}
+
+  ng_MergeDef(def,{
+    Methods: { GetAnchors: bbbfly.morph.misc._getAnchors }
   });
 };
 bbbfly.morph.misc.ApplyIconShade = function(def){
