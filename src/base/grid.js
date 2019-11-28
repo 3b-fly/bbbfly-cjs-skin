@@ -24,6 +24,8 @@ bbbfly.morph = bbbfly.morph || {};
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentGrid = function(def,ref,parent){
+  def = def || {};
+  
   bbbfly.morph.misc.ApplyFrameShade(def);
   bbbfly.morph.misc.ApplyClassShade(def,'ContentGrid');
   return ngCreateControlAsType(def,'bbbfly.Grid',ref,parent);

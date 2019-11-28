@@ -50,6 +50,8 @@ bbbfly.morph.checklist._onListClick = function(event){
   return false;
 };
 bbbfly.morph.ContentList = function(def,ref,parent){
+  def = def || {};
+  
   bbbfly.morph.ngmisc.ApplyFrameShade(def);
 
   ng_MergeDef(def,{
@@ -66,6 +68,8 @@ bbbfly.morph.ContentList = function(def,ref,parent){
   return ngCreateControlAsType(def,'bbbfly.List',ref,parent);
 };
 bbbfly.morph.ContentCheckList = function(def,ref,parent){
+  def = def || {};
+
   ng_MergeDef(def,{
     Data: { ShowCheckboxes: true },
     Events: { OnClick: bbbfly.morph.checklist._onListClick }

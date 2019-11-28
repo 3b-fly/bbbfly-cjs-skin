@@ -39,6 +39,8 @@ bbbfly.morph.InputFrame = function(def,ref,parent){
   return ngCreateControlAsType(def,'bbbfly.Frame',ref,parent);
 };
 bbbfly.morph.ContentSeparator = function(def,ref,parent){
+  def = def || {};
+  
   bbbfly.morph.misc.ApplyFrameShade(def);
 
   ng_MergeDef(def,{

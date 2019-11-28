@@ -75,6 +75,8 @@ bbbfly.morph.checklist._onListClick = function(event){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentList = function(def,ref,parent){
+  def = def || {};
+  
   bbbfly.morph.ngmisc.ApplyFrameShade(def);
 
   ng_MergeDef(def,{
@@ -104,6 +106,8 @@ bbbfly.morph.ContentList = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentCheckList = function(def,ref,parent){
+  def = def || {};
+
   ng_MergeDef(def,{
     Data: { ShowCheckboxes: true },
     Events: { OnClick: bbbfly.morph.checklist._onListClick }

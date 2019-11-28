@@ -30,6 +30,8 @@ bbbfly.morph.menu._onGetSubMenuImg = function(){
   return bbbfly.morph.misc.GetImgShade(img,this.Shade);
 };
 bbbfly.morph.PopupMenu = function(def,ref,parent){
+  def = def || {};
+  
   bbbfly.morph.ngmisc.ApplyFrameShade(def);
 
   ng_MergeDef(def,{

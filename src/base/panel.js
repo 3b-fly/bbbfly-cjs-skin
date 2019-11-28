@@ -97,6 +97,8 @@ bbbfly.morph.InputFrame = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentSeparator = function(def,ref,parent){
+  def = def || {};
+  
   bbbfly.morph.misc.ApplyFrameShade(def);
 
   ng_MergeDef(def,{

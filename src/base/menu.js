@@ -53,6 +53,8 @@ bbbfly.morph.menu._onGetSubMenuImg = function(){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.PopupMenu = function(def,ref,parent){
+  def = def || {};
+  
   bbbfly.morph.ngmisc.ApplyFrameShade(def);
 
   ng_MergeDef(def,{
