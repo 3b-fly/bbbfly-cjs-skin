@@ -33,6 +33,15 @@
  */
 
 /**
+ * @package hint
+ *
+ * @version 1.0.0
+ *
+ * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:hint|bbbfly-cjs-controls (2.0.0): hint}
+ * @requires {@link package:core|bbbfly-cjs-morph (1.0.0): core}
+ */
+
+/**
  * @package wrapper
  *
  * @version 1.0.0
@@ -48,6 +57,7 @@
  *
  * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:button|bbbfly-cjs-controls (2.0.0): button}
  * @requires {@link package:core|bbbfly-cjs-morph (1.0.0): core}
+ * @requires {@link package:hint|bbbfly-cjs-morph (1.0.0): hint}
  */
 
 /**

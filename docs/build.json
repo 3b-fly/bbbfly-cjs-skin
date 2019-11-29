@@ -9,6 +9,7 @@
       "../src/core/ngmisc.js",
       "../src/base/button.js",
       "../src/base/grid.js",
+      "../src/base/hint.js",
       "../src/base/panel.js",
       "../src/base/wrapper.js",
       "../src/base/menu.js"

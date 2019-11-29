@@ -8,11 +8,18 @@
 var bbbfly = bbbfly || {};
 bbbfly.morph = bbbfly.morph || {};
 bbbfly.morph.Button = function(def,ref,parent,className){
-  if(!String.isString(className)){className = 'Button';}
+  def = def || {};
 
   bbbfly.morph.misc.ApplyIconShade(def);
   bbbfly.morph.misc.ApplyFrameShade(def);
-  bbbfly.morph.misc.ApplyClassShade(def,className);
+
+  ng_MergeDef(def,{
+    HintDef: {
+      Type: 'bbbfly.morph.TextHint'
+    }
+  });
+
+  bbbfly.morph.misc.ApplyClassShade(def,(className || 'Button'));
   return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
 };
 bbbfly.morph.PanelButton = function(def,ref,parent){
@@ -31,6 +38,8 @@ bbbfly.morph.ContentInputButton = function(def,ref,parent){
   return bbbfly.morph.Button(def,ref,parent,'ContentInputButton');
 };
 bbbfly.morph.PanelIconButton = function(def,ref,parent){
+  def = def || {};
+
   ng_MergeDef(def,{
     ControlsPanel: null,
     Methods: {
@@ -41,6 +50,8 @@ bbbfly.morph.PanelIconButton = function(def,ref,parent){
   return bbbfly.morph.Button(def,ref,parent,'IconButtonBanel');
 };
 bbbfly.morph.ContentIconButton = function(def,ref,parent){
+  def = def || {};
+
   ng_MergeDef(def,{
     ControlsPanel: null,
     Methods: {
@@ -51,6 +62,8 @@ bbbfly.morph.ContentIconButton = function(def,ref,parent){
   return bbbfly.morph.Button(def,ref,parent,'ContentIconButton');
 };
 bbbfly.morph.ContentCheckBox = function(def,ref,parent){
+  def = def || {};
+
   ng_MergeDef(def,{
     Data: {
       SelectType: bbbfly.Btn.selecttype.both,
@@ -62,6 +75,8 @@ bbbfly.morph.ContentCheckBox = function(def,ref,parent){
   return bbbfly.morph.Button(def,ref,parent,'ContentCheckBox');
 };
 bbbfly.morph.ContentRadioButton = function(def,ref,parent){
+  def = def || {};
+
   ng_MergeDef(def,{
     Data: {
       SelectType: bbbfly.Btn.selecttype.both,

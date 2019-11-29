@@ -64,6 +64,22 @@
         }
       }
     },
+    "hint": {
+      "DebugFiles": [
+        "base/hint.js"
+      ],
+      "ReleaseFiles": [
+        "base/hint.js"
+      ],
+      "Libraries": {
+        "bbbfly-cjs-controls": {
+          "Packages": ["hint"]
+        },
+        "bbbfly-cjs-morph": {
+          "Packages": ["core"]
+        }
+      }
+    },
     "wrapper": {
       "DebugFiles": [
         "base/wrapper.js"
@@ -92,7 +108,7 @@
           "Packages": ["button"]
         },
         "bbbfly-cjs-morph": {
-          "Packages": ["core"]
+          "Packages": ["core","hint"]
         }
       }
     },

@@ -75,6 +75,26 @@
         }
       }
     },
+    "hint": {
+      "DebugFiles": [
+        "debug/base/hint.js"
+      ],
+      "ReleaseFiles": [
+        "release/base/hint.js"
+      ],
+      "Libraries": {
+        "bbbfly-cjs-controls": {
+          "Packages": [
+            "hint"
+          ]
+        },
+        "bbbfly-cjs-morph": {
+          "Packages": [
+            "core"
+          ]
+        }
+      }
+    },
     "wrapper": {
       "DebugFiles": [
         "debug/base/wrapper.js"
@@ -110,7 +130,8 @@
         },
         "bbbfly-cjs-morph": {
           "Packages": [
-            "core"
+            "core",
+            "hint"
           ]
         }
       }

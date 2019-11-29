@@ -13,11 +13,18 @@ bbbfly.morph = bbbfly.morph || {};
 
 /** @private */
 bbbfly.morph.Button = function(def,ref,parent,className){
-  if(!String.isString(className)){className = 'Button';}
+  def = def || {};
 
   bbbfly.morph.misc.ApplyIconShade(def);
   bbbfly.morph.misc.ApplyFrameShade(def);
-  bbbfly.morph.misc.ApplyClassShade(def,className);
+
+  ng_MergeDef(def,{
+    HintDef: {
+      Type: 'bbbfly.morph.TextHint'
+    }
+  });
+
+  bbbfly.morph.misc.ApplyClassShade(def,(className || 'Button'));
   return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
 };
 
@@ -114,6 +121,8 @@ bbbfly.morph.ContentInputButton = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.PanelIconButton = function(def,ref,parent){
+  def = def || {};
+
   ng_MergeDef(def,{
     ControlsPanel: null,
     Methods: {
@@ -137,6 +146,8 @@ bbbfly.morph.PanelIconButton = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentIconButton = function(def,ref,parent){
+  def = def || {};
+
   ng_MergeDef(def,{
     ControlsPanel: null,
     Methods: {
@@ -160,6 +171,8 @@ bbbfly.morph.ContentIconButton = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentCheckBox = function(def,ref,parent){
+  def = def || {};
+
   ng_MergeDef(def,{
     Data: {
       SelectType: bbbfly.Btn.selecttype.both,
@@ -184,6 +197,8 @@ bbbfly.morph.ContentCheckBox = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentRadioButton = function(def,ref,parent){
+  def = def || {};
+
   ng_MergeDef(def,{
     Data: {
       SelectType: bbbfly.Btn.selecttype.both,
