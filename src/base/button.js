@@ -19,8 +19,10 @@ bbbfly.morph.Button = function(def,ref,parent,className){
   bbbfly.morph.misc.ApplyFrameShade(def);
 
   ng_MergeDef(def,{
-    HintDef: {
-      Type: 'bbbfly.morph.TextHint'
+    Data: {
+      HintDef: {
+        Type: 'bbbfly.morph.TextHint'
+      }
     }
   });
 
