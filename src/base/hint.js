@@ -82,10 +82,10 @@ bbbfly.morph.TextHint = function(def,ref,parent){
  *   {@link bbbfly.morph.TextHint.HintType|bbbfly.morph.TextHint.HintType}
  */
 bbbfly.morph.TextHint.type = {
-  info: 'info',
-  submit: 'submit',
-  warn: 'warn',
-  error: 'error'
+  info: 'Info',
+  submit: 'Submit',
+  warn: 'Warn',
+  error: 'Error'
 };
 
 /** @ignore */

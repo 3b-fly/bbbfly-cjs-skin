@@ -54,10 +54,10 @@ bbbfly.morph.TextHint = function(def,ref,parent){
   return ngCreateControlAsType(def,'bbbfly.TextHint',ref,parent);
 };
 bbbfly.morph.TextHint.type = {
-  info: 'info',
-  submit: 'submit',
-  warn: 'warn',
-  error: 'error'
+  info: 'Info',
+  submit: 'Submit',
+  warn: 'Warn',
+  error: 'Error'
 };
 ngUserControls = ngUserControls || new Array();
 ngUserControls['bbbfly_morph_hint'] = {
