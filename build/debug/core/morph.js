@@ -64,7 +64,7 @@ bbbfly.morph.core._registerControlType = function(type,constr){
   this._CtrlTypes[type] = constr;
 };
 bbbfly.morph.core._onInit = function(){
-  var path = (ngDEBUG ? 'debug/' : 'release/');
+  var url = (ngDEBUG ? 'debug/' : 'release/');
 
   for(var themeId in this._Themes){
     var theme = this._Themes[themeId];
@@ -74,8 +74,8 @@ bbbfly.morph.core._onInit = function(){
       theme.OnInit();
     }
 
-    var url = String.isString(theme.Lib)
-      ? ngLibPath(theme.Lib,path) : path;
+    if(String.isString(theme.ImgDir)){url += theme.ImgDir;}
+    if(String.isString(theme.Lib)){url = ngLibPath(theme.Lib,url);}
 
     bbbfly.morph.core._recalcImagePaths(theme.Sources,url);
     bbbfly.morph.core._recalcImageSources(theme.Images,theme.Sources);
