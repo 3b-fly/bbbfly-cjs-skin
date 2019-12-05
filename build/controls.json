@@ -178,10 +178,10 @@
     },
     "theme-frame-medium": {
       "DebugFiles": [
-        "debug/theme/frame/medium/img.js"
+        "debug/theme/frame/medium/images.js"
       ],
       "ReleaseFiles": [
-        "release/theme/frame/medium/img.js"
+        "release/theme/frame/medium/images.js"
       ],
       "Libraries": {
         "bbbfly-cjs": {

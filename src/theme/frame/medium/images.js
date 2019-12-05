@@ -12,26 +12,21 @@ var bbbfly = bbbfly || {};
 bbbfly.morph = bbbfly.morph || {};
 /** @ignore */
 bbbfly.morph.theme = bbbfly.morph.theme || {};
-
 /** @ignore */
 bbbfly.morph.theme.frame = bbbfly.morph.theme.frame || {};
-
-/**
- * @namespace
- * @inpackage theme-frame-medium
- */
+/** @ignore */
 bbbfly.morph.theme.frame.medium = bbbfly.morph.theme.frame.medium || {};
 
 /** @ignore */
-bbbfly.morph.theme.frame.medium.img = {};
+bbbfly.morph.theme.frame.medium.images = {};
 
 /** @ignore */
-bbbfly.morph.theme.frame.medium.img._init = function(){
+bbbfly.morph.theme.frame.medium.images._init = function(){
   if(Function.isFunction(this.Images)){this.Images = this.Images();}
 };
 
 /** @ignore */
-bbbfly.morph.theme.frame.medium.img._padding = function(padding){
+bbbfly.morph.theme.frame.medium.images._padding = function(padding){
   if(Object.isObject(padding)){
     ng_MergeVar(padding,{L:0,T:0,R:0,B:0});
   }
@@ -45,7 +40,7 @@ bbbfly.morph.theme.frame.medium.img._padding = function(padding){
 };
 
 /** @ignore */
-bbbfly.morph.theme.frame.medium.img._image = function(anchor,padding){
+bbbfly.morph.theme.frame.medium.images._image = function(anchor,padding){
   padding = this.Padding(padding);
 
   return {
@@ -60,7 +55,7 @@ bbbfly.morph.theme.frame.medium.img._image = function(anchor,padding){
 };
 
 /** @ignore */
-bbbfly.morph.theme.frame.medium.img._panelFrame = function(anchor){
+bbbfly.morph.theme.frame.medium.images._panelFrame = function(anchor){
   return {
     LeftTop: { L:0, DL:30, T:0, W:2, H:2, Src:{Img:'frame', Anchor:anchor} },
     Top: { L:0, T:0, DT:30, H:2, Src:{Img:'frame_h', Anchor:anchor} },
@@ -74,7 +69,7 @@ bbbfly.morph.theme.frame.medium.img._panelFrame = function(anchor){
 };
 
 /** @ignore */
-bbbfly.morph.theme.frame.medium.img._hLineFrame = function(anchor){
+bbbfly.morph.theme.frame.medium.images._hLineFrame = function(anchor){
   return {
     Left: { L:0, DL:30, T:12, W:3, H:3, Src:{Img:'frame', Anchor:anchor} },
     Center: { L:0, T:0, DT:5, H:3, Src:{Img:'frame_h', Anchor:anchor} },
@@ -83,7 +78,7 @@ bbbfly.morph.theme.frame.medium.img._hLineFrame = function(anchor){
 };
 
 /** @ignore */
-bbbfly.morph.theme.frame.medium.img._vLineFrame = function(anchor){
+bbbfly.morph.theme.frame.medium.images._vLineFrame = function(anchor){
   return {
     Top: { L:12, DL:42, T:0, W:3, H:3, Src:{Img:'frame', Anchor:anchor} },
     Center: { L:0, DL:5, T:0, W:3, Src:{Img:'frame_v', Anchor:anchor} },
@@ -92,7 +87,7 @@ bbbfly.morph.theme.frame.medium.img._vLineFrame = function(anchor){
 };
 
 /** @ignore */
-bbbfly.morph.theme.frame.medium.img._hintFrame = function(anchor){
+bbbfly.morph.theme.frame.medium.images._hintFrame = function(anchor){
   return {
     LeftTop: { L:0, DL:30, T:0, W:4, H:4, Src:{Img:'frame', Anchor:anchor} },
     Top: { L:0, T:0, DT:30, H:4, Src:{Img:'frame_h', Anchor:anchor} },
@@ -106,7 +101,7 @@ bbbfly.morph.theme.frame.medium.img._hintFrame = function(anchor){
 };
 
 /** @ignore */
-bbbfly.morph.theme.frame.medium.img._buttonFrame = function(anchor){
+bbbfly.morph.theme.frame.medium.images._buttonFrame = function(anchor){
   return {
     LeftTop: {
       L:0, oL:30, SL:60, oSL:90, DL:120, DSL:150, T:0, W:3, H:3,
@@ -152,7 +147,7 @@ bbbfly.morph.theme.frame.medium.img._buttonFrame = function(anchor){
 };
 
 /** @ignore */
-bbbfly.morph.theme.frame.medium.img._buttonImage = function(anchor,indent){
+bbbfly.morph.theme.frame.medium.images._buttonImage = function(anchor,indent){
   var padding = this.Padding(indent);
 
   return {
@@ -170,7 +165,7 @@ bbbfly.morph.theme.frame.medium.img._buttonImage = function(anchor,indent){
 };
 
 /** @ignore */
-bbbfly.morph.theme.frame.medium.img._buttonIcon = function(anchor,padding){
+bbbfly.morph.theme.frame.medium.images._buttonIcon = function(anchor,padding){
   padding = this.Padding(padding);
   var icons = {};
 
@@ -192,7 +187,7 @@ bbbfly.morph.theme.frame.medium.img._buttonIcon = function(anchor,padding){
 };
 
 /** @ignore */
-bbbfly.morph.theme.frame.medium.img._getButtonIcon = function(name){
+bbbfly.morph.theme.frame.medium.images._getButtonIcon = function(name){
   if(!String.isString(name)){return null;}
 
   var icon = this.Images.Icon.Button[name];
@@ -202,8 +197,7 @@ bbbfly.morph.theme.frame.medium.img._getButtonIcon = function(name){
 /**
  * @class
  * @hideconstructor
- * @name frame.medium.Img
- * @memberOf bbbfly.morph.theme
+ * @name frame.medium.Images
  *
  * @inpackage theme-frame-medium
  *
@@ -211,7 +205,7 @@ bbbfly.morph.theme.frame.medium.img._getButtonIcon = function(name){
  * @property {object} Icons - Icons definition
  * @property {object} Images - Images definition
  */
-bbbfly.morph.theme.frame.medium.Img = {
+bbbfly.morph.theme.frame.medium.Images = {
 
   Sources: {
     image: {
@@ -385,37 +379,37 @@ bbbfly.morph.theme.frame.medium.Img = {
   },
 
   /** @private */
-  Init: bbbfly.morph.theme.frame.medium.img._init,
+  Init: bbbfly.morph.theme.frame.medium.images._init,
   /** @private */
-  Padding: bbbfly.morph.theme.frame.medium.img._padding,
+  Padding: bbbfly.morph.theme.frame.medium.images._padding,
 
   /** @private */
-  Image: bbbfly.morph.theme.frame.medium.img._image,
+  Image: bbbfly.morph.theme.frame.medium.images._image,
   /** @private */
-  PanelFrame: bbbfly.morph.theme.frame.medium.img._panelFrame,
+  PanelFrame: bbbfly.morph.theme.frame.medium.images._panelFrame,
   /** @private */
-  HLineFrame: bbbfly.morph.theme.frame.medium.img._hLineFrame,
+  HLineFrame: bbbfly.morph.theme.frame.medium.images._hLineFrame,
   /** @private */
-  VLineFrame: bbbfly.morph.theme.frame.medium.img._vLineFrame,
+  VLineFrame: bbbfly.morph.theme.frame.medium.images._vLineFrame,
   /** @private */
-  HintFrame: bbbfly.morph.theme.frame.medium.img._hintFrame,
+  HintFrame: bbbfly.morph.theme.frame.medium.images._hintFrame,
   /** @private */
-  ButtonFrame: bbbfly.morph.theme.frame.medium.img._buttonFrame,
+  ButtonFrame: bbbfly.morph.theme.frame.medium.images._buttonFrame,
   /** @private */
-  ButtonImage: bbbfly.morph.theme.frame.medium.img._buttonImage,
+  ButtonImage: bbbfly.morph.theme.frame.medium.images._buttonImage,
   /** @private */
-  ButtonIcon: bbbfly.morph.theme.frame.medium.img._buttonIcon,
+  ButtonIcon: bbbfly.morph.theme.frame.medium.images._buttonIcon,
 
   /**
    * @function
    * @name GetButtonIcon
-   * @memberof bbbfly.morph.theme.frame.medium.Img
+   * @memberof bbbfly.morph.theme.frame.medium.Images
    *
    * @param {string} Icon name
    * @return {image|null} Icon image definition
    */
-  GetButtonIcon: bbbfly.morph.theme.frame.medium.img._getButtonIcon
+  GetButtonIcon: bbbfly.morph.theme.frame.medium.images._getButtonIcon
 };
 
 /** @ignore */
-bbbfly.morph.theme.frame.medium.Img.Init();
+bbbfly.morph.theme.frame.medium.Images.Init();

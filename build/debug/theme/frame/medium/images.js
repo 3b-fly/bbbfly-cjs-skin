@@ -10,11 +10,11 @@ bbbfly.morph = bbbfly.morph || {};
 bbbfly.morph.theme = bbbfly.morph.theme || {};
 bbbfly.morph.theme.frame = bbbfly.morph.theme.frame || {};
 bbbfly.morph.theme.frame.medium = bbbfly.morph.theme.frame.medium || {};
-bbbfly.morph.theme.frame.medium.img = {};
-bbbfly.morph.theme.frame.medium.img._init = function(){
+bbbfly.morph.theme.frame.medium.images = {};
+bbbfly.morph.theme.frame.medium.images._init = function(){
   if(Function.isFunction(this.Images)){this.Images = this.Images();}
 };
-bbbfly.morph.theme.frame.medium.img._padding = function(padding){
+bbbfly.morph.theme.frame.medium.images._padding = function(padding){
   if(Object.isObject(padding)){
     ng_MergeVar(padding,{L:0,T:0,R:0,B:0});
   }
@@ -26,7 +26,7 @@ bbbfly.morph.theme.frame.medium.img._padding = function(padding){
   }
   return padding;
 };
-bbbfly.morph.theme.frame.medium.img._image = function(anchor,padding){
+bbbfly.morph.theme.frame.medium.images._image = function(anchor,padding){
   padding = this.Padding(padding);
 
   return {
@@ -39,7 +39,7 @@ bbbfly.morph.theme.frame.medium.img._image = function(anchor,padding){
     Src:{Img:'image', Anchor:anchor}
   };
 };
-bbbfly.morph.theme.frame.medium.img._panelFrame = function(anchor){
+bbbfly.morph.theme.frame.medium.images._panelFrame = function(anchor){
   return {
     LeftTop: { L:0, DL:30, T:0, W:2, H:2, Src:{Img:'frame', Anchor:anchor} },
     Top: { L:0, T:0, DT:30, H:2, Src:{Img:'frame_h', Anchor:anchor} },
@@ -51,21 +51,21 @@ bbbfly.morph.theme.frame.medium.img._panelFrame = function(anchor){
     RightBottom: { L:26, DL:56, T:26, W:2, H:2, Src:{Img:'frame', Anchor:anchor} }
   };
 };
-bbbfly.morph.theme.frame.medium.img._hLineFrame = function(anchor){
+bbbfly.morph.theme.frame.medium.images._hLineFrame = function(anchor){
   return {
     Left: { L:0, DL:30, T:12, W:3, H:3, Src:{Img:'frame', Anchor:anchor} },
     Center: { L:0, T:0, DT:5, H:3, Src:{Img:'frame_h', Anchor:anchor} },
     Right: { L:25, DL:55, T:12, W:3, H:3, Src:{Img:'frame', Anchor:anchor} }
   };
 };
-bbbfly.morph.theme.frame.medium.img._vLineFrame = function(anchor){
+bbbfly.morph.theme.frame.medium.images._vLineFrame = function(anchor){
   return {
     Top: { L:12, DL:42, T:0, W:3, H:3, Src:{Img:'frame', Anchor:anchor} },
     Center: { L:0, DL:5, T:0, W:3, Src:{Img:'frame_v', Anchor:anchor} },
     Bottom: { L:12, DL:42, T:25, W:3, H:3, Src:{Img:'frame', Anchor:anchor} }
   };
 };
-bbbfly.morph.theme.frame.medium.img._hintFrame = function(anchor){
+bbbfly.morph.theme.frame.medium.images._hintFrame = function(anchor){
   return {
     LeftTop: { L:0, DL:30, T:0, W:4, H:4, Src:{Img:'frame', Anchor:anchor} },
     Top: { L:0, T:0, DT:30, H:4, Src:{Img:'frame_h', Anchor:anchor} },
@@ -77,7 +77,7 @@ bbbfly.morph.theme.frame.medium.img._hintFrame = function(anchor){
     RightBottom: { L:24, DL:54, T:24, W:4, H:4, Src:{Img:'frame', Anchor:anchor} }
   };
 };
-bbbfly.morph.theme.frame.medium.img._buttonFrame = function(anchor){
+bbbfly.morph.theme.frame.medium.images._buttonFrame = function(anchor){
   return {
     LeftTop: {
       L:0, oL:30, SL:60, oSL:90, DL:120, DSL:150, T:0, W:3, H:3,
@@ -121,7 +121,7 @@ bbbfly.morph.theme.frame.medium.img._buttonFrame = function(anchor){
     }
   };
 };
-bbbfly.morph.theme.frame.medium.img._buttonImage = function(anchor,indent){
+bbbfly.morph.theme.frame.medium.images._buttonImage = function(anchor,indent){
   var padding = this.Padding(indent);
 
   return {
@@ -137,7 +137,7 @@ bbbfly.morph.theme.frame.medium.img._buttonImage = function(anchor,indent){
     Src:{Img:'button', Anchor:anchor}
   };
 };
-bbbfly.morph.theme.frame.medium.img._buttonIcon = function(anchor,padding){
+bbbfly.morph.theme.frame.medium.images._buttonIcon = function(anchor,padding){
   padding = this.Padding(padding);
   var icons = {};
 
@@ -157,13 +157,13 @@ bbbfly.morph.theme.frame.medium.img._buttonIcon = function(anchor,padding){
   }
   return icons;
 };
-bbbfly.morph.theme.frame.medium.img._getButtonIcon = function(name){
+bbbfly.morph.theme.frame.medium.images._getButtonIcon = function(name){
   if(!String.isString(name)){return null;}
 
   var icon = this.Images.Icon.Button[name];
   return Object.isObject(icon) ? icon : null;;
 };
-bbbfly.morph.theme.frame.medium.Img = {
+bbbfly.morph.theme.frame.medium.Images = {
 
   Sources: {
     image: {
@@ -335,16 +335,16 @@ bbbfly.morph.theme.frame.medium.Img = {
       }
     };
   },
-  Init: bbbfly.morph.theme.frame.medium.img._init,
-  Padding: bbbfly.morph.theme.frame.medium.img._padding,
-  Image: bbbfly.morph.theme.frame.medium.img._image,
-  PanelFrame: bbbfly.morph.theme.frame.medium.img._panelFrame,
-  HLineFrame: bbbfly.morph.theme.frame.medium.img._hLineFrame,
-  VLineFrame: bbbfly.morph.theme.frame.medium.img._vLineFrame,
-  HintFrame: bbbfly.morph.theme.frame.medium.img._hintFrame,
-  ButtonFrame: bbbfly.morph.theme.frame.medium.img._buttonFrame,
-  ButtonImage: bbbfly.morph.theme.frame.medium.img._buttonImage,
-  ButtonIcon: bbbfly.morph.theme.frame.medium.img._buttonIcon,
-  GetButtonIcon: bbbfly.morph.theme.frame.medium.img._getButtonIcon
+  Init: bbbfly.morph.theme.frame.medium.images._init,
+  Padding: bbbfly.morph.theme.frame.medium.images._padding,
+  Image: bbbfly.morph.theme.frame.medium.images._image,
+  PanelFrame: bbbfly.morph.theme.frame.medium.images._panelFrame,
+  HLineFrame: bbbfly.morph.theme.frame.medium.images._hLineFrame,
+  VLineFrame: bbbfly.morph.theme.frame.medium.images._vLineFrame,
+  HintFrame: bbbfly.morph.theme.frame.medium.images._hintFrame,
+  ButtonFrame: bbbfly.morph.theme.frame.medium.images._buttonFrame,
+  ButtonImage: bbbfly.morph.theme.frame.medium.images._buttonImage,
+  ButtonIcon: bbbfly.morph.theme.frame.medium.images._buttonIcon,
+  GetButtonIcon: bbbfly.morph.theme.frame.medium.images._getButtonIcon
 };
-bbbfly.morph.theme.frame.medium.Img.Init();
+bbbfly.morph.theme.frame.medium.Images.Init();
