@@ -179,7 +179,7 @@ bbbfly.morph.theme.frame.medium.img._buttonIcon = function(anchor,padding){
     if(!Number.isInteger(index)){index = -1;}
 
     icons[name] = {
-      T:(0+(index*60)+padding.T),
+      T:(0+(index*30)+padding.T),
       L:(0+padding.L), oL:(30+padding.L),
       SL:(60+padding.L), oSL:(90+padding.L),
       DL:(120+padding.L), DSL:(120+padding.L),
@@ -191,11 +191,19 @@ bbbfly.morph.theme.frame.medium.img._buttonIcon = function(anchor,padding){
   return icons;
 };
 
+/** @ignore */
+bbbfly.morph.theme.frame.medium.img._getButtonIcon = function(name){
+  if(!String.isString(name)){return null;}
+
+  var icon = this.Images.Icon.Button[name];
+  return Object.isObject(icon) ? icon : null;;
+};
+
 /**
  * @class
  * @hideconstructor
  * @name frame.medium.Img
- * @memberOf bbbfly.morph.theme.
+ * @memberOf bbbfly.morph.theme
  *
  * @inpackage theme-frame-medium
  *
@@ -396,7 +404,17 @@ bbbfly.morph.theme.frame.medium.Img = {
   /** @private */
   ButtonImage: bbbfly.morph.theme.frame.medium.img._buttonImage,
   /** @private */
-  ButtonIcon: bbbfly.morph.theme.frame.medium.img._buttonIcon
+  ButtonIcon: bbbfly.morph.theme.frame.medium.img._buttonIcon,
+
+  /**
+   * @function
+   * @name GetButtonIcon
+   * @memberof bbbfly.morph.theme.frame.medium.Img
+   *
+   * @param {string} Icon name
+   * @return {image|null} Icon image definition
+   */
+  GetButtonIcon: bbbfly.morph.theme.frame.medium.img._getButtonIcon
 };
 
 /** @ignore */

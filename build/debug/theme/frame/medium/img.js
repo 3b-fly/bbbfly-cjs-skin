@@ -146,7 +146,7 @@ bbbfly.morph.theme.frame.medium.img._buttonIcon = function(anchor,padding){
     if(!Number.isInteger(index)){index = -1;}
 
     icons[name] = {
-      T:(0+(index*60)+padding.T),
+      T:(0+(index*30)+padding.T),
       L:(0+padding.L), oL:(30+padding.L),
       SL:(60+padding.L), oSL:(90+padding.L),
       DL:(120+padding.L), DSL:(120+padding.L),
@@ -156,6 +156,12 @@ bbbfly.morph.theme.frame.medium.img._buttonIcon = function(anchor,padding){
     };
   }
   return icons;
+};
+bbbfly.morph.theme.frame.medium.img._getButtonIcon = function(name){
+  if(!String.isString(name)){return null;}
+
+  var icon = this.Images.Icon.Button[name];
+  return Object.isObject(icon) ? icon : null;;
 };
 bbbfly.morph.theme.frame.medium.Img = {
 
@@ -338,6 +344,7 @@ bbbfly.morph.theme.frame.medium.Img = {
   HintFrame: bbbfly.morph.theme.frame.medium.img._hintFrame,
   ButtonFrame: bbbfly.morph.theme.frame.medium.img._buttonFrame,
   ButtonImage: bbbfly.morph.theme.frame.medium.img._buttonImage,
-  ButtonIcon: bbbfly.morph.theme.frame.medium.img._buttonIcon
+  ButtonIcon: bbbfly.morph.theme.frame.medium.img._buttonIcon,
+  GetButtonIcon: bbbfly.morph.theme.frame.medium.img._getButtonIcon
 };
 bbbfly.morph.theme.frame.medium.Img.Init();
