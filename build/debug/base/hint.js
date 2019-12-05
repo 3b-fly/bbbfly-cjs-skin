@@ -22,9 +22,6 @@ bbbfly.morph.hint._doUpdate = function(node){
 bbbfly.morph.TextHint = function(def,ref,parent){
   def = def || {};
 
-  bbbfly.morph.ngmisc.ApplyFrameShade(def);
-  bbbfly.morph.ngmisc.ApplyAnchorsShade(def);
-
   ng_MergeDef(def,{
     Data: { HintType: null },
     Methods: { DoUpdate: bbbfly.morph.hint._doUpdate }
@@ -32,25 +29,25 @@ bbbfly.morph.TextHint = function(def,ref,parent){
 
   if(def.Data && String.isString(def.Data.HintType)){
     var type = def.Data.HintType;
-    var frame = def.Data.ShadeFrame;
-    var anchors = def.Data.ShadeAnchors;
+    var frame = def.Data.Frame;
+    var anchors = def.Data.Anchors;
 
     if(frame){
       frame = frame[type];
       if(Object.isObject(frame)){
-        def.Data.ShadeFrame = frame;
+        def.Data.Frame = frame;
       }
     }
 
     if(anchors){
       anchors = anchors[type];
       if(Object.isObject(anchors)){
-        def.Data.ShadeAnchors = anchors;
+        def.Data.Anchors = anchors;
       }
     }
   }
 
-  bbbfly.morph.ngmisc.ApplyClassShade(def,'TextHint');
+  bbbfly.morph.ngmisc.ApplyClassName(def,'TextHint');
   return ngCreateControlAsType(def,'bbbfly.TextHint',ref,parent);
 };
 bbbfly.morph.TextHint.type = {

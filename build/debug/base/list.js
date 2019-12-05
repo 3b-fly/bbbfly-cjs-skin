@@ -24,20 +24,12 @@ bbbfly.morph.list._onGetRowClassName = function(list,item){
   cn += ' '+bcn+'Row';
   return cn;
 };
-bbbfly.morph.list._onGetTreeImg = function(){
-  var img = Function.isFunction(this.OnGetTreeImg.callParent)
-    ? this.OnGetTreeImg.callParent() : this.TreeImg;
-
-  return bbbfly.morph.misc.GetImgShade(img,this.Shade);
-};
 bbbfly.morph.list._onGetCheckImg = function(list,item){
   if(!this.ShowCheckboxes || !item){return null;}
   if(typeof item.Checked === 'undefined'){return null;}
 
-  var img = Function.isFunction(this.OnGetCheckImg.callParent)
+  return Function.isFunction(this.OnGetCheckImg.callParent)
     ? this.OnGetCheckImg.callParent(list,item) : this.CheckImg;
-
-  return bbbfly.morph.misc.GetImgShade(img,this.Shade);
 };
 bbbfly.morph.checklist._onListClick = function(event){
   var list = event.list;
@@ -51,20 +43,17 @@ bbbfly.morph.checklist._onListClick = function(event){
 };
 bbbfly.morph.ContentList = function(def,ref,parent){
   def = def || {};
-  
-  bbbfly.morph.ngmisc.ApplyFrameShade(def);
 
   ng_MergeDef(def,{
     Events: {
       OnGetRowClassName: bbbfly.morph.list._onGetRowClassName
     },
     OverrideEvents: {
-      OnGetTreeImg: bbbfly.morph.list._onGetTreeImg,
       OnGetCheckImg: bbbfly.morph.list._onGetCheckImg
     }
   });
 
-  bbbfly.morph.ngmisc.ApplyClassShade(def,'ContentList');
+  bbbfly.morph.ngmisc.ApplyClassName(def,'ContentList');
   return ngCreateControlAsType(def,'bbbfly.List',ref,parent);
 };
 bbbfly.morph.ContentCheckList = function(def,ref,parent){

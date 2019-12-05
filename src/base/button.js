@@ -15,9 +15,6 @@ bbbfly.morph = bbbfly.morph || {};
 bbbfly.morph.Button = function(def,ref,parent,className){
   def = def || {};
 
-  bbbfly.morph.misc.ApplyIconShade(def);
-  bbbfly.morph.misc.ApplyFrameShade(def);
-
   ng_MergeDef(def,{
     Data: {
       HintDef: {
@@ -26,7 +23,7 @@ bbbfly.morph.Button = function(def,ref,parent,className){
     }
   });
 
-  bbbfly.morph.misc.ApplyClassShade(def,(className || 'Button'));
+  bbbfly.morph.misc.ApplyClassName(def,(className || 'Button'));
   return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
 };
 

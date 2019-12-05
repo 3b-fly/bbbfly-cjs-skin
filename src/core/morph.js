@@ -39,14 +39,6 @@ bbbfly.morph.core.GetDefTheme = function(def){
 };
 
 /** @ignore */
-bbbfly.morph.core.GetDefShade = function(def){
-  if(!Object.isObject(def)){return null;}
-
-  return (def.Data && Number.isInteger(def.Data.Shade))
-    ? def.Data.Shade : bbbfly.Morph.shade.none;
-};
-
-/** @ignore */
 bbbfly.morph.core._setDefaultTheme = function(themeId){
   if(!String.isString(themeId)){return false;}
 
@@ -270,17 +262,6 @@ bbbfly.Morph = {
   OnCreateControl: bbbfly.morph.core._onCreateControl
 };
 
-/**
- * @enum {integer}
- * @description
- *   Possible values for {@link bbbfly.Morph.Control|Shade}
- */
-bbbfly.Morph.shade = {
-  none: 0,
-  light: 1,
-  dark: 2
-};
-
 ngUserControls['bbbfly_morph'] = {
   OnInit: function(){
     bbbfly.Morph.OnInit();
@@ -297,7 +278,6 @@ ngUserControls['bbbfly_morph'] = {
  * @memberOf bbbfly.Morph
  *
  * @property {string} [Theme=null] - Theme {@link bbbfly.Morph.Theme|ID}
- * @property {bbbfly.Morph.shade} [Shade=none]
  * @property {string} [ClassName=undefined]
  */
 

@@ -14,30 +14,12 @@ bbbfly.morph = bbbfly.morph || {};
 bbbfly.morph.menu = {};
 
 /** @ignore */
-bbbfly.morph.menu._onGetTreeImg = function(){
-  var img = Function.isFunction(this.OnGetTreeImg.callParent)
-    ? this.OnGetTreeImg.callParent() : this.TreeImg;
-
-  return bbbfly.morph.misc.GetImgShade(img,this.Shade);
-};
-
-/** @ignore */
 bbbfly.morph.menu._onGetCheckImg = function(menu,item){
   if(!this.ShowCheckboxes || !item){return null;}
   if(typeof item.Checked === 'undefined'){return null;}
 
-  var img = Function.isFunction(this.OnGetCheckImg.callParent)
+  return Function.isFunction(this.OnGetCheckImg.callParent)
     ? this.OnGetCheckImg.callParent(menu,item) : this.CheckImg;
-
-  return bbbfly.morph.misc.GetImgShade(img,this.Shade);
-};
-
-/** @ignore */
-bbbfly.morph.menu._onGetSubMenuImg = function(){
-  var img = Function.isFunction(this.OnGetSubMenuImg.callParent)
-    ? this.OnGetSubMenuImg.callParent() : this.SubMenuImg;
-
-  return bbbfly.morph.misc.GetImgShade(img,this.Shade);
 };
 
 /**
@@ -54,21 +36,17 @@ bbbfly.morph.menu._onGetSubMenuImg = function(){
  */
 bbbfly.morph.PopupMenu = function(def,ref,parent){
   def = def || {};
-  
-  bbbfly.morph.ngmisc.ApplyFrameShade(def);
 
   ng_MergeDef(def,{
     Data: {
       SubMenuDef: { Type: 'bbbfly.morph.PopupMenu' }
     },
     OverrideEvents: {
-      OnGetTreeImg: bbbfly.morph.menu._onGetTreeImg,
-      OnGetCheckImg: bbbfly.morph.menu._onGetCheckImg,
-      OnGetSubMenuImg: bbbfly.morph.menu._onGetSubMenuImg
+      OnGetCheckImg: bbbfly.morph.menu._onGetCheckImg
     }
   });
 
-  bbbfly.morph.ngmisc.ApplyClassShade(def,'PopupMenu');
+  bbbfly.morph.ngmisc.ApplyClassName(def,'PopupMenu');
   return ngCreateControlAsType(def,'bbbfly.Menu',ref,parent);
 };
 

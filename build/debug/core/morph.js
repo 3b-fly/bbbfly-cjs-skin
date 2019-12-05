@@ -31,12 +31,6 @@ bbbfly.morph.core.GetDefTheme = function(def){
   }
   return null;
 };
-bbbfly.morph.core.GetDefShade = function(def){
-  if(!Object.isObject(def)){return null;}
-
-  return (def.Data && Number.isInteger(def.Data.Shade))
-    ? def.Data.Shade : bbbfly.Morph.shade.none;
-};
 bbbfly.morph.core._setDefaultTheme = function(themeId){
   if(!String.isString(themeId)){return false;}
 
@@ -179,11 +173,6 @@ bbbfly.Morph = {
   RegisterControlType: bbbfly.morph.core._registerControlType,
   OnInit: bbbfly.morph.core._onInit,
   OnCreateControl: bbbfly.morph.core._onCreateControl
-};
-bbbfly.Morph.shade = {
-  none: 0,
-  light: 1,
-  dark: 2
 };
 
 ngUserControls['bbbfly_morph'] = {
