@@ -12,7 +12,9 @@
       "../src/base/hint.js",
       "../src/base/panel.js",
       "../src/base/wrapper.js",
-      "../src/base/menu.js"
+      "../src/base/menu.js",
+
+      "../src/theme/frame/medium/img.js"
     ]
   },
   "plugins": [
