@@ -127,7 +127,8 @@
           "Packages": ["core"]
         }
       }
-    },"menu": {
+    },
+    "menu": {
       "DebugFiles": [
         "base/menu.js"
       ],
@@ -140,6 +141,20 @@
         },
         "bbbfly-cjs-morph": {
           "Packages": ["core"]
+        }
+      }
+    },
+
+    "theme-frame-medium": {
+      "DebugFiles": [
+        "theme/frame/medium/img.js"
+      ],
+      "ReleaseFiles": [
+        "theme/frame/medium/img.js"
+      ],
+      "Libraries": {
+        "bbbfly-cjs": {
+          "Packages": ["crossbrowser"]
         }
       }
     }

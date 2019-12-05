@@ -175,6 +175,21 @@
           ]
         }
       }
+    },
+    "theme-frame-medium": {
+      "DebugFiles": [
+        "debug/theme/frame/medium/img.js"
+      ],
+      "ReleaseFiles": [
+        "release/theme/frame/medium/img.js"
+      ],
+      "Libraries": {
+        "bbbfly-cjs": {
+          "Packages": [
+            "crossbrowser"
+          ]
+        }
+      }
     }
   }
 }
