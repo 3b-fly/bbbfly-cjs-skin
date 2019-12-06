@@ -20,7 +20,10 @@ bbbfly.morph.PopupMenu = function(def,ref,parent){
 
   ng_MergeDef(def,{
     Data: {
-      SubMenuDef: { Type: 'bbbfly.morph.PopupMenu' }
+      SubMenuDef: {
+        Type: 'bbbfly.morph.PopupMenu',
+        Theme: def.Theme
+      }
     },
     OverrideEvents: {
       OnGetCheckImg: bbbfly.morph.menu._onGetCheckImg
