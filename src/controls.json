@@ -147,10 +147,12 @@
 
     "theme-frame-medium": {
       "DebugFiles": [
-        "theme/frame/medium/images.js"
+        "theme/frame/medium/images.js",
+        "theme/frame/medium/controls.js"
       ],
       "ReleaseFiles": [
-        "theme/frame/medium/images.js"
+        "theme/frame/medium/images.js",
+        "theme/frame/medium/controls.js"
       ],
       "Libraries": {
         "bbbfly-cjs": {

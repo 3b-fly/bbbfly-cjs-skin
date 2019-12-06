@@ -21,11 +21,6 @@ bbbfly.morph.theme.frame.medium = bbbfly.morph.theme.frame.medium || {};
 bbbfly.morph.theme.frame.medium.images = {};
 
 /** @ignore */
-bbbfly.morph.theme.frame.medium.images._init = function(){
-  if(Function.isFunction(this.Images)){this.Images = this.Images();}
-};
-
-/** @ignore */
 bbbfly.morph.theme.frame.medium.images._padding = function(padding){
   if(Object.isObject(padding)){
     ng_MergeVar(padding,{L:0,T:0,R:0,B:0});
@@ -186,24 +181,15 @@ bbbfly.morph.theme.frame.medium.images._buttonIcon = function(anchor,padding){
   return icons;
 };
 
-/** @ignore */
-bbbfly.morph.theme.frame.medium.images._getButtonIcon = function(name){
-  if(!String.isString(name)){return null;}
-
-  var icon = this.Images.Icon.Button[name];
-  return Object.isObject(icon) ? icon : null;;
-};
-
 /**
  * @class
  * @hideconstructor
- * @name frame.medium.Images
  *
  * @inpackage theme-frame-medium
  *
  * @property {object} Sources - Image sources definition
  * @property {object} Icons - Icons definition
- * @property {object} Images - Images definition
+ * @property {function} Images - Images definition
  */
 bbbfly.morph.theme.frame.medium.Images = {
 
@@ -379,8 +365,6 @@ bbbfly.morph.theme.frame.medium.Images = {
   },
 
   /** @private */
-  Init: bbbfly.morph.theme.frame.medium.images._init,
-  /** @private */
   Padding: bbbfly.morph.theme.frame.medium.images._padding,
 
   /** @private */
@@ -398,18 +382,5 @@ bbbfly.morph.theme.frame.medium.Images = {
   /** @private */
   ButtonImage: bbbfly.morph.theme.frame.medium.images._buttonImage,
   /** @private */
-  ButtonIcon: bbbfly.morph.theme.frame.medium.images._buttonIcon,
-
-  /**
-   * @function
-   * @name GetButtonIcon
-   * @memberof bbbfly.morph.theme.frame.medium.Images
-   *
-   * @param {string} Icon name
-   * @return {image|null} Icon image definition
-   */
-  GetButtonIcon: bbbfly.morph.theme.frame.medium.images._getButtonIcon
+  ButtonIcon: bbbfly.morph.theme.frame.medium.images._buttonIcon
 };
-
-/** @ignore */
-bbbfly.morph.theme.frame.medium.Images.Init();

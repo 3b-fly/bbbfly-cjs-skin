@@ -11,9 +11,6 @@ bbbfly.morph.theme = bbbfly.morph.theme || {};
 bbbfly.morph.theme.frame = bbbfly.morph.theme.frame || {};
 bbbfly.morph.theme.frame.medium = bbbfly.morph.theme.frame.medium || {};
 bbbfly.morph.theme.frame.medium.images = {};
-bbbfly.morph.theme.frame.medium.images._init = function(){
-  if(Function.isFunction(this.Images)){this.Images = this.Images();}
-};
 bbbfly.morph.theme.frame.medium.images._padding = function(padding){
   if(Object.isObject(padding)){
     ng_MergeVar(padding,{L:0,T:0,R:0,B:0});
@@ -156,12 +153,6 @@ bbbfly.morph.theme.frame.medium.images._buttonIcon = function(anchor,padding){
     };
   }
   return icons;
-};
-bbbfly.morph.theme.frame.medium.images._getButtonIcon = function(name){
-  if(!String.isString(name)){return null;}
-
-  var icon = this.Images.Icon.Button[name];
-  return Object.isObject(icon) ? icon : null;;
 };
 bbbfly.morph.theme.frame.medium.Images = {
 
@@ -335,7 +326,6 @@ bbbfly.morph.theme.frame.medium.Images = {
       }
     };
   },
-  Init: bbbfly.morph.theme.frame.medium.images._init,
   Padding: bbbfly.morph.theme.frame.medium.images._padding,
   Image: bbbfly.morph.theme.frame.medium.images._image,
   PanelFrame: bbbfly.morph.theme.frame.medium.images._panelFrame,
@@ -344,7 +334,5 @@ bbbfly.morph.theme.frame.medium.Images = {
   HintFrame: bbbfly.morph.theme.frame.medium.images._hintFrame,
   ButtonFrame: bbbfly.morph.theme.frame.medium.images._buttonFrame,
   ButtonImage: bbbfly.morph.theme.frame.medium.images._buttonImage,
-  ButtonIcon: bbbfly.morph.theme.frame.medium.images._buttonIcon,
-  GetButtonIcon: bbbfly.morph.theme.frame.medium.images._getButtonIcon
+  ButtonIcon: bbbfly.morph.theme.frame.medium.images._buttonIcon
 };
-bbbfly.morph.theme.frame.medium.Images.Init();
