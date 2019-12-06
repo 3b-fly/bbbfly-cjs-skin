@@ -14,7 +14,8 @@
       "../src/base/wrapper.js",
       "../src/base/menu.js",
 
-      "../src/theme/frame/medium/img.js"
+      "../src/theme/frame/medium/images.js",
+      "../src/theme/frame/medium/controls.js"
     ]
   },
   "plugins": [
