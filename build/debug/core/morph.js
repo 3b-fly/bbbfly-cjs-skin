@@ -8,7 +8,7 @@
 var bbbfly = bbbfly || {};
 bbbfly.morph = bbbfly.morph || {};
 bbbfly.morph.core = {};
-bbbfly.morph.core.GetDefTheme = function(def){
+bbbfly.morph.core._getDefTheme = function(def){
   if(!Object.isObject(def)){return null;}
 
   var themeId = this._DefaultTheme;
@@ -18,12 +18,12 @@ bbbfly.morph.core.GetDefTheme = function(def){
   }
 
   if(String.isString(themeId)){
-    var theme = bbbfly.Morph._Themes[themeId];
+    var theme = this._Themes[themeId];
     if(theme){return theme;}
   }
-  else if(bbbfly.Morph._ThemesCnt === 1){
-    for(var themeId in bbbfly.Morph._Themes){
-      var theme = bbbfly.Morph._Themes[themeId];
+  else if(this._ThemesCnt === 1){
+    for(var themeId in this._Themes){
+      var theme = this._Themes[themeId];
       if(theme && (theme.ID === themeId)){
         return theme;
       }
@@ -148,17 +148,15 @@ bbbfly.morph.core._recalcImageAnchor = function(image,anchor){
 };
 bbbfly.morph.core._onCreateControl = function(def){
   if(!Object.isObject(def) || !this._CtrlTypes[def.Type]){return;}
+  var theme = this.GetDefTheme(def);
 
-  var theme = bbbfly.morph.core.GetDefTheme(def);
   if(theme){
     if(Function.isFunction(theme.OnCreateControl)){
       theme.OnCreateControl(def);
     }
 
     ng_MergeVarReplace(def,{
-      Data: {
-        Theme: theme ? theme.ID : null
-      }
+      Data: { Theme: theme ? theme.ID : null }
     },true);
   }
 };
@@ -170,6 +168,7 @@ bbbfly.Morph = {
   SetDefaultTheme: bbbfly.morph.core._setDefaultTheme,
   RegisterTheme: bbbfly.morph.core._registerTheme,
   GetTheme: bbbfly.morph.core._getTheme,
+  GetDefTheme: bbbfly.morph.core._getDefTheme,
   RegisterControlType: bbbfly.morph.core._registerControlType,
   OnInit: bbbfly.morph.core._onInit,
   OnCreateControl: bbbfly.morph.core._onCreateControl
