@@ -74,8 +74,6 @@ bbbfly.morph.core._registerControlType = function(type,constr){
 
 /** @ignore */
 bbbfly.morph.core._onInit = function(){
-  var url = (ngDEBUG ? 'debug/' : 'release/');
-
   for(var themeId in this._Themes){
     var theme = this._Themes[themeId];
     if(!theme){continue;}
@@ -84,6 +82,7 @@ bbbfly.morph.core._onInit = function(){
       theme.OnInit();
     }
 
+    var url = (ngDEBUG ? 'debug/' : 'release/');
     if(String.isString(theme.ImgDir)){url += theme.ImgDir;}
     if(String.isString(theme.Lib)){url = ngLibPath(theme.Lib,url);}
 
