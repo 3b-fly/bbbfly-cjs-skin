@@ -187,123 +187,101 @@ bbbfly.morph.theme.frame.medium.images._buttonIcon = function(anchor,padding){
  *
  * @inpackage theme-frame-medium
  *
- * @property {object} Sources - Image sources definition
- * @property {object} Icons - Icons definition
- * @property {function} Images - Images definition
+ * @property {object} Sources - Returns image sources definition
+ * @property {function} Images - Returns images definition
+ * @property {function} Icons - Icons definition
  */
 bbbfly.morph.theme.frame.medium.Images = {
 
-  Sources: {
-    image: {
-      Path: 'morph-medium-image.png?2',
-      Anchors: {
-        list_check: { L:0, T:0 },
-        list_tree: { L:0, T:30 },
-        menu_check: { L:0, T:60 },
-        menu_tree: { L:0, T:90 },
-        menu_sub: { L:0, T:120 },
-        edit_drop: { L:0, T:150 }
-      }
-    },
-    frame: {
-      Path: 'morph-medium-frame.png?2',
-      Anchors: {
-        line_outer: { L:0, T:0 },
-        line_inner: { L:0, T:30 },
-        frame_outer: { L:0, T:60 },
-        frame_inner: { L:0, T:90 },
-        frame_hint_warn: { L:0, T:120 },
-        frame_hint_error: { L:0, T:150 },
-        frame_hint_submit: { L:0, T:180 },
-        frame_hint_info: { L:0, T:210 }
-      }
-    },
-    frame_h: {
-      Path: 'morph-medium-frame_h.png?2',
-      Anchors: {
-        line_outer: { L:0, T:0 },
-        line_inner: { L:0, T:10 },
-        frame_outer: { L:0, T:20 },
-        frame_inner: { L:0, T:80 },
-        frame_hint_warn: { L:0, T:140 },
-        frame_hint_error: { L:0, T:200 },
-        frame_hint_submit: { L:0, T:260 },
-        frame_hint_info: { L:0, T:320 }
-      }
-    },
-    frame_v: {
-      Path: 'morph-medium-frame_v.png?2',
-      Anchors: {
-        line_outer: { L:0, T:0 },
-        line_inner: { L:10, T:0 },
-        frame_outer: { L:20, T:0 },
-        frame_inner: { L:80, T:0 },
-        frame_hint_warn: { L:140, T:0 },
-        frame_hint_error: { L:200, T:0 },
-        frame_hint_submit: { L:260, T:0 },
-        frame_hint_info: { L:320, T:0 }
-      }
-    },
-    button: {
-      Path: 'morph-medium-button.png?2',
-      Anchors: {
-        button_panel: { L:0, T:0 },
-        button_std: { L:0, T:30 },
-        button_flat: { L:0, T:60 },
-        button_input: { L:0, T:90 },
+  Sources: function(){
+    return {
+      image: {
+        Path: 'morph-medium-image.png?2',
+        Anchors: {
+          list_check: { L:0, T:0 },
+          list_tree: { L:0, T:30 },
+          menu_check: { L:0, T:60 },
+          menu_tree: { L:0, T:90 },
+          menu_sub: { L:0, T:120 },
+          edit_drop: { L:0, T:150 }
+        }
+      },
+      frame: {
+        Path: 'morph-medium-frame.png?2',
+        Anchors: {
+          line_outer: { L:0, T:0 },
+          line_inner: { L:0, T:30 },
+          frame_outer: { L:0, T:60 },
+          frame_inner: { L:0, T:90 },
+          frame_hint_warn: { L:0, T:120 },
+          frame_hint_error: { L:0, T:150 },
+          frame_hint_submit: { L:0, T:180 },
+          frame_hint_info: { L:0, T:210 }
+        }
+      },
+      frame_h: {
+        Path: 'morph-medium-frame_h.png?2',
+        Anchors: {
+          line_outer: { L:0, T:0 },
+          line_inner: { L:0, T:10 },
+          frame_outer: { L:0, T:20 },
+          frame_inner: { L:0, T:80 },
+          frame_hint_warn: { L:0, T:140 },
+          frame_hint_error: { L:0, T:200 },
+          frame_hint_submit: { L:0, T:260 },
+          frame_hint_info: { L:0, T:320 }
+        }
+      },
+      frame_v: {
+        Path: 'morph-medium-frame_v.png?2',
+        Anchors: {
+          line_outer: { L:0, T:0 },
+          line_inner: { L:10, T:0 },
+          frame_outer: { L:20, T:0 },
+          frame_inner: { L:80, T:0 },
+          frame_hint_warn: { L:140, T:0 },
+          frame_hint_error: { L:200, T:0 },
+          frame_hint_submit: { L:260, T:0 },
+          frame_hint_info: { L:320, T:0 }
+        }
+      },
+      button: {
+        Path: 'morph-medium-button.png?2',
+        Anchors: {
+          button_panel: { L:0, T:0 },
+          button_std: { L:0, T:30 },
+          button_flat: { L:0, T:60 },
+          button_input: { L:0, T:90 },
 
-        button_check: { L:0, T:120 },
-        button_radio: { L:0, T:150 }
+          button_check: { L:0, T:120 },
+          button_radio: { L:0, T:150 }
+        }
+      },
+      button_h: {
+        Path: 'morph-medium-button_h.png?2',
+        Anchors: {
+          button_panel: { L:0, T:0 },
+          button_std: { L:0, T:360 },
+          button_flat: { L:0, T:720 },
+          button_input: { L:0, T:1080 }
+        }
+      },
+      button_v: {
+        Path: 'morph-medium-button_v.png?2',
+        Anchors: {
+          button_panel: { L:0, T:0 },
+          button_std: { L:360, T:0 },
+          button_flat: { L:720, T:0 },
+          button_input: { L:1080, T:0 }
+        }
+      },
+      icon: {
+        Path: 'morph-medium-icon.png?2',
+        Anchors: {
+          misc: { L:0, T:0 }
+        }
       }
-    },
-    button_h: {
-      Path: 'morph-medium-button_h.png?2',
-      Anchors: {
-        button_panel: { L:0, T:0 },
-        button_std: { L:0, T:360 },
-        button_flat: { L:0, T:720 },
-        button_input: { L:0, T:1080 }
-      }
-    },
-    button_v: {
-      Path: 'morph-medium-button_v.png?2',
-      Anchors: {
-        button_panel: { L:0, T:0 },
-        button_std: { L:360, T:0 },
-        button_flat: { L:720, T:0 },
-        button_input: { L:1080, T:0 }
-      }
-    },
-    icon: {
-      Path: 'morph-medium-icon.png?2',
-      Anchors: {
-        misc: { L:0, T:0 }
-      }
-    }
-  },
-
-  Icons: {
-    none: -1,
-    plus: 0,
-    minus: 1,
-    add: 2,
-    remove: 3,
-    up: 4,
-    down: 5,
-    left: 6,
-    right: 7,
-    close: 8,
-    refresh: 9,
-    edit: 10,
-    delete: 11,
-    settings: 12,
-    search: 13,
-    filter: 14,
-    layers: 15,
-    copyright: 16,
-    drop: 17,
-    circle: 18,
-    set: 19
+    };
   },
 
   Images: function(){
@@ -362,6 +340,30 @@ bbbfly.morph.theme.frame.medium.Images = {
         Button: this.ButtonIcon('misc')
       }
     };
+  },
+
+  Icons: {
+    none: -1,
+    plus: 0,
+    minus: 1,
+    add: 2,
+    remove: 3,
+    up: 4,
+    down: 5,
+    left: 6,
+    right: 7,
+    close: 8,
+    refresh: 9,
+    edit: 10,
+    delete: 11,
+    settings: 12,
+    search: 13,
+    filter: 14,
+    layers: 15,
+    copyright: 16,
+    drop: 17,
+    circle: 18,
+    set: 19
   },
 
   /** @private */
