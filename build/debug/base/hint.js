@@ -11,10 +11,10 @@ bbbfly.morph.hint = {};
 bbbfly.morph.hint._doUpdate = function(node){
   if(node instanceof HTMLElement){
     if(String.isString(this.HintType)){
-      node.setAttribute('hint_type',this.HintType);
+      node.setAttribute('type',this.HintType);
     }
     else{
-      node.removeAttribute('hint_type');
+      node.removeAttribute('type');
     }
   }
   this.DoUpdate.callParent(node);
