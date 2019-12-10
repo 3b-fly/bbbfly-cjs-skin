@@ -64,6 +64,18 @@ bbbfly.morph.theme.frame.medium.controls.ContentSeparator = function(def,imgs){
 };
 
 /** @ignore */
+bbbfly.morph.theme.frame.medium.controls.TextHint = function(def,imgs){
+  ng_MergeDef(def,{
+    Data: {
+      Frame: imgs.HintFrame.Frame,
+      Anchors: imgs.HintFrame.Anchors
+    },
+    ControlsPanel: { className: 'ControlsPanel' },
+    Controls: { Hint: { className: 'Hint' } }
+  });
+};
+
+/** @ignore */
 bbbfly.morph.theme.frame.medium.controls.PanelButton = function(def,imgs){
   ng_MergeDef(def,{
     Data: {
@@ -220,6 +232,10 @@ bbbfly.morph.theme.frame.medium.controls.SkinControl = function(def,imgs){
     //wrapper
     case 'bbbfly.morph.ContentWrapper':
       this.ContentFrame(def,imgs);
+    break;
+    //hint
+    case 'bbbfly.morph.TextHint':
+      this.TextHint(def,imgs);
     break;
     //button
     case 'bbbfly.morph.PanelButton':
