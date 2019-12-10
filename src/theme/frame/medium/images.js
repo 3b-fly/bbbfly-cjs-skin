@@ -104,6 +104,23 @@ bbbfly.morph.theme.frame.medium.images._hintFrame = function(anchor){
 };
 
 /** @ignore */
+bbbfly.morph.theme.frame.medium.images._hintAnchors = function(anchor){
+  var frame = {Img:'frame', Anchor:anchor};
+
+  return {
+    lefttop: { L:-13, T:7, HX:0, HY:7, Img: { L:74, DL:104, T:14, W:14, H:14, Src:frame } },
+    leftbottom: { L:-13, B:7, HX:0, HY:7, Img: { L:74, DL:104, T:14, W:14, H:14, Src:frame } },
+    righttop: { R:-13, T:7, HX:13, HY:7, Img: { L:60, DL:90, T:0, W:14, H:14, Src:frame } },
+    rightbottom: { R:-13, B:7, HX:13, HY:7, Img: { L:60, DL:90, T:0, W:14, H:14, Src:frame } },
+
+    topleft: { L:7, T:-13, HX:7, HY:1, Img: { L:60, DL:90, T:14, W:14, H:14, Src:frame } },
+    topright: { R:7, T:-13, HX:7, HY:1, Img: { L:60, DL:90, T:14, W:14, H:14, Src:frame } },
+    bottomright: { R:7, B:-13, HX:7, HY:13, Img: { L:74, DL:104, T:0, W:14, H:14, Src:frame } },
+    bottomleft: { L:7, B:-13, HX:7, HY:13, Img: { L:74, DL:104, T:0, W:14, H:14, Src:frame } }
+  };
+};
+
+/** @ignore */
 bbbfly.morph.theme.frame.medium.images._buttonFrame = function(anchor){
   var button = {Img:'button', Anchor:anchor};
   var hButton = {Img:'button_h', Anchor:anchor};
@@ -327,10 +344,18 @@ bbbfly.morph.theme.frame.medium.Images = {
         Inner: this.PanelFrame('frame_inner')
       },
       HintFrame: {
-        Warn: this.HintFrame('frame_hint_warn'),
-        Error: this.HintFrame('frame_hint_error'),
-        Submit: this.HintFrame('frame_hint_submit'),
-        Info: this.HintFrame('frame_hint_info')
+        Frame: {
+          Warn: this.HintFrame('frame_hint_warn'),
+          Error: this.HintFrame('frame_hint_error'),
+          Submit: this.HintFrame('frame_hint_submit'),
+          Info: this.HintFrame('frame_hint_info')
+        },
+        Anchors: {
+          Warn: this.HintAnchors('frame_hint_warn'),
+          Error: this.HintAnchors('frame_hint_error'),
+          Submit: this.HintAnchors('frame_hint_submit'),
+          Info: this.HintAnchors('frame_hint_info')
+        }
       },
       ButtonFrame: {
         Panel: this.ButtonFrame('button_panel'),
@@ -391,6 +416,8 @@ bbbfly.morph.theme.frame.medium.Images = {
   VLineFrame: bbbfly.morph.theme.frame.medium.images._vLineFrame,
   /** @private */
   HintFrame: bbbfly.morph.theme.frame.medium.images._hintFrame,
+  /** @private */
+  HintAnchors: bbbfly.morph.theme.frame.medium.images._hintAnchors,
   /** @private */
   ButtonFrame: bbbfly.morph.theme.frame.medium.images._buttonFrame,
   /** @private */
