@@ -37,15 +37,19 @@ bbbfly.morph.theme.frame.medium.images._image = function(anchor,padding){
   };
 };
 bbbfly.morph.theme.frame.medium.images._panelFrame = function(anchor){
+  var frame = {Img:'frame', Anchor:anchor};
+  var hFrame = {Img:'frame_h', Anchor:anchor};
+  var vFrame = {Img:'frame_v', Anchor:anchor};
+
   return {
-    LeftTop: { L:0, DL:30, T:0, W:2, H:2, Src:{Img:'frame', Anchor:anchor} },
-    Top: { L:0, T:0, DT:30, H:2, Src:{Img:'frame_h', Anchor:anchor} },
-    RightTop: { L:26, DL:56, T:0, W:2, H:2, Src:{Img:'frame', Anchor:anchor} },
-    Left: { L:0, DL:30, T:0, W:2, Src:{Img:'frame_v', Anchor:anchor} },
-    Right: { L:26, DL:56, T:0, W:2, Src:{Img:'frame_v', Anchor:anchor} },
-    LeftBottom: { L:0, DL:30, T:26, W:2, H:2, Src:{Img:'frame', Anchor:anchor} },
-    Bottom: { L:0, T:26, DT:56, H:2, Src:{Img:'frame_h', Anchor:anchor} },
-    RightBottom: { L:26, DL:56, T:26, W:2, H:2, Src:{Img:'frame', Anchor:anchor} }
+    LeftTop: { L:0, DL:30, T:0, W:2, H:2, Src:frame },
+    Top: { L:0, T:0, DT:30, H:2, Src:hFrame },
+    RightTop: { L:26, DL:56, T:0, W:2, H:2, Src:frame },
+    Left: { L:0, DL:30, T:0, W:2, Src:vFrame },
+    Right: { L:26, DL:56, T:0, W:2, Src:vFrame },
+    LeftBottom: { L:0, DL:30, T:26, W:2, H:2, Src:frame },
+    Bottom: { L:0, T:26, DT:56, H:2, Src:hFrame },
+    RightBottom: { L:26, DL:56, T:26, W:2, H:2, Src:frame }
   };
 };
 bbbfly.morph.theme.frame.medium.images._hLineFrame = function(anchor){
@@ -63,58 +67,66 @@ bbbfly.morph.theme.frame.medium.images._vLineFrame = function(anchor){
   };
 };
 bbbfly.morph.theme.frame.medium.images._hintFrame = function(anchor){
+  var frame = {Img:'frame', Anchor:anchor};
+  var hFrame = {Img:'frame_h', Anchor:anchor};
+  var vFrame = {Img:'frame_v', Anchor:anchor};
+
   return {
-    LeftTop: { L:0, DL:30, T:0, W:4, H:4, Src:{Img:'frame', Anchor:anchor} },
-    Top: { L:0, T:0, DT:30, H:4, Src:{Img:'frame_h', Anchor:anchor} },
-    RightTop: { L:24, DL:54, T:0, W:4, H:4, Src:{Img:'frame', Anchor:anchor} },
-    Left: { L:0, DL:30, T:0, W:4, Src:{Img:'frame_v', Anchor:anchor} },
-    Right: { L:24, DL:54, T:0, W:4, Src:{Img:'frame_v', Anchor:anchor} },
-    LeftBottom: { L:0, DL:30, T:24, W:4, H:4, Src:{Img:'frame', Anchor:anchor} },
-    Bottom: { L:0, T:24, DT:54, H:4, Src:{Img:'frame_h', Anchor:anchor} },
-    RightBottom: { L:24, DL:54, T:24, W:4, H:4, Src:{Img:'frame', Anchor:anchor} }
+    LeftTop: { L:0, DL:30, T:0, W:4, H:4, Src:frame },
+    Top: { L:0, T:0, DT:30, H:4, Src:hFrame },
+    RightTop: { L:24, DL:54, T:0, W:4, H:4, Src:frame },
+    Left: { L:0, DL:30, T:0, W:4, Src:vFrame },
+    Right: { L:24, DL:54, T:0, W:4, Src:vFrame },
+    LeftBottom: { L:0, DL:30, T:24, W:4, H:4, Src:frame },
+    Bottom: { L:0, T:24, DT:54, H:4, Src:hFrame },
+    RightBottom: { L:24, DL:54, T:24, W:4, H:4, Src:frame }
   };
 };
 bbbfly.morph.theme.frame.medium.images._buttonFrame = function(anchor){
+  var button = {Img:'button', Anchor:anchor};
+  var hButton = {Img:'button_h', Anchor:anchor};
+  var vButton = {Img:'button_v', Anchor:anchor};
+
   return {
     LeftTop: {
       L:0, oL:30, SL:60, oSL:90, DL:120, DSL:150, T:0, W:3, H:3,
       IL:180, oIL:210, ISL:240, oISL:270, DIL:300, DISL:330,
-      Src:{Img:'button', Anchor:anchor}
+      Src:button
     },
     Top: {
       T:0, oT:30, ST:60, oST:90, DT:120, DST:150, L:0, H:3,
       IT:180, oIT:210, IST:240, oIST:270, DIT:300, DIST:330,
-      Src:{Img:'button_h', Anchor:anchor}
+      Src:hButton
     },
     RightTop: {
       L:25, oL:55, SL:85, oSL:115, DL:145, DSL:175, T:0, W:3, H:3,
       IL:205, oIL:235, ISL:265, oISL:295, DIL:325, DISL:355,
-      Src:{Img:'button', Anchor:anchor}
+      Src:button
     },
     Left: {
       L:0, oL:30, SL:60, oSL:90, DL:120, DSL:150, T:0, W:3,
       IL:180, oIL:210, ISL:240, oISL:270, DIL:300, DISL:330,
-      Src:{Img:'button_v', Anchor:anchor}
+      Src:vButton
     },
     Right: {
       L:25, oL:55, SL:85, oSL:115, DL:145, DSL:175, T:0, W:3,
       IL:205, oIL:235, ISL:265, oISL:295, DIL:325, DISL:355,
-      Src:{Img:'button_v', Anchor:anchor}
+      Src:vButton
     },
     LeftBottom: {
       L:0, oL:30, SL:60, oSL:90, DL:120, DSL:150, T:25, W:3, H:3,
       IL:180, oIL:210, ISL:240, oISL:270, DIL:300, DISL:330,
-      Src:{Img:'button', Anchor:anchor}
+      Src:button
     },
     Bottom: {
       T:25, oT:55, ST:85, oST:115, DT:145, DST:175, L:0, H:3,
       IT:355, oIT:235, IST:265, oIST:295, DIT:325, DIST:355,
-      Src:{Img:'button_h', Anchor:anchor}
+      Src:hButton
     },
     RightBottom: {
       L:25, oL:55, SL:85, oSL:115, DL:145, DSL:175, T:25, W:3, H:3,
       IL:205, oIL:235, ISL:265, oISL:295, DIL:325, DISL:355,
-      Src:{Img:'button', Anchor:anchor}
+      Src:button
     }
   };
 };
