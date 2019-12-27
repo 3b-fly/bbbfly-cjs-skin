@@ -50,6 +50,16 @@ bbbfly.morph.theme.frame.medium.images._image = function(anchor,padding){
 };
 
 /** @ignore */
+bbbfly.morph.theme.frame.medium.images._progressRing = function(anchor){
+  return {
+    T:0,
+    L:0, DL:42,
+    W:40, H:40,
+    Src:{Img:'progress', Anchor:anchor}
+  };
+};
+
+/** @ignore */
 bbbfly.morph.theme.frame.medium.images._panelFrame = function(anchor){
   var frame = {Img:'frame', Anchor:anchor};
   var hFrame = {Img:'frame_h', Anchor:anchor};
@@ -235,6 +245,12 @@ bbbfly.morph.theme.frame.medium.Images = {
           edit_drop: { L:0, T:150 }
         }
       },
+      progress: {
+        Path: 'morph-medium-progress.gif?2',
+        Anchors: {
+          ring: { L:0, T:0 }
+        }
+      },
       frame: {
         Path: 'morph-medium-frame.png?2',
         Anchors: {
@@ -357,6 +373,9 @@ bbbfly.morph.theme.frame.medium.Images = {
           Info: this.HintAnchors('frame_hint_info')
         }
       },
+      Progress: {
+        Ring: this.ProgressRing('ring')
+      },
       ButtonFrame: {
         Panel: this.ButtonFrame('button_panel'),
         Std: this.ButtonFrame('button_std'),
@@ -408,6 +427,8 @@ bbbfly.morph.theme.frame.medium.Images = {
 
   /** @private */
   Image: bbbfly.morph.theme.frame.medium.images._image,
+  /** @private */
+  ProgressRing: bbbfly.morph.theme.frame.medium.images._progressRing,
   /** @private */
   PanelFrame: bbbfly.morph.theme.frame.medium.images._panelFrame,
   /** @private */
