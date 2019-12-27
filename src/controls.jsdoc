@@ -43,6 +43,15 @@
  */
 
 /**
+ * @package progress
+ *
+ * @version 1.0.0
+ *
+ * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:progress|bbbfly-cjs-controls (2.0.0): progress}
+ * @requires {@link package:core|bbbfly-cjs-morph (1.0.0): core}
+ */
+
+/**
  * @package wrapper
  *
  * @version 1.0.0

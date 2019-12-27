@@ -1,26 +1,55 @@
-/*!
- * @author Jan Nejedly support@3b-fly.eu
+/**
+ * @file
+ * @author Jan Nejedly [support@3b-fly.eu]
  * @copyright Jan Nejedly
- * @version 1.0.0
- * @license see license in 'LICENSE' file
-*/
+ *
+ * @inpackage progress
+ */
 
-
+/** @ignore */
 var bbbfly = bbbfly || {};
+/** @ignore */
 bbbfly.morph = bbbfly.morph || {};
+/** @ignore */
 bbbfly.morph.progress = {};
+
+/**
+ * @class
+ * @type control
+ * @extends bbbfly.ProgressRing
+ *
+ * @inpackage progress
+ *
+ * @param {bbbfly.Edit.Definition} [def=undefined] - Descendant definition
+ * @param {object} [ref=undefined] - Reference owner
+ * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
+ */
 bbbfly.morph.ProgressRing = function(def,ref,parent){
   def = def || {};
 
   bbbfly.morph.misc.ApplyClassName(def,'ProgressRing');
   return ngCreateControlAsType(def,'bbbfly.ProgressRing',ref,parent);
 };
+
+/**
+ * @class
+ * @type control
+ * @extends bbbfly.ProgressBar
+ *
+ * @inpackage progress
+ *
+ * @param {ngControl.Definition} [def=undefined] - Descendant definition
+ * @param {object} [ref=undefined] - Reference owner
+ * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
+ */
 bbbfly.morph.ProgressBar = function(def,ref,parent){
   def = def || {};
 
   bbbfly.morph.misc.ApplyClassName(def,'ProgressBar');
   return ngCreateControlAsType(def,'bbbfly.ProgressBar',ref,parent);
 };
+
+/** @ignore */
 ngUserControls = ngUserControls || new Array();
 ngUserControls['bbbfly_morph_progress'] = {
   OnInit: function(){

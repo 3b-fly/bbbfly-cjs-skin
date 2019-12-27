@@ -80,6 +80,22 @@
         }
       }
     },
+    "progress": {
+      "DebugFiles": [
+        "base/progress.js"
+      ],
+      "ReleaseFiles": [
+        "base/progress.js"
+      ],
+      "Libraries": {
+        "bbbfly-cjs-controls": {
+          "Packages": ["progress"]
+        },
+        "bbbfly-cjs-morph": {
+          "Packages": ["core"]
+        }
+      }
+    },
     "wrapper": {
       "DebugFiles": [
         "base/wrapper.js"
