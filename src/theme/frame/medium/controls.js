@@ -76,11 +76,31 @@ bbbfly.morph.theme.frame.medium.controls.TextHint = function(def,imgs){
 };
 
 /** @ignore */
+bbbfly.morph.theme.frame.medium.controls.ProgressRing = function(def,imgs){
+  ng_MergeDef(def,{
+    Data: {
+      Image: imgs.Progress.Ring
+    }
+  });
+};
+
+/** @ignore */
+bbbfly.morph.theme.frame.medium.controls.ProgressBar = function(def,imgs){
+  ng_MergeDef(def,{
+    H:10,
+    Data: { Frame: imgs.Frame.Inner },
+    Controls: {
+      Indicator: { T:0, B:0 }
+    }
+  });
+};
+
+/** @ignore */
 bbbfly.morph.theme.frame.medium.controls.PanelButton = function(def,imgs){
   ng_MergeDef(def,{
     Data: {
       Frame: imgs.ButtonFrame.Panel,
-      Indent: {L:-3,T:-3,R:-3,B:-3}
+      Indent: { L:-3, T:-3, R:-3, B:-3 }
     }
   });
 
@@ -236,6 +256,13 @@ bbbfly.morph.theme.frame.medium.controls.SkinControl = function(def,imgs){
     //hint
     case 'bbbfly.morph.TextHint':
       this.TextHint(def,imgs);
+    break;
+    //progress
+    case 'bbbfly.morph.ProgressRing':
+      this.ProgressRing(def,imgs);
+    break;
+    case 'bbbfly.morph.ProgressBar':
+      this.ProgressBar(def,imgs);
     break;
     //button
     case 'bbbfly.morph.PanelButton':
