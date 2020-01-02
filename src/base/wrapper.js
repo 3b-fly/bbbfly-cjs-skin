@@ -3,7 +3,7 @@
  * @author Jan Nejedly [support@3b-fly.eu]
  * @copyright Jan Nejedly
  *
- * @inpackage panel
+ * @inpackage wrapper
  */
 
 /** @ignore */
@@ -17,7 +17,7 @@ bbbfly.morph = bbbfly.morph || {};
  * @extends bbbfly.Wrapper
  * @implements bbbfly.Morph.Control
  *
- * @inpackage panel
+ * @inpackage wrapper
  *
  * @param {bbbfly.Panel.Definition} [def=undefined] - Descendant definition
  * @param {object} [ref=undefined] - Reference owner
