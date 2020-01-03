@@ -25,6 +25,19 @@
  */
 
 /**
+ * @package file
+ *
+ * @version 1.0.0
+ *
+ * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:file|bbbfly-cjs-controls (2.0.0): file}
+ * @requires {@link package:core|bbbfly-cjs-morph (1.0.0): core}
+ * @requires {@link package:button|bbbfly-cjs-morph (1.0.0): button}
+ * @requires {@link package:list|bbbfly-cjs-morph (1.0.0): list}
+ * @requires {@link package:progress|bbbfly-cjs-morph (1.0.0): progress}
+ * @requires {@link package:text|bbbfly-cjs-morph (1.0.0): text}
+ */
+
+/**
  * @package grid
  *
  * @version 1.0.0

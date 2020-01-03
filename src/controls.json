@@ -48,6 +48,22 @@
         }
       }
     },
+    "file": {
+      "DebugFiles": [
+        "base/file.js"
+      ],
+      "ReleaseFiles": [
+        "base/file.js"
+      ],
+      "Libraries": {
+        "bbbfly-cjs-controls": {
+          "Packages": ["file"]
+        },
+        "bbbfly-cjs-morph": {
+          "Packages": ["core","button","list","progress","text"]
+        }
+      }
+    },
     "grid": {
       "DebugFiles": [
         "base/grid.js"
