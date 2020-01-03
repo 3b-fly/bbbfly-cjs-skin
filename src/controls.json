@@ -160,6 +160,22 @@
         }
       }
     },
+    "text": {
+      "DebugFiles": [
+        "base/text.js"
+      ],
+      "ReleaseFiles": [
+        "base/text.js"
+      ],
+      "Libraries": {
+        "bbbfly-cjs-controls": {
+          "Packages": ["text"]
+        },
+        "bbbfly-cjs-morph": {
+          "Packages": ["core"]
+        }
+      }
+    },
 
     "theme-frame-medium": {
       "DebugFiles": [
