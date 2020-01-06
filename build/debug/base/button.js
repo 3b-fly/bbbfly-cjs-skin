@@ -19,7 +19,7 @@ bbbfly.morph.Button = function(def,ref,parent,className){
   });
 
   bbbfly.morph.misc.ApplyClassName(def,(className || 'Button'));
-  return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
+  return ngCreateControlAsType(def,'bbbfly.Button',ref,parent);
 };
 bbbfly.morph.PanelButton = function(def,ref,parent){
   return bbbfly.morph.Button(def,ref,parent,'PanelButton');
@@ -65,8 +65,8 @@ bbbfly.morph.ContentCheckBox = function(def,ref,parent){
 
   ng_MergeDef(def,{
     Data: {
-      SelectType: bbbfly.Btn.selecttype.both,
-      AutoSize: bbbfly.Btn.autosize.both
+      SelectType: bbbfly.Button.selecttype.both,
+      AutoSize: bbbfly.Button.autosize.both
     },
     ControlsPanel: null
   });
@@ -78,8 +78,8 @@ bbbfly.morph.ContentRadioButton = function(def,ref,parent){
 
   ng_MergeDef(def,{
     Data: {
-      SelectType: bbbfly.Btn.selecttype.both,
-      AutoSize: bbbfly.Btn.autosize.both
+      SelectType: bbbfly.Button.selecttype.both,
+      AutoSize: bbbfly.Button.autosize.both
     },
     ControlsPanel: null
   });

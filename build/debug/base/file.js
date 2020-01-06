@@ -20,14 +20,14 @@ bbbfly.morph.FileUploader = function(def,ref,parent){
             Type: 'bbbfly.morph.ContentButton',
             L:-3,W:'50%',T:5,H:28,
             Data: {
-              TextAlign: bbbfly.Btn.textalign.center
+              TextAlign: bbbfly.Button.textalign.center
             }
           },
           RemoveFiles: {
             Type: 'bbbfly.morph.ContentButton',
             R:-2,W:'50%',T:5,H:28,
             Data: {
-              TextAlign: bbbfly.Btn.textalign.center
+              TextAlign: bbbfly.Button.textalign.center
             }
           }
         }

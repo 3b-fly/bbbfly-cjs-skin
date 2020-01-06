@@ -24,13 +24,13 @@ bbbfly.morph.Button = function(def,ref,parent,className){
   });
 
   bbbfly.morph.misc.ApplyClassName(def,(className || 'Button'));
-  return ngCreateControlAsType(def,'bbbfly.Btn',ref,parent);
+  return ngCreateControlAsType(def,'bbbfly.Button',ref,parent);
 };
 
 /**
  * @class
  * @type control
- * @extends bbbfly.Btn
+ * @extends bbbfly.Button
  * @implements bbbfly.Morph.Control
  *
  * @inpackage button
@@ -46,7 +46,7 @@ bbbfly.morph.PanelButton = function(def,ref,parent){
 /**
  * @class
  * @type control
- * @extends bbbfly.Btn
+ * @extends bbbfly.Button
  * @implements bbbfly.Morph.Control
  *
  * @inpackage button
@@ -62,7 +62,7 @@ bbbfly.morph.ContentButton = function(def,ref,parent){
 /**
  * @class
  * @type control
- * @extends bbbfly.Btn
+ * @extends bbbfly.Button
  * @implements bbbfly.Morph.Control
  *
  * @inpackage button
@@ -78,7 +78,7 @@ bbbfly.morph.LargeContentButton = function(def,ref,parent){
 /**
  * @class
  * @type control
- * @extends bbbfly.Btn
+ * @extends bbbfly.Button
  * @implements bbbfly.Morph.Control
  *
  * @inpackage button
@@ -94,7 +94,7 @@ bbbfly.morph.ContentFlatButton = function(def,ref,parent){
 /**
  * @class
  * @type control
- * @extends bbbfly.Btn
+ * @extends bbbfly.Button
  * @implements bbbfly.Morph.Control
  *
  * @inpackage button
@@ -110,7 +110,7 @@ bbbfly.morph.ContentInputButton = function(def,ref,parent){
 /**
  * @class
  * @type control
- * @extends bbbfly.Btn
+ * @extends bbbfly.Button
  * @implements bbbfly.Morph.Control
  *
  * @inpackage button
@@ -135,7 +135,7 @@ bbbfly.morph.PanelIconButton = function(def,ref,parent){
 /**
  * @class
  * @type control
- * @extends bbbfly.Btn
+ * @extends bbbfly.Button
  * @implements bbbfly.Morph.Control
  *
  * @inpackage button
@@ -160,7 +160,7 @@ bbbfly.morph.ContentIconButton = function(def,ref,parent){
 /**
  * @class
  * @type control
- * @extends bbbfly.Btn
+ * @extends bbbfly.Button
  * @implements bbbfly.Morph.Control
  *
  * @inpackage button
@@ -174,8 +174,8 @@ bbbfly.morph.ContentCheckBox = function(def,ref,parent){
 
   ng_MergeDef(def,{
     Data: {
-      SelectType: bbbfly.Btn.selecttype.both,
-      AutoSize: bbbfly.Btn.autosize.both
+      SelectType: bbbfly.Button.selecttype.both,
+      AutoSize: bbbfly.Button.autosize.both
     },
     ControlsPanel: null
   });
@@ -186,7 +186,7 @@ bbbfly.morph.ContentCheckBox = function(def,ref,parent){
 /**
  * @class
  * @type control
- * @extends bbbfly.Btn
+ * @extends bbbfly.Button
  * @implements bbbfly.Morph.Control
  *
  * @inpackage button
@@ -200,8 +200,8 @@ bbbfly.morph.ContentRadioButton = function(def,ref,parent){
 
   ng_MergeDef(def,{
     Data: {
-      SelectType: bbbfly.Btn.selecttype.both,
-      AutoSize: bbbfly.Btn.autosize.both
+      SelectType: bbbfly.Button.selecttype.both,
+      AutoSize: bbbfly.Button.autosize.both
     },
     ControlsPanel: null
   });
