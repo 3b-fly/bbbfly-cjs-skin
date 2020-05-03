@@ -50,10 +50,10 @@
     },
     "file": {
       "DebugFiles": [
-        "base/file.js"
+        "special/file.js"
       ],
       "ReleaseFiles": [
-        "base/file.js"
+        "special/file.js"
       ],
       "Libraries": {
         "bbbfly-cjs-controls": {

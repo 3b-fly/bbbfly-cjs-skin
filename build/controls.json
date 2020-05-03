@@ -57,10 +57,10 @@
     },
     "file": {
       "DebugFiles": [
-        "debug/base/file.js"
+        "debug/special/file.js"
       ],
       "ReleaseFiles": [
-        "release/base/file.js"
+        "release/special/file.js"
       ],
       "Libraries": {
         "bbbfly-cjs-controls": {
