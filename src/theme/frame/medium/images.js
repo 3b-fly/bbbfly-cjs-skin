@@ -296,10 +296,11 @@ bbbfly.morph.theme.frame.medium.Images = {
           button_panel: { L:0, T:0 },
           button_std: { L:0, T:30 },
           button_flat: { L:0, T:60 },
-          button_input: { L:0, T:90 },
+          button_handle: { L:0, T:90 },
+          button_input: { L:0, T:120 },
 
-          button_check: { L:0, T:120 },
-          button_radio: { L:0, T:150 }
+          button_check: { L:0, T:150 },
+          button_radio: { L:0, T:180 }
         }
       },
       button_h: {
@@ -308,7 +309,8 @@ bbbfly.morph.theme.frame.medium.Images = {
           button_panel: { L:0, T:0 },
           button_std: { L:0, T:360 },
           button_flat: { L:0, T:720 },
-          button_input: { L:0, T:1080 }
+          button_handle: { L:0, T:1080 },
+          button_input: { L:0, T:1440 }
         }
       },
       button_v: {
@@ -317,7 +319,8 @@ bbbfly.morph.theme.frame.medium.Images = {
           button_panel: { L:0, T:0 },
           button_std: { L:360, T:0 },
           button_flat: { L:720, T:0 },
-          button_input: { L:1080, T:0 }
+          button_handle: { L:1080, T:0 },
+          button_input: { L:1440, T:0 }
         }
       },
       icon: {
