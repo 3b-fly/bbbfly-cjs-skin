@@ -294,9 +294,9 @@ bbbfly.morph.theme.frame.medium.Images = {
         Path: 'morph-medium-button.png?2',
         Anchors: {
           button_panel: { L:0, T:0 },
-          button_std: { L:0, T:30 },
-          button_flat: { L:0, T:60 },
-          button_handle: { L:0, T:90 },
+          button_inverse: { L:0, T:30 },
+          button_std: { L:0, T:60 },
+          button_flat: { L:0, T:90 },
           button_input: { L:0, T:120 },
 
           button_check: { L:0, T:150 },
@@ -307,9 +307,9 @@ bbbfly.morph.theme.frame.medium.Images = {
         Path: 'morph-medium-button_h.png?2',
         Anchors: {
           button_panel: { L:0, T:0 },
-          button_std: { L:0, T:360 },
-          button_flat: { L:0, T:720 },
-          button_handle: { L:0, T:1080 },
+          button_inverse: { L:0, T:360 },
+          button_std: { L:0, T:720 },
+          button_flat: { L:0, T:1080 },
           button_input: { L:0, T:1440 }
         }
       },
@@ -317,9 +317,9 @@ bbbfly.morph.theme.frame.medium.Images = {
         Path: 'morph-medium-button_v.png?2',
         Anchors: {
           button_panel: { L:0, T:0 },
-          button_std: { L:360, T:0 },
-          button_flat: { L:720, T:0 },
-          button_handle: { L:1080, T:0 },
+          button_inverse: { L:360, T:0 },
+          button_std: { L:720, T:0 },
+          button_flat: { L:1080, T:0 },
           button_input: { L:1440, T:0 }
         }
       },
@@ -381,6 +381,7 @@ bbbfly.morph.theme.frame.medium.Images = {
       },
       ButtonFrame: {
         Panel: this.ButtonFrame('button_panel'),
+        Inverse: this.ButtonFrame('button_inverse'),
         Std: this.ButtonFrame('button_std'),
         Flat: this.ButtonFrame('button_flat'),
         Input: this.ButtonFrame('button_input')
