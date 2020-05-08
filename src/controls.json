@@ -1,6 +1,6 @@
 {
   "Lib": "bbbfly-cjs-morph",
-  "Version": "1.0.0",
+  "Version": "1.0.1",
   "Name": "3b-fly's skin base for Controls.js",
   "Copyright": "Jan Nejedly",
 
@@ -8,7 +8,8 @@
     "controls.js": "5.0.0",
     "bbbfly-cjs": "2.0.0",
     "bbbfly-cjs-controls": "2.0.0",
-    "bbbfly-cjs-morph": "1.0.0"
+    "bbbfly-cjs-morph": "1.0.1",
+    "bbbfly": "1.0.3"
   },
 
   "Packages": {
@@ -45,22 +46,6 @@
         },
         "bbbfly-cjs-morph": {
           "Packages": ["core"]
-        }
-      }
-    },
-    "file": {
-      "DebugFiles": [
-        "special/file.js"
-      ],
-      "ReleaseFiles": [
-        "special/file.js"
-      ],
-      "Libraries": {
-        "bbbfly-cjs-controls": {
-          "Packages": ["file"]
-        },
-        "bbbfly-cjs-morph": {
-          "Packages": ["core","button","list","progress","text"]
         }
       }
     },
@@ -189,6 +174,22 @@
         },
         "bbbfly-cjs-morph": {
           "Packages": ["core"]
+        }
+      }
+    },
+    "file": {
+      "DebugFiles": [
+        "special/file.js"
+      ],
+      "ReleaseFiles": [
+        "special/file.js"
+      ],
+      "Libraries": {
+        "bbbfly-cjs-controls": {
+          "Packages": ["file"]
+        },
+        "bbbfly-cjs-morph": {
+          "Packages": ["core","button","list","progress","text"]
         }
       }
     },
