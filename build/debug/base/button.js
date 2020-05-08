@@ -24,6 +24,9 @@ bbbfly.morph.Button = function(def,ref,parent,className){
 bbbfly.morph.PanelButton = function(def,ref,parent){
   return bbbfly.morph.Button(def,ref,parent,'PanelButton');
 };
+bbbfly.morph.InverseButton = function(def,ref,parent){
+  return bbbfly.morph.Button(def,ref,parent,'InverseButton');
+};
 bbbfly.morph.ContentButton = function(def,ref,parent){
   return bbbfly.morph.Button(def,ref,parent,'ContentButton');
 };
@@ -91,6 +94,9 @@ ngUserControls['bbbfly_morph_button'] = {
   OnInit: function(){
     bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.PanelButton',bbbfly.morph.PanelButton
+    );
+    bbbfly.Morph.RegisterControlType(
+      'bbbfly.morph.InverseButton',bbbfly.morph.InverseButton
     );
     bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.ContentButton',bbbfly.morph.ContentButton

@@ -108,6 +108,18 @@ bbbfly.morph.theme.frame.medium.controls.PanelButton = function(def,imgs){
 };
 
 /** @ignore */
+bbbfly.morph.theme.frame.medium.controls.InverseButton = function(def,imgs){
+  ng_MergeDef(def,{
+    Data: {
+      Frame: imgs.ButtonFrame.Inverse,
+      Indent: { L:-3, T:-3, R:-3, B:-3 }
+    }
+  });
+
+  this.ApplyBtnIcon(def,imgs);
+};
+
+/** @ignore */
 bbbfly.morph.theme.frame.medium.controls.ContentButton = function(def,imgs){
   ng_MergeDef(def,{
     Data: {
@@ -267,6 +279,9 @@ bbbfly.morph.theme.frame.medium.controls.SkinControl = function(def,imgs){
     //button
     case 'bbbfly.morph.PanelButton':
       this.PanelButton(def,imgs);
+    break;
+    case 'bbbfly.morph.InverseButton':
+      this.InverseButton(def,imgs);
     break;
     case 'bbbfly.morph.PanelIconButton':
       this.PanelIconButton(def,imgs);
