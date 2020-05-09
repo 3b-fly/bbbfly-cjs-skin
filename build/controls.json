@@ -241,6 +241,40 @@
         }
       }
     },
+    "map": {
+      "DebugFiles": [
+        "debug/map/map.js"
+      ],
+      "ReleaseFiles": [
+        "release/map/map.js"
+      ],
+      "Libraries": {
+        "controls.js": {
+          "Packages": [
+            "Controls.js UI"
+          ]
+        },
+        "bbbfly": {
+          "Packages": [
+            "mapbox"
+          ]
+        },
+        "bbbfly-cjs-controls": {
+          "Packages": [
+            "panel"
+          ]
+        },
+        "bbbfly-cjs-morph": {
+          "Packages": [
+            "core",
+            "panel",
+            "wrapper",
+            "button",
+            "list"
+          ]
+        }
+      }
+    },
     "theme-frame-medium": {
       "DebugFiles": [
         "debug/theme/frame/medium/images.js",

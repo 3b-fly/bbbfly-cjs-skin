@@ -111,6 +111,16 @@
  */
 
 /**
+ * @package map
+ *
+ * @version 1.0.1
+ *
+ * @requires {@link https://controlsjs.com/|controls.js (5.0.0)}
+ * @requires {@link https://3b-fly.github.io/bbbfly/packages.html#package:mapbox|bbbfly-cjs-controls (1.0.0): mapbox}
+ * @requires {@link package:core|bbbfly-cjs-morph (1.0.3): core}
+ */
+
+/**
  * @package theme-frame-medium
  *
  * @version 1.0.1

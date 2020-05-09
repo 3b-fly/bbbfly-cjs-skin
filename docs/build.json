@@ -14,7 +14,8 @@
       "../src/base/panel.js",
       "../src/base/wrapper.js",
       "../src/base/text.js",
-      "../src/base/file.js",
+      "../src/special/file.js",
+      "../src/map/map.js",
 
       "../src/theme/frame/medium/images.js",
       "../src/theme/frame/medium/controls.js"

@@ -186,6 +186,136 @@ bbbfly.morph.theme.frame.medium.controls.PopupMenu = function(def,imgs){
     }
   });
 };
+bbbfly.morph.theme.frame.medium.controls.MapBox = function(def,imgs){
+
+  var mapControls = (def.Data)
+    ? def.Data.MapControls
+    : bbbfly.MapCrate.control.none;
+
+  if(mapControls & bbbfly.MapCrate.control.zoomSlider){
+    ng_MergeDef(def,{
+      Controls: { Map: { L:27 } }
+    });
+  }
+
+  ng_MergeDef(def,{
+    Data: {
+      Frame: imgs.Frame.Inner
+    },
+    ModifyControls: {
+      ModeBar:{ R:-1,T:-1 },
+      SideBar: { R:-1,B:-1 },
+      ZoomSlider: { L:-1,T:-1,B:-1 },
+      Copyrights:{ R:30,W:320,T:-1,B:-1 },
+      Layers:{ R:30,W:320,T:-1,B:-1 }
+    }
+  });
+};
+bbbfly.morph.theme.frame.medium.controls.MapSideBar = function(def,imgs){
+  ng_MergeDef(def,{
+    W:32,
+    Data: {
+      SectionDef: {
+        L:0,R:0,
+        Data: {
+          VPadding: 2,
+          HPadding: 2
+        }
+      }
+    }
+  });
+};
+bbbfly.morph.theme.frame.medium.controls.MapZoomSlider = function(def,imgs){
+  ng_MergeDef(def,{
+    W:28,
+    Controls: {
+      ZoomIn: { L:0,T:0 },
+      ZoomOut: { L:0,B:0 },
+      Slider: {
+        L:0,R:0,T:27,B:27,
+        Data: { HandleIndent: 11 },
+        Controls: {
+          Rail: {
+            L:'50%',W:6,T:10,B:10,
+            style: { marginLeft: '-3px' },
+            Data: { Frame: imgs.Frame.Inner }
+          },
+          Handle: {
+            L:'50%',W:24,H:8,
+            style: {
+              marginLeft: '-12px',
+              marginTop: '-4px'
+            },
+            Data: { Frame: imgs.ButtonFrame.Handle }
+          }
+        }
+      }
+    }
+  });
+};
+bbbfly.morph.theme.frame.medium.controls.MapCopyrights = function(def,imgs){
+  ng_MergeDef(def,{
+    Controls: {
+      TitlePanel: {
+        L:5,R:5,T:5,H:28,
+        Controls:{
+          Refresh: { L:0,T:0 },
+          Title: {
+            H: bbbfly.morph.Title.LineHeight,
+            L:33,R:33,T:0
+          },
+          Close: { R:0,T:0 }
+        }
+      },
+      CopyrightsPanel: {
+        L:5,R:5,T:38,B:5,
+        Controls: {
+          CopyrightsText: {
+            L:10,R:10,T:0,
+            style: {
+              paddingTop: '5px',
+              paddingBottom: '5px'
+            }
+          }
+        }
+      }
+    }
+  });
+};
+bbbfly.morph.theme.frame.medium.controls.MapLayers = function(def,imgs){
+  ng_MergeDef(def,{
+    Controls: {
+      TitlePanel: {
+        L:5,R:5,T:5,H:28,
+        Controls:{
+          Refresh: { L:0,T:0 },
+          Title: {
+            H: bbbfly.morph.Title.LineHeight,
+            L:33,R:33,T:0
+          },
+          Close: { R:0,T:0 }
+        }
+      },
+      List: {
+        L:5,R:5,T:38,B:5
+      }
+    }
+  });
+};
+bbbfly.morph.theme.frame.medium.controls.MapModeBar = function(def,imgs){
+  ng_MergeDef(def,{
+    W:32,
+    Data: {
+      FrameDef: {
+        L:0,R:0,
+        Data: {
+          VPadding: 2,
+          HPadding: 2
+        }
+      }
+    }
+  });
+};
 bbbfly.morph.theme.frame.medium.controls.SkinControl = function(def,imgs){
   if(!Object.isObject(def) || !Object.isObject(imgs)){return;}
 
@@ -252,6 +382,24 @@ bbbfly.morph.theme.frame.medium.controls.SkinControl = function(def,imgs){
     break;
     case 'bbbfly.morph.PopupMenu':
       this.PopupMenu(def,imgs);
+    break;
+    case 'bbbfly.morph.MapBox':
+      this.MapBox(def,imgs);
+    break;
+    case 'bbbfly.morph.MapSideBar':
+      this.MapSideBar(def,imgs);
+    break;
+    case 'bbbfly.morph.MapZoomSlider':
+      this.MapZoomSlider(def,imgs);
+    break;
+    case 'bbbfly.morph.MapCopyrights':
+      this.MapCopyrights(def,imgs);
+    break;
+    case 'bbbfly.morph.MapLayers':
+      this.MapLayers(def,imgs);
+    break;
+    case 'bbbfly.morph.MapModeBar':
+      this.MapModeBar(def,imgs);
     break;
   }
 };
