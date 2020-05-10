@@ -117,7 +117,12 @@
  *
  * @requires {@link https://controlsjs.com/|controls.js (5.0.0)}
  * @requires {@link https://3b-fly.github.io/bbbfly/packages.html#package:mapbox|bbbfly-cjs-controls (1.0.0): mapbox}
- * @requires {@link package:core|bbbfly-cjs-morph (1.0.3): core}
+ * @requires {@link package:core|bbbfly-cjs-morph (1.0.1): core}
+ * @requires {@link package:panel|bbbfly-cjs-morph (1.0.1): panel}
+ * @requires {@link package:wrapper|bbbfly-cjs-morph (1.0.1): wrapper}
+ * @requires {@link package:button|bbbfly-cjs-morph (1.0.3): button}
+ * @requires {@link package:list|bbbfly-cjs-morph (1.0.3): list}
+ * @requires {@link package:text|bbbfly-cjs-morph (1.0.3): text}
  */
 
 /**

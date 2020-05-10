@@ -270,7 +270,8 @@
             "panel",
             "wrapper",
             "button",
-            "list"
+            "list",
+            "text"
           ]
         }
       }
