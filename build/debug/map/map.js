@@ -9,17 +9,6 @@ var bbbfly = bbbfly || {};
 bbbfly.morph = bbbfly.morph || {};
 bbbfly.morph.map = bbbfly.morph.map || {};
 bbbfly.morph.map.sidebar = {};
-bbbfly.morph.map.sidebar._getButtonIcon = function(id,group){
-  switch(group){
-    case 'map_control':
-      switch(id){
-        case 'layers': return 'layers';
-        case 'copyrights': return 'copyright';
-      }
-    break;
-  }
-  return null;
-};
 bbbfly.morph.MapBox = function(def,ref,parent){
   def = def || {};
 
@@ -62,21 +51,35 @@ bbbfly.morph.MapSideBar = function(def,ref,parent){
 
   ng_MergeDef(def,{
     CreteFromType: 'bbbfly.morph.ContentWrapper',
+    SectionDef: {
+      Type: 'bbbfly.Wrapper', //TODO
+      Data: {
+        WrapperOptions: {
+          AutoSize: true,
+          TrackChanges: true
+        }
+      }
+    },
+    ButtonDef: {
+      Type: 'bbbfly.morph.ContentIconButton'
+    },
     Data: {
       WrapperOptions: {
         AutoSize: true,
         TrackChanges: true
-      },
-      SectionDef: {
-        Type: 'ngToolBar',
-        Data: { AutoSize: true }
-      },
-      ButtonDef: {
-        Type: 'bbbfly.morph.ContentIconButton'
       }
     },
-    Methods: {
-      GetButtonIcon: bbbfly.morph.map.sidebar._getButtonIcon
+    Controls: {
+      MapControls: {
+        Controls: {
+          Layers: {
+            Data: { Icon: 'layers' }
+          },
+          Copyrights: {
+            Data: { Icon: 'copyright' }
+          }
+        }
+      }
     }
   });
 
