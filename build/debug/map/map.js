@@ -52,7 +52,7 @@ bbbfly.morph.MapSideBar = function(def,ref,parent){
   ng_MergeDef(def,{
     CreteFromType: 'bbbfly.morph.ContentWrapper',
     SectionDef: {
-      Type: 'bbbfly.Wrapper', //TODO
+      Type: 'bbbfly.Wrapper',
       Data: {
         WrapperOptions: {
           AutoSize: true,

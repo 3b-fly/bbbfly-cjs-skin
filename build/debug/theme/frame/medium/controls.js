@@ -214,9 +214,7 @@ bbbfly.morph.theme.frame.medium.controls.MapBox = function(def,imgs){
 bbbfly.morph.theme.frame.medium.controls.MapSideBar = function(def,imgs){
   ng_MergeDef(def,{
     W:32,
-    SectionDef: {
-      L:0,R:0,
-    }
+    SectionDef: { L:0,R:0 }
   });
 };
 bbbfly.morph.theme.frame.medium.controls.MapZoomSlider = function(def,imgs){

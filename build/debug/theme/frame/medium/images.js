@@ -378,11 +378,12 @@ bbbfly.morph.theme.frame.medium.Images = {
     settings: 12,
     search: 13,
     filter: 14,
-    layers: 15,
-    copyright: 16,
-    drop: 17,
-    circle: 18,
-    set: 19
+    list: 15,
+    layers: 16,
+    copyright: 17,
+    drop: 18,
+    circle: 19,
+    set: 20
   },
   Padding: bbbfly.morph.theme.frame.medium.images._padding,
   Image: bbbfly.morph.theme.frame.medium.images._image,
