@@ -14,7 +14,7 @@ bbbfly.morph.MapBox = function(def,ref,parent){
 
   ng_MergeDef(def,{
     Data: {
-      BoundsPadding: 80
+      BoundsPadding: { L:80,R:80,T:80,B:80 }
     },
     Controls: {
       Map: { L:0,R:0,T:0,B:0 }
