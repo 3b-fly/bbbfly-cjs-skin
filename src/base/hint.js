@@ -73,7 +73,7 @@ bbbfly.morph.TextHint = function(def,ref,parent){
 };
 
 /**
- * @enum {integer}
+ * @enum {string}
  * @description
  *   Possible values for
  *   {@link bbbfly.morph.TextHint.HintType|bbbfly.morph.TextHint.HintType}
