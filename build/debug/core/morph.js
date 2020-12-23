@@ -137,7 +137,7 @@ bbbfly.morph.core._recalcImageAnchor = function(image,anchor){
 
   for(var i in image){
     if(!Number.isInteger(image[i])){continue;}
-    if(!bbbfly.Renderer.IsImageLTPosition(i)){continue;}
+    if(!bbbfly.Renderer.IsImagePosition(i)){continue;}
 
     switch(i.slice(-1)){
       case 'L': image[i] += left; break;
