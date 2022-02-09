@@ -145,7 +145,7 @@ bbbfly.morph.PanelIconButton = function(def,ref,parent){
     }
   });
 
-  return bbbfly.morph.Button(def,ref,parent,'IconButtonBanel');
+  return bbbfly.morph.Button(def,ref,parent,'PanelIconButton');
 };
 
 /**
