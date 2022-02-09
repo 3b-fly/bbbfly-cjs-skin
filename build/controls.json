@@ -136,6 +136,26 @@
         }
       }
     },
+    "bar": {
+      "DebugFiles": [
+        "debug/base/bar.js"
+      ],
+      "ReleaseFiles": [
+        "release/base/bar.js"
+      ],
+      "Libraries": {
+        "bbbfly-cjs-controls": {
+          "Packages": [
+            "bar"
+          ]
+        },
+        "bbbfly-cjs-morph": {
+          "Packages": [
+            "core"
+          ]
+        }
+      }
+    },
     "button": {
       "DebugFiles": [
         "debug/base/button.js"

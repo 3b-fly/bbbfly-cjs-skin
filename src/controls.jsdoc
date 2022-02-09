@@ -61,6 +61,15 @@
  */
 
 /**
+ * @package bar
+ *
+ * @version 1.0.1
+ *
+ * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:bar|bbbfly-cjs-controls (2.0.0): bar}
+ * @requires {@link package:core|bbbfly-cjs-morph (1.0.1): core}
+ */
+
+/**
  * @package button
  *
  * @version 1.0.1

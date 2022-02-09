@@ -399,6 +399,10 @@ bbbfly.morph.theme.frame.medium.controls.SkinControl = function(def,imgs){
     case 'bbbfly.morph.ContentWrapper':
       this.ContentFrame(def,imgs);
     break;
+    //bar
+    case 'bbbfly.morph.ContentInputBar':
+      this.InputFrame(def,imgs);
+    break;
     //hint
     case 'bbbfly.morph.TextHint':
       this.TextHint(def,imgs);
