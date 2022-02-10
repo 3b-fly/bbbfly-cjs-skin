@@ -20,6 +20,7 @@
  *
  * @version 1.0.1
  *
+ * @requires {@link https://controlsjs.com/|controls.js (5.0.0)}
  * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:panel|bbbfly-cjs-controls (2.0.0): panel}
  * @requires {@link package:core|bbbfly-cjs-morph (1.0.1): core}
  */
@@ -29,6 +30,7 @@
  *
  * @version 1.0.1
  *
+ * @requires {@link https://controlsjs.com/|controls.js (5.0.0)}
  * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:grid|bbbfly-cjs-controls (2.0.0): grid}
  * @requires {@link package:core|bbbfly-cjs-morph (1.0.1): core}
  */
@@ -38,6 +40,7 @@
  *
  * @version 1.0.1
  *
+ * @requires {@link https://controlsjs.com/|controls.js (5.0.0)}
  * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:hint|bbbfly-cjs-controls (2.0.0): hint}
  * @requires {@link package:core|bbbfly-cjs-morph (1.0.1): core}
  */
@@ -47,6 +50,7 @@
  *
  * @version 1.0.1
  *
+ * @requires {@link https://controlsjs.com/|controls.js (5.0.0)}
  * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:progress|bbbfly-cjs-controls (2.0.0): progress}
  * @requires {@link package:core|bbbfly-cjs-morph (1.0.1): core}
  */
@@ -56,6 +60,7 @@
  *
  * @version 1.0.1
  *
+ * @requires {@link https://controlsjs.com/|controls.js (5.0.0)}
  * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:wrapper|bbbfly-cjs-controls (2.0.0): wrapper}
  * @requires {@link package:core|bbbfly-cjs-morph (1.0.1): core}
  */
@@ -65,6 +70,7 @@
  *
  * @version 1.0.1
  *
+ * @requires {@link https://controlsjs.com/|controls.js (5.0.0)}
  * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:bar|bbbfly-cjs-controls (2.0.0): bar}
  * @requires {@link package:core|bbbfly-cjs-morph (1.0.1): core}
  */
@@ -74,6 +80,7 @@
  *
  * @version 1.0.1
  *
+ * @requires {@link https://controlsjs.com/|controls.js (5.0.0)}
  * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:button|bbbfly-cjs-controls (2.0.0): button}
  * @requires {@link package:core|bbbfly-cjs-morph (1.0.1): core}
  * @requires {@link package:hint|bbbfly-cjs-morph (1.0.1): hint}
@@ -84,6 +91,7 @@
  *
  * @version 1.0.1
  *
+ * @requires {@link https://controlsjs.com/|controls.js (5.0.0)}
  * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:list|bbbfly-cjs-controls (2.0.0): list}
  * @requires {@link package:core|bbbfly-cjs-morph (1.0.1): core}
  */
@@ -93,6 +101,7 @@
  *
  * @version 1.0.1
  *
+ * @requires {@link https://controlsjs.com/|controls.js (5.0.0)}
  * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:menu|bbbfly-cjs-controls (2.0.0): menu}
  * @requires {@link package:core|bbbfly-cjs-morph (1.0.1): core}
  */
@@ -102,6 +111,7 @@
  *
  * @version 1.0.1
  *
+ * @requires {@link https://controlsjs.com/|controls.js (5.0.0)}
  * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:text|bbbfly-cjs-controls (2.0.0): text}
  * @requires {@link package:core|bbbfly-cjs-morph (1.0.1): core}
  */
@@ -111,6 +121,7 @@
  *
  * @version 1.0.1
  *
+ * @requires {@link https://controlsjs.com/|controls.js (5.0.0)}
  * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:file|bbbfly-cjs-controls (2.0.0): file}
  * @requires {@link package:core|bbbfly-cjs-morph (1.0.1): core}
  * @requires {@link package:button|bbbfly-cjs-morph (1.0.1): button}
@@ -139,5 +150,6 @@
  *
  * @version 1.0.1
  *
+ * @requires {@link https://controlsjs.com/|controls.js (5.0.0)}
  * @requires {@link https://3b-fly.github.io/bbbfly-cjs/packages.html#package:crossbrowser|bbbfly-cjs (2.0.0): crossbrowser}
  */

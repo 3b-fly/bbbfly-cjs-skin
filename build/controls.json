@@ -44,6 +44,11 @@
         "release/base/panel.js"
       ],
       "Libraries": {
+        "controls.js": {
+          "Packages": [
+            "Controls.js"
+          ]
+        },
         "bbbfly-cjs-controls": {
           "Packages": [
             "panel"
@@ -64,6 +69,11 @@
         "release/base/grid.js"
       ],
       "Libraries": {
+        "controls.js": {
+          "Packages": [
+            "Controls.js"
+          ]
+        },
         "bbbfly-cjs-controls": {
           "Packages": [
             "grid"
@@ -84,6 +94,11 @@
         "release/base/hint.js"
       ],
       "Libraries": {
+        "controls.js": {
+          "Packages": [
+            "Controls.js"
+          ]
+        },
         "bbbfly-cjs-controls": {
           "Packages": [
             "hint"
@@ -104,6 +119,11 @@
         "release/base/progress.js"
       ],
       "Libraries": {
+        "controls.js": {
+          "Packages": [
+            "Controls.js"
+          ]
+        },
         "bbbfly-cjs-controls": {
           "Packages": [
             "progress"
@@ -124,6 +144,11 @@
         "release/base/wrapper.js"
       ],
       "Libraries": {
+        "controls.js": {
+          "Packages": [
+            "Controls.js"
+          ]
+        },
         "bbbfly-cjs-controls": {
           "Packages": [
             "wrapper"
@@ -144,6 +169,11 @@
         "release/base/bar.js"
       ],
       "Libraries": {
+        "controls.js": {
+          "Packages": [
+            "Controls.js"
+          ]
+        },
         "bbbfly-cjs-controls": {
           "Packages": [
             "bar"
@@ -164,6 +194,11 @@
         "release/base/button.js"
       ],
       "Libraries": {
+        "controls.js": {
+          "Packages": [
+            "Controls.js"
+          ]
+        },
         "bbbfly-cjs-controls": {
           "Packages": [
             "button"
@@ -185,6 +220,11 @@
         "release/base/list.js"
       ],
       "Libraries": {
+        "controls.js": {
+          "Packages": [
+            "Controls.js"
+          ]
+        },
         "bbbfly-cjs-controls": {
           "Packages": [
             "list"
@@ -205,6 +245,11 @@
         "release/base/menu.js"
       ],
       "Libraries": {
+        "controls.js": {
+          "Packages": [
+            "Controls.js"
+          ]
+        },
         "bbbfly-cjs-controls": {
           "Packages": [
             "menu"
@@ -225,6 +270,11 @@
         "release/base/text.js"
       ],
       "Libraries": {
+        "controls.js": {
+          "Packages": [
+            "Controls.js"
+          ]
+        },
         "bbbfly-cjs-controls": {
           "Packages": [
             "text"
@@ -245,6 +295,11 @@
         "release/special/file.js"
       ],
       "Libraries": {
+        "controls.js": {
+          "Packages": [
+            "Controls.js"
+          ]
+        },
         "bbbfly-cjs-controls": {
           "Packages": [
             "file"
@@ -271,7 +326,7 @@
       "Libraries": {
         "controls.js": {
           "Packages": [
-            "Controls.js UI"
+            "Controls.js"
           ]
         },
         "bbbfly": {
@@ -306,6 +361,11 @@
         "release/theme/frame/medium/controls.js"
       ],
       "Libraries": {
+        "controls.js": {
+          "Packages": [
+            "Controls.js"
+          ]
+        },
         "bbbfly-cjs": {
           "Packages": [
             "crossbrowser"
