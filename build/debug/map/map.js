@@ -203,8 +203,13 @@ bbbfly.morph.MapModeBar = function(def,ref,parent){
         TrackChanges: true
       },
       FrameDef: {
-        Type: 'ngToolBar',
-        Data: { AutoSize: true }
+        Type: 'bbbfly.Wrapper',
+        Data: {
+          WrapperOptions: {
+            AutoSize: true,
+            TrackChanges: true
+          }
+        }
       },
       ButtonDef: {
         Type: 'bbbfly.morph.ContentIconButton'

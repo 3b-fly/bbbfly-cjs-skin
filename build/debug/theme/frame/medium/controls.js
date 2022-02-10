@@ -299,11 +299,7 @@ bbbfly.morph.theme.frame.medium.controls.MapModeBar = function(def,imgs){
     W:32,
     Data: {
       FrameDef: {
-        L:0,R:0,
-        Data: {
-          VPadding: 2,
-          HPadding: 2
-        }
+        L:0,R:0
       }
     }
   });
