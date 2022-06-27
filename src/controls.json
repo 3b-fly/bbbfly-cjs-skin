@@ -257,7 +257,7 @@
           "Packages": ["mapbox"]
         },
         "bbbfly-cjs-controls": {
-          "Packages": ["panel"]
+          "Packages": ["panel","map_copyrights","map_layers","map_modebar","map_sidebar","map_zoomslider"]
         },
         "bbbfly-cjs-morph": {
           "Packages": ["core","panel","wrapper","button","list","text"]
