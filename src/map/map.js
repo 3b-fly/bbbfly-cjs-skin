@@ -102,11 +102,14 @@ bbbfly.morph.MapSideBar = function(def,ref,parent){
     },
     Controls: {
       MapControls: {
-        Controls: {
+        ModifyControls: {
           Layers: {
+            IgnoreModifyIfMissing: true,
             Data: { Icon: 'layers' }
+
           },
           Copyrights: {
+            IgnoreModifyIfMissing: true,
             Data: { Icon: 'copyright' }
           }
         }
