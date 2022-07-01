@@ -31,6 +31,37 @@ bbbfly.morph.theme.frame.medium.controls._getButtonIcon = function(){
 };
 
 /** @ignore */
+bbbfly.morph.theme.frame.medium.controls._positionMap = function(){
+  var map = this.Owner.Map;
+  if(!map){return;}
+
+  var mapBounds = {L:0,R:0};
+
+  var zoomSlider = this.Owner.ZoomSlider;
+
+  if(zoomSlider && zoomSlider.Visible){
+    if(Number.isInteger(zoomSlider.Bounds.L)){
+      mapBounds.L += zoomSlider.Bounds.L;
+
+      if(Number.isInteger(zoomSlider.Bounds.W)){
+        mapBounds.L += zoomSlider.Bounds.W;
+      }
+    }
+    else if(Number.isInteger(zoomSlider.Bounds.R)){
+      mapBounds.R += zoomSlider.Bounds.R;
+
+      if(Number.isInteger(zoomSlider.Bounds.W)){
+        mapBounds.R += zoomSlider.Bounds.W;
+      }
+    }
+  }
+
+  if(map.SetBounds(mapBounds)){
+    map.Update();
+  }
+};
+
+/** @ignore */
 bbbfly.morph.theme.frame.medium.controls.ApplyBtnIcon = function(def,imgs){
   ng_MergeDef(def,{
     Data: {
@@ -239,26 +270,34 @@ bbbfly.morph.theme.frame.medium.controls.PopupMenu = function(def,imgs){
 /** @ignore */
 bbbfly.morph.theme.frame.medium.controls.MapBox = function(def,imgs){
 
-  var mapControls = (def.Data)
-    ? def.Data.MapControls
-    : bbbfly.MapCrate.control.none;
-
-  if(mapControls & bbbfly.MapCrate.control.zoomSlider){
-    ng_MergeDef(def,{
-      Controls: { Map: { L:27 } }
-    });
-  }
-
   ng_MergeDef(def,{
     Data: {
       Frame: imgs.Frame.Inner
     },
     ModifyControls: {
-      ModeBar:{ R:-1,T:-1 },
-      SideBar: { R:-1,B:-1 },
-      ZoomSlider: { L:-1,T:-1,B:-1 },
-      Copyrights:{ R:30,W:320,T:-1,B:-1 },
-      Layers:{ R:30,W:320,T:-1,B:-1 }
+      Copyrights:{
+        R:30,W:320,T:-1,B:-1,
+        IgnoreModifyIfMissing: true
+      },
+      Layers:{
+        R:30,W:320,T:-1,B:-1,
+        IgnoreModifyIfMissing: true
+      },
+      ModeBar:{
+        R:-1,T:-1,
+        IgnoreModifyIfMissing: true
+      },
+      SideBar: {
+        R:-1,B:-1,
+        IgnoreModifyIfMissing: true
+      },
+      ZoomSlider: {
+        L:-1,T:-1,B:-1,
+        IgnoreModifyIfMissing: true,
+        Events: {
+          OnUpdated: bbbfly.morph.theme.frame.medium.controls._positionMap
+        }
+      }
     }
   });
 };
