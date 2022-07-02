@@ -337,11 +337,7 @@
         "bbbfly-cjs-controls": {
           "Packages": [
             "panel",
-            "map_copyrights",
-            "map_layers",
-            "map_modebar",
-            "map_sidebar",
-            "map_zoomslider"
+            "mapbox"
           ]
         },
         "bbbfly-cjs-morph": {
