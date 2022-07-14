@@ -44,7 +44,7 @@ bbbfly.morph.MapBox = function(def,ref,parent){
   });
 
   bbbfly.morph.misc.ApplyClassName(def,'MapBox');
-  return ngCreateControlAsType(def,'bbbfly.MapCrate',ref,parent);
+  return ngCreateControlAsType(def,'bbbfly.MapBox',ref,parent);
 };
 bbbfly.morph.MapSideBar = function(def,ref,parent){
   def = def || {};

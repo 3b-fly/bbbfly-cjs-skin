@@ -18,7 +18,7 @@ bbbfly.morph.map.sidebar = {};
 /**
  * @class
  * @type control
- * @extends bbbfly.MapCrate
+ * @extends bbbfly.MapBox
  * @implements bbbfly.Morph.Control
  *
  * @inpackage map
@@ -62,7 +62,7 @@ bbbfly.morph.MapBox = function(def,ref,parent){
   });
 
   bbbfly.morph.misc.ApplyClassName(def,'MapBox');
-  return ngCreateControlAsType(def,'bbbfly.MapCrate',ref,parent);
+  return ngCreateControlAsType(def,'bbbfly.MapBox',ref,parent);
 };
 
 /**

@@ -8,8 +8,7 @@
     "controls.js": "5.0.0",
     "bbbfly-cjs": "2.0.0",
     "bbbfly-cjs-controls": "2.0.0",
-    "bbbfly-cjs-morph": "1.0.1",
-    "bbbfly": "1.0.3"
+    "bbbfly-cjs-morph": "1.0.1"
   },
 
   "Packages": {
@@ -252,9 +251,6 @@
       "Libraries": {
         "controls.js": {
           "Packages": ["Controls.js"]
-        },
-        "bbbfly": {
-          "Packages": ["mapbox"]
         },
         "bbbfly-cjs-controls": {
           "Packages": ["panel","mapbox"]
