@@ -14,13 +14,13 @@ bbbfly.morph = bbbfly.morph || {};
 bbbfly.morph.core = {};
 
 /** @ignore */
-bbbfly.morph.core._getDefTheme = function(def){
-  if(!Object.isObject(def)){return null;}
+bbbfly.morph.core._getObjTheme = function(obj){
+  if(!Object.isObject(obj)){return null;}
 
   var themeId = this._DefaultTheme;
 
-  if(String.isString(def.Theme)){
-    themeId = def.Theme;
+  if(String.isString(obj.Theme)){
+    themeId = obj.Theme;
   }
 
   if(String.isString(themeId)){
@@ -39,10 +39,43 @@ bbbfly.morph.core._getDefTheme = function(def){
 };
 
 /** @ignore */
+bbbfly.morph.core._getObjStyle = function(obj){
+  if(!Object.isObject(obj)){return null;}
+
+  var styleId = this._DefaultStyle;
+
+  if(String.isString(obj.Style)){
+    styleId = obj.Style;
+  }
+
+  if(String.isString(styleId)){
+    var style = this._Styles[styleId];
+    if(style){return style;}
+  }
+  else if(this._StylesCnt === 1){
+    for(var styleId in this._Styles){
+      var style = this._Styles[styleId];
+      if(style && (style.ID === styleId)){
+        return style;
+      }
+    }
+  }
+  return null;
+};
+
+/** @ignore */
 bbbfly.morph.core._setDefaultTheme = function(themeId){
   if(!String.isString(themeId)){return false;}
 
   this._DefaultTheme = themeId;
+  return true;
+};
+
+/** @ignore */
+bbbfly.morph.core._setDefaultStyle = function(styleId){
+  if(!String.isString(styleId)){return false;}
+
+  this._DefaultStyle = styleId;
   return true;
 };
 
@@ -58,9 +91,26 @@ bbbfly.morph.core._registerTheme = function(theme){
 };
 
 /** @ignore */
+bbbfly.morph.core._registerStyle = function(style){
+  if(!Object.isObject(style) || !String.isString(style.ID)){
+    return false;
+  }
+
+  this._Styles[style.ID] = style;
+  this._StylesCnt += 1;
+  return true;
+};
+
+/** @ignore */
 bbbfly.morph.core._getTheme = function(themeId){
   var theme = this._Themes[themeId];
   return Object.isObject(theme) ? theme : null;
+};
+
+/** @ignore */
+bbbfly.morph.core._getStyle = function(styleId){
+  var style = this._Styles[styleId];
+  return Object.isObject(style) ? style : null;
 };
 
 /** @ignore */
@@ -76,19 +126,29 @@ bbbfly.morph.core._registerControlType = function(type,constr){
 bbbfly.morph.core._onInit = function(){
   for(var themeId in this._Themes){
     var theme = this._Themes[themeId];
-    if(!theme){continue;}
-
-    if(Function.isFunction(theme.OnInit)){
-      theme.OnInit();
-    }
-
-    var url = (ngDEBUG ? 'debug/' : 'release/');
-    if(String.isString(theme.ImgDir)){url += theme.ImgDir;}
-    if(String.isString(theme.Lib)){url = ngLibPath(theme.Lib,url);}
-
-    bbbfly.morph.core._recalcImagePaths(theme.Sources,url);
-    bbbfly.morph.core._recalcImageSources(theme.Images,theme.Sources);
+    bbbfly.morph.core._initDefinition(theme);
   }
+
+  for(var styleId in this._Styles){
+    var style = this._Styles[styleId];
+    bbbfly.morph.core._initDefinition(style);
+  }
+};
+
+/** @ignore */
+bbbfly.morph.core._initDefinition = function(definition){
+  if(!Object.isObject(definition)){return;}
+
+  if(Function.isFunction(definition.OnInit)){
+    definition.OnInit();
+  }
+
+  var url = (ngDEBUG ? 'debug/' : 'release/');
+  if(String.isString(definition.ImgDir)){url += definition.ImgDir;}
+  if(String.isString(definition.Lib)){url = ngLibPath(definition.Lib,url);}
+
+  bbbfly.morph.core._recalcImagePaths(definition.Sources,url);
+  bbbfly.morph.core._recalcImageSources(definition.Images,definition.Sources);
 };
 
 /** @ignore */
@@ -171,17 +231,47 @@ bbbfly.morph.core._recalcImageAnchor = function(image,anchor){
 /** @ignore */
 bbbfly.morph.core._onCreateControl = function(def){
   if(!Object.isObject(def) || !this._CtrlTypes[def.Type]){return;}
-  var theme = this.GetDefTheme(def);
 
-  if(theme){
-    if(Function.isFunction(theme.OnCreateControl)){
-      theme.OnCreateControl(def);
-    }
+  var theme = this.GetObjTheme(def);
+  var style = this.GetObjStyle(def);
 
-    ng_MergeVarReplace(def,{
-      Data: { Theme: theme ? theme.ID : null }
-    },true);
+  if(theme && Function.isFunction(theme.OnCreateControl)){
+    theme.OnCreateControl(def);
   }
+
+  if(style && Function.isFunction(style.OnCreateControl)){
+    style.OnCreateControl(def);
+  }
+
+  ng_MergeVarReplace(def,{
+    Data: {
+      Theme: theme ? theme.ID : null,
+      Style: style ? style.ID : null
+    }
+  },true);
+};
+
+/** @ignore */
+bbbfly.morph.core._onCreateObj = function(obj){
+  if(!Object.isObject(obj)){return;}
+
+  var theme = this.GetObjTheme(obj);
+  var style = this.GetObjStyle(obj);
+
+  if(theme && Function.isFunction(theme.OnCreateObj)){
+    theme.OnCreateObj(obj);
+  }
+
+  if(style && Function.isFunction(style.OnCreateObj)){
+    style.OnCreateObj(obj);
+  }
+
+  ng_MergeVarReplace(obj,{
+    Data: {
+      Theme: theme ? theme.ID : null,
+      Style: style ? style.ID : null
+    }
+  },true);
 };
 
 /**
@@ -202,6 +292,13 @@ bbbfly.Morph = {
   /** @private */
   _Themes: {},
 
+  /** @private */
+  _DefaultStyle: null,
+  /** @private */
+  _StylesCnt: 0,
+  /** @private */
+  _Styles: {},
+
   /**
    * @function
    * @name SetDefaultTheme
@@ -216,10 +313,22 @@ bbbfly.Morph = {
   SetDefaultTheme: bbbfly.morph.core._setDefaultTheme,
   /**
    * @function
+   * @name SetDefaultStyle
+   * @memberof bbbfly.Morph#
+   *
+   * @param {string} styleId
+   * @return {boolean} If default style ID was set
+   *
+   * @see {@link bbbfly.Morph#RegisterStyle|RegisterStyle()}
+   * @see {@link bbbfly.Morph#GetStyle|GetStyle()}
+   */
+  SetDefaultStyle: bbbfly.morph.core._setDefaultStyle,
+  /**
+   * @function
    * @name RegisterTheme
    * @memberof bbbfly.Morph#
    *
-   * @param {bbbfly.Morph.Theme} theme
+   * @param {bbbfly.Morph.Definition} theme
    * @return {boolean} If theme was registered
    *
    * @see {@link bbbfly.Morph#SetDefaultTheme|SetDefaultTheme()}
@@ -228,11 +337,23 @@ bbbfly.Morph = {
   RegisterTheme: bbbfly.morph.core._registerTheme,
   /**
    * @function
+   * @name RegisterStyle
+   * @memberof bbbfly.Morph#
+   *
+   * @param {bbbfly.Morph.Definition} style
+   * @return {boolean} If style was registered
+   *
+   * @see {@link bbbfly.Morph#SetDefaultStyle|SetDefaultStyle()}
+   * @see {@link bbbfly.Morph#GetStyle|GetStyle()}
+   */
+  RegisterStyle: bbbfly.morph.core._registerStyle,
+  /**
+   * @function
    * @name GetTheme
    * @memberof bbbfly.Morph#
    *
-   * @param {string} themeId - Theme {@link bbbfly.Morph.Theme|ID}
-   * @return {bbbfly.Morph.Theme|null}
+   * @param {string} themeId - Theme {@link bbbfly.Morph.Definition|ID}
+   * @return {bbbfly.Morph.Definition|null}
    *
    * @see {@link bbbfly.Morph#SetDefaultTheme|SetDefaultTheme()}
    * @see {@link bbbfly.Morph#RegisterTheme|RegisterTheme()}
@@ -240,25 +361,44 @@ bbbfly.Morph = {
   GetTheme: bbbfly.morph.core._getTheme,
   /**
    * @function
-   * @name GetDefTheme
+   * @name GetStyle
    * @memberof bbbfly.Morph#
    *
-   * @param {object} def - Control definition
-   * @return {bbbfly.Morph.Theme|null}
+   * @param {string} styleId - Style {@link bbbfly.Morph.Definition|ID}
+   * @return {bbbfly.Morph.Definition|null}
+   *
+   * @see {@link bbbfly.Morph#SetDefaultStyle|SetDefaultStyle()}
+   * @see {@link bbbfly.Morph#RegisterStyle|RegisterStyle()}
+   */
+  GetStyle: bbbfly.morph.core._getStyle,
+  /**
+   * @function
+   * @name GetObjTheme
+   * @memberof bbbfly.Morph#
+   *
+   * @param {bbbfly.Morph.Object} obj
+   * @return {bbbfly.Morph.Definition|null}
    *
    * @see {@link bbbfly.Morph#SetDefaultTheme|SetDefaultTheme()}
    * @see {@link bbbfly.Morph#RegisterTheme|RegisterTheme()}
    */
-  GetDefTheme: bbbfly.morph.core._getDefTheme,
+  GetObjTheme: bbbfly.morph.core._getObjTheme,
+  /**
+   * @function
+   * @name GetObjStyle
+   * @memberof bbbfly.Morph#
+   *
+   * @param {bbbfly.Morph.Object} obj
+   * @return {bbbfly.Morph.Definition|null}
+   *
+   * @see {@link bbbfly.Morph#SetDefaultStyle|SetDefaultStyle()}
+   * @see {@link bbbfly.Morph#RegisterStyle|RegisterStyle()}
+   */
+  GetObjStyle: bbbfly.morph.core._getObjStyle,
   /**
    * @function
    * @name RegisterControlType
    * @memberof bbbfly.Morph#
-   *
-   * @description
-   *   Modifies passed defintion to make control
-   *   implement {@link bbbfly.Morph.Control|Control} interface
-   *   and registers control type.
    *
    * @param {string} type - Control type
    * @param {function} constr - Control constructor
@@ -268,7 +408,9 @@ bbbfly.Morph = {
   /** @private */
   OnInit: bbbfly.morph.core._onInit,
   /** @private */
-  OnCreateControl: bbbfly.morph.core._onCreateControl
+  OnCreateControl: bbbfly.morph.core._onCreateControl,
+  /** @private */
+  OnCreateObj: bbbfly.morph.core._onCreateObj
 };
 
 ngUserControls['bbbfly_morph'] = {
@@ -283,31 +425,27 @@ ngUserControls['bbbfly_morph'] = {
 
 /**
  * @interface
- * @name Control
+ * @name Object
  * @memberOf bbbfly.Morph
  *
- * @property {string} [Theme=null] - Theme {@link bbbfly.Morph.Theme|ID}
- * @property {string} [ClassName=undefined]
+ * @property {string} [Theme=null] - Theme {@link bbbfly.Morph.Definition|ID}
+ * @property {string} [Style=null] - Style {@link bbbfly.Morph.Definition|ID}
+ */
+
+/**
+ * @interface
+ * @name Control
+ * @memberOf bbbfly.Morph
+ * @extends bbbfly.Morph.Object
  */
 
 /**
  * @interface Definition
- * @memberOf bbbfly.Morph.Control
- *
- * @description {@link bbbfly.Morph.Control|Control} definition
- *
- * @property {string} [Theme=undefined] - Theme {@link bbbfly.Morph.Theme|ID}
- */
-
-/**
- * @interface Theme
  * @memberOf bbbfly.Morph
- *
- * @description Theme definition
  *
  * @property {string} ID
  * @property {string} Lib - Library ID
- * @property {string} Prefix - Theme prefix - will be used in classNames
+ * @property {string} Prefix - will be used in classNames
  * @property {string} [ImgDir=undefined] - Image directory path
  *
  * @property {object} Sources - Image source file definitions
@@ -317,13 +455,21 @@ ngUserControls['bbbfly_morph'] = {
 /**
  * @event
  * @name OnInit
- * @memberof bbbfly.Morph.Theme#
+ * @memberof bbbfly.Morph.Definition#
  */
 
 /**
  * @event
  * @name OnCreateControl
- * @memberof bbbfly.Morph.Theme#
+ * @memberof bbbfly.Morph.Definition#
  *
- * @param {bbbfly.Morph.Control.Definition} def - Control definition
+ * @param {bbbfly.Morph.Object} def - Control definition
+ */
+
+/**
+ * @event
+ * @name OnCreateObj
+ * @memberof bbbfly.Morph.Definition#
+ *
+ * @param {bbbfly.Morph.Object} obj - Created object
  */

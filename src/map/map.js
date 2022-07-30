@@ -12,8 +12,6 @@ var bbbfly = bbbfly || {};
 bbbfly.morph = bbbfly.morph || {};
 /** @ignore */
 bbbfly.morph.map = bbbfly.morph.map || {};
-/** @ignore */
-bbbfly.morph.map.sidebar = {};
 
 /**
  * @class
@@ -134,7 +132,7 @@ bbbfly.morph.MapSideBar = function(def,ref,parent){
  */
 bbbfly.morph.MapZoomSlider = function(def,ref,parent){
   def = def || {};
-  var theme = bbbfly.Morph.GetDefTheme(def);
+  var theme = bbbfly.Morph.GetObjTheme(def);
 
   ng_MergeDef(def,{
     Controls: {

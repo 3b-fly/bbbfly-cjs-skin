@@ -8,7 +8,6 @@
 var bbbfly = bbbfly || {};
 bbbfly.morph = bbbfly.morph || {};
 bbbfly.morph.map = bbbfly.morph.map || {};
-bbbfly.morph.map.sidebar = {};
 bbbfly.morph.MapBox = function(def,ref,parent){
   def = def || {};
 
@@ -90,7 +89,7 @@ bbbfly.morph.MapSideBar = function(def,ref,parent){
 };
 bbbfly.morph.MapZoomSlider = function(def,ref,parent){
   def = def || {};
-  var theme = bbbfly.Morph.GetDefTheme(def);
+  var theme = bbbfly.Morph.GetObjTheme(def);
 
   ng_MergeDef(def,{
     Controls: {
