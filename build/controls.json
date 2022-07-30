@@ -367,6 +367,26 @@
           ]
         }
       }
+    },
+    "style-map": {
+      "DebugFiles": [
+        "debug/theme/frame/medium/images.js"
+      ],
+      "ReleaseFiles": [
+        "release/theme/frame/medium/images.js"
+      ],
+      "Libraries": {
+        "controls.js": {
+          "Packages": [
+            "Controls.js"
+          ]
+        },
+        "bbbfly-cjs": {
+          "Packages": [
+            "crossbrowser"
+          ]
+        }
+      }
     }
   }
 }
