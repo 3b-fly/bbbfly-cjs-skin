@@ -7,8 +7,7 @@
   "RequiredLibraries": {
     "controls.js": "5.0.0",
     "bbbfly-cjs": "2.0.0",
-    "bbbfly-cjs-controls": "2.0.0",
-    "bbbfly-cjs-morph": "1.0.1"
+    "bbbfly-cjs-controls": "2.0.0"
   },
 
   "Packages": {
@@ -253,7 +252,7 @@
           "Packages": ["Controls.js"]
         },
         "bbbfly-cjs-controls": {
-          "Packages": ["panel","mapbox"]
+          "Packages": ["panel","wrapper","mapbox"]
         },
         "bbbfly-cjs-morph": {
           "Packages": ["core","panel","wrapper","button","list","text"]

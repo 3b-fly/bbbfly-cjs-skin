@@ -136,7 +136,9 @@
  * @version 1.0.1
  *
  * @requires {@link https://controlsjs.com/|controls.js (5.0.0)}
- * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:mapbox|bbbfly-cjs-controls (1.0.0): mapbox}
+ * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:panel|bbbfly-cjs-controls (2.0.0): panel}
+ * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:wrapper|bbbfly-cjs-controls (2.0.0): wrapper}
+ * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:mapbox|bbbfly-cjs-controls (2.0.0): mapbox}
  * @requires {@link package:core|bbbfly-cjs-morph (1.0.1): core}
  * @requires {@link package:panel|bbbfly-cjs-morph (1.0.1): panel}
  * @requires {@link package:wrapper|bbbfly-cjs-morph (1.0.1): wrapper}
