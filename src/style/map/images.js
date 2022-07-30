@@ -45,7 +45,7 @@ bbbfly.morph.style.map.Images = {
   Sources: function(){
     return {
       tiny: {
-        Path: 'morph-tiny-mapicon.png?1',
+        Path: 'morph-map-icon_tiny.png?1',
         Anchors: {
           drop: { L:0, T:0 },
           cluster: { L:0, T:105 },
@@ -55,7 +55,7 @@ bbbfly.morph.style.map.Images = {
         }
       },
       small: {
-        Path: 'morph-small-mapicon.png?1',
+        Path: 'morph-map-icon_small.png?1',
         Anchors: {
           drop: { L:0, T:0 },
           cluster: { L:0, T:210 },
@@ -65,7 +65,7 @@ bbbfly.morph.style.map.Images = {
         }
       },
       medium: {
-        Path: 'morph-meium-mapicon.png?1',
+        Path: 'morph-map-icon_medium.png?1',
         Anchors: {
           drop: { L:0, T:0 },
           cluster: { L:0, T:315 },
@@ -75,7 +75,7 @@ bbbfly.morph.style.map.Images = {
         }
       },
       large: {
-        Path: 'morph-large-mapicon.png?1',
+        Path: 'morph-map-icon_large.png?1',
         Anchors: {
           drop: { L:0, T:0 },
           cluster: { L:0, T:420 },
