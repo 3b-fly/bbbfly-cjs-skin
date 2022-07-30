@@ -370,10 +370,10 @@
     },
     "style-map": {
       "DebugFiles": [
-        "debug/theme/frame/medium/images.js"
+        "debug/style/map/images.js"
       ],
       "ReleaseFiles": [
-        "release/theme/frame/medium/images.js"
+        "release/style/map/images.js"
       ],
       "Libraries": {
         "controls.js": {

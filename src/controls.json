@@ -280,10 +280,10 @@
     },
     "style-map": {
       "DebugFiles": [
-        "theme/frame/medium/images.js"
+        "style/map/images.js"
       ],
       "ReleaseFiles": [
-        "theme/frame/medium/images.js"
+        "style/map/images.js"
       ],
       "Libraries": {
         "controls.js": {
