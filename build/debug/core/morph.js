@@ -31,29 +31,6 @@ bbbfly.morph.core._getObjTheme = function(obj){
   }
   return null;
 };
-bbbfly.morph.core._getObjStyle = function(obj){
-  if(!Object.isObject(obj)){return null;}
-
-  var styleId = this._DefaultStyle;
-
-  if(String.isString(obj.MorphStyle)){
-    styleId = obj.MorphStyle;
-  }
-
-  if(String.isString(styleId)){
-    var style = this._Styles[styleId];
-    if(style){return style;}
-  }
-  else if(this._StylesCnt === 1){
-    for(var styleId in this._Styles){
-      var style = this._Styles[styleId];
-      if(style && (style.ID === styleId)){
-        return style;
-      }
-    }
-  }
-  return null;
-};
 bbbfly.morph.core._setDefaultTheme = function(themeId){
   if(!String.isString(themeId)){return false;}
 
@@ -75,22 +52,9 @@ bbbfly.morph.core._registerTheme = function(theme){
   this._ThemesCnt += 1;
   return true;
 };
-bbbfly.morph.core._registerStyle = function(style){
-  if(!Object.isObject(style) || !String.isString(style.ID)){
-    return false;
-  }
-
-  this._Styles[style.ID] = style;
-  this._StylesCnt += 1;
-  return true;
-};
 bbbfly.morph.core._getTheme = function(themeId){
   var theme = this._Themes[themeId];
   return Object.isObject(theme) ? theme : null;
-};
-bbbfly.morph.core._getStyle = function(styleId){
-  var style = this._Styles[styleId];
-  return Object.isObject(style) ? style : null;
 };
 bbbfly.morph.core._registerControlType = function(type,constr){
   if(!String.isString(type)){return;}
@@ -122,11 +86,6 @@ bbbfly.morph.core._onInit = function(){
   for(var themeId in this._Themes){
     var theme = this._Themes[themeId];
     bbbfly.morph.core._initDefinition(theme);
-  }
-
-  for(var styleId in this._Styles){
-    var style = this._Styles[styleId];
-    bbbfly.morph.core._initDefinition(style);
   }
 };
 bbbfly.morph.core._initDefinition = function(definition){
@@ -218,42 +177,26 @@ bbbfly.morph.core._onCreateControl = function(def){
   if(!this.ControlTypeRegistered(def)){return;}
 
   var theme = this.GetObjTheme(def);
-  var style = this.GetObjStyle(def);
 
   if(theme && Function.isFunction(theme.OnCreateControl)){
     theme.OnCreateControl(def);
   }
 
-  if(style && Function.isFunction(style.OnCreateControl)){
-    style.OnCreateControl(def);
-  }
-
   ng_MergeVarReplace(def,{
-    Data: {
-      MorphTheme: theme ? theme.ID : null,
-      MorphStyle: style ? style.ID : null
-    }
+    Data: { MorphTheme: theme ? theme.ID : null }
   },true);
 };
 bbbfly.morph.core._onCreateObject = function(obj){
   if(!this.ObjectTypeRegistered(obj)){return;}
 
   var theme = this.GetObjTheme(obj);
-  var style = this.GetObjStyle(obj);
 
   if(theme && Function.isFunction(theme.OnCreateObject)){
     theme.OnCreateObject(obj);
   }
 
-  if(style && Function.isFunction(style.OnCreateObject)){
-    style.OnCreateObject(obj);
-  }
-
   ng_MergeVarReplace(obj,{
-    Data: {
-      MorphTheme: theme ? theme.ID : null,
-      MorphStyle: style ? style.ID : null
-    }
+    Data: { MorphTheme: theme ? theme.ID : null }
   },true);
 };
 bbbfly.Morph = {
@@ -266,11 +209,8 @@ bbbfly.Morph = {
   _StylesCnt: 0,
   _Styles: {},
   SetDefaultTheme: bbbfly.morph.core._setDefaultTheme,
-  SetDefaultStyle: bbbfly.morph.core._setDefaultStyle,
   RegisterTheme: bbbfly.morph.core._registerTheme,
-  RegisterStyle: bbbfly.morph.core._registerStyle,
   GetTheme: bbbfly.morph.core._getTheme,
-  GetStyle: bbbfly.morph.core._getStyle,
   GetObjTheme: bbbfly.morph.core._getObjTheme,
   GetObjStyle: bbbfly.morph.core._getObjStyle,
   RegisterControlType: bbbfly.morph.core._registerControlType,
