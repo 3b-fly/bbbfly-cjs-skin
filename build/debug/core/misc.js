@@ -14,7 +14,7 @@ bbbfly.morph.misc._getClassName = function(suffix){
   if(!String.isString(cn)){return '';}
   if(String.isString(suffix)){cn += suffix;}
 
-  var theme = bbbfly.Morph.GetTheme(this.Theme);
+  var theme = bbbfly.Morph.GetTheme(this.MorphTheme);
   if(theme && String.isString(theme.Prefix)){cn = theme.Prefix+cn;}
 
   return cn;

@@ -22,7 +22,7 @@ bbbfly.morph.PopupMenu = function(def,ref,parent){
     Data: {
       SubMenuDef: {
         Type: 'bbbfly.morph.PopupMenu',
-        Theme: def.Theme
+        MorphTheme: def.MorphTheme
       }
     },
     OverrideEvents: {

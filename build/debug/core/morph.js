@@ -13,8 +13,8 @@ bbbfly.morph.core._getObjTheme = function(obj){
 
   var themeId = this._DefaultTheme;
 
-  if(String.isString(obj.Theme)){
-    themeId = obj.Theme;
+  if(String.isString(obj.MorphTheme)){
+    themeId = obj.MorphTheme;
   }
 
   if(String.isString(themeId)){
@@ -36,8 +36,8 @@ bbbfly.morph.core._getObjStyle = function(obj){
 
   var styleId = this._DefaultStyle;
 
-  if(String.isString(obj.Style)){
-    styleId = obj.Style;
+  if(String.isString(obj.MorphStyle)){
+    styleId = obj.MorphStyle;
   }
 
   if(String.isString(styleId)){
@@ -230,8 +230,8 @@ bbbfly.morph.core._onCreateControl = function(def){
 
   ng_MergeVarReplace(def,{
     Data: {
-      Theme: theme ? theme.ID : null,
-      Style: style ? style.ID : null
+      MorphTheme: theme ? theme.ID : null,
+      MorphStyle: style ? style.ID : null
     }
   },true);
 };
@@ -240,7 +240,7 @@ bbbfly.morph.core._onCreateObject = function(obj){
 
   var theme = this.GetObjTheme(obj);
   var style = this.GetObjStyle(obj);
-console.info('OBJ',style); //TODO
+
   if(theme && Function.isFunction(theme.OnCreateObject)){
     theme.OnCreateObject(obj);
   }
@@ -251,8 +251,8 @@ console.info('OBJ',style); //TODO
 
   ng_MergeVarReplace(obj,{
     Data: {
-      Theme: theme ? theme.ID : null,
-      Style: style ? style.ID : null
+      MorphTheme: theme ? theme.ID : null,
+      MorphStyle: style ? style.ID : null
     }
   },true);
 };

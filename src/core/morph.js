@@ -19,8 +19,8 @@ bbbfly.morph.core._getObjTheme = function(obj){
 
   var themeId = this._DefaultTheme;
 
-  if(String.isString(obj.Theme)){
-    themeId = obj.Theme;
+  if(String.isString(obj.MorphTheme)){
+    themeId = obj.MorphTheme;
   }
 
   if(String.isString(themeId)){
@@ -44,8 +44,8 @@ bbbfly.morph.core._getObjStyle = function(obj){
 
   var styleId = this._DefaultStyle;
 
-  if(String.isString(obj.Style)){
-    styleId = obj.Style;
+  if(String.isString(obj.MorphStyle)){
+    styleId = obj.MorphStyle;
   }
 
   if(String.isString(styleId)){
@@ -270,8 +270,8 @@ bbbfly.morph.core._onCreateControl = function(def){
 
   ng_MergeVarReplace(def,{
     Data: {
-      Theme: theme ? theme.ID : null,
-      Style: style ? style.ID : null
+      MorphTheme: theme ? theme.ID : null,
+      MorphStyle: style ? style.ID : null
     }
   },true);
 };
@@ -293,8 +293,8 @@ bbbfly.morph.core._onCreateObject = function(obj){
 
   ng_MergeVarReplace(obj,{
     Data: {
-      Theme: theme ? theme.ID : null,
-      Style: style ? style.ID : null
+      MorphTheme: theme ? theme.ID : null,
+      MorphStyle: style ? style.ID : null
     }
   },true);
 };
@@ -483,8 +483,8 @@ ngUserControls['bbbfly_morph'] = {
  * @name Object
  * @memberOf bbbfly.Morph
  *
- * @property {string} [Theme=null] - Theme {@link bbbfly.Morph.Definition|ID}
- * @property {string} [Style=null] - Style {@link bbbfly.Morph.Definition|ID}
+ * @property {string} [MorphTheme=null] - Theme {@link bbbfly.Morph.Definition|ID}
+ * @property {string} [MorphStyle=null] - Style {@link bbbfly.Morph.Definition|ID}
  */
 
 /**

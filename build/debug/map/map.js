@@ -109,7 +109,7 @@ bbbfly.morph.MapZoomSlider = function(def,ref,parent){
         Controls: {
           Rail: {
             Type: 'bbbfly.Frame',
-            Data: { Theme: theme ? theme.ID : null }
+            Data: { MorphTheme: theme ? theme.ID : null }
           },
           Handle: {
             Type: 'bbbfly.morph.InverseButton'
