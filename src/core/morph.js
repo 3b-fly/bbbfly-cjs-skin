@@ -123,6 +123,31 @@ bbbfly.morph.core._registerControlType = function(type,constr){
 };
 
 /** @ignore */
+bbbfly.morph.core._registerObjectType = function(type,constr){
+  if(!String.isString(type)){return;}
+  if(!Function.isFunction(constr)){return;}
+
+  this._ObjTypes[type] = constr;
+};
+
+/** @ignore */
+bbbfly.morph.core._controlTypeRegistered = function(def){
+  return (Object.isObject(def) && this._CtrlTypes[def.Type]);
+};
+
+/** @ignore */
+bbbfly.morph.core._objectTypeRegistered = function(obj){
+  if(Object.isObject(obj)){
+    for(var type in this._ObjTypes){
+      if(obj instanceof this._ObjTypes[type]){
+        return true;
+      }
+    }
+  }
+  return false;
+};
+
+/** @ignore */
 bbbfly.morph.core._onInit = function(){
   for(var themeId in this._Themes){
     var theme = this._Themes[themeId];
@@ -230,7 +255,7 @@ bbbfly.morph.core._recalcImageAnchor = function(image,anchor){
 
 /** @ignore */
 bbbfly.morph.core._onCreateControl = function(def){
-  if(!Object.isObject(def) || !this._CtrlTypes[def.Type]){return;}
+  if(!this.ControlTypeRegistered(def)){return;}
 
   var theme = this.GetObjTheme(def);
   var style = this.GetObjStyle(def);
@@ -252,18 +277,18 @@ bbbfly.morph.core._onCreateControl = function(def){
 };
 
 /** @ignore */
-bbbfly.morph.core._onCreateObj = function(obj){
-  if(!Object.isObject(obj)){return;}
+bbbfly.morph.core._onCreateObject = function(obj){
+  if(!this.ObjectTypeRegistered(obj)){return;}
 
   var theme = this.GetObjTheme(obj);
   var style = this.GetObjStyle(obj);
 
-  if(theme && Function.isFunction(theme.OnCreateObj)){
-    theme.OnCreateObj(obj);
+  if(theme && Function.isFunction(theme.OnCreateObject)){
+    theme.OnCreateObject(obj);
   }
 
-  if(style && Function.isFunction(style.OnCreateObj)){
-    style.OnCreateObj(obj);
+  if(style && Function.isFunction(style.OnCreateObject)){
+    style.OnCreateObject(obj);
   }
 
   ng_MergeVarReplace(obj,{
@@ -285,6 +310,9 @@ bbbfly.morph.core._onCreateObj = function(obj){
 bbbfly.Morph = {
   /** @private */
   _CtrlTypes: {},
+  /** @private */
+  _ObjTypes: {},
+
   /** @private */
   _DefaultTheme: null,
   /** @private */
@@ -404,13 +432,40 @@ bbbfly.Morph = {
    * @param {function} constr - Control constructor
    */
   RegisterControlType: bbbfly.morph.core._registerControlType,
+  /**
+   * @function
+   * @name RegisterObjectType
+   * @memberof bbbfly.Morph#
+   *
+   * @param {string} type - Object type
+   * @param {function} constr - Object constructor
+   */
+  RegisterObjectType: bbbfly.morph.core._registerObjectType,
+  /**
+   * @function
+   * @name ControlTypeRegistered
+   * @memberof bbbfly.Morph#
+   *
+   * @param {object} def - Control definition
+   * @return {boolean}
+   */
+  ControlTypeRegistered: bbbfly.morph.core._controlTypeRegistered,
+  /**
+   * @function
+   * @name ObjectTypeRegistered
+   * @memberof bbbfly.Morph#
+   *
+   * @param {object} obj - Object
+   * @return {boolean}
+   */
+  ObjectTypeRegistered: bbbfly.morph.core._objectTypeRegistered,
 
   /** @private */
   OnInit: bbbfly.morph.core._onInit,
   /** @private */
   OnCreateControl: bbbfly.morph.core._onCreateControl,
   /** @private */
-  OnCreateObj: bbbfly.morph.core._onCreateObj
+  OnCreateObject: bbbfly.morph.core._onCreateObject
 };
 
 ngUserControls['bbbfly_morph'] = {
@@ -468,7 +523,7 @@ ngUserControls['bbbfly_morph'] = {
 
 /**
  * @event
- * @name OnCreateObj
+ * @name OnCreateObject
  * @memberof bbbfly.Morph.Definition#
  *
  * @param {bbbfly.Morph.Object} obj - Created object
