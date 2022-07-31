@@ -379,8 +379,8 @@
     },
     "theme-frame-medium": {
       "DebugFiles": [
-        "debug/theme/frame/medium/images.js",
-        "debug/theme/frame/medium/controls.js"
+        "debug/theme/controls/frame/medium/images.js",
+        "debug/theme/controls/frame/medium/controls.js"
       ],
       "ReleaseFiles": [
         "release/theme/frame/medium/images.js",
@@ -399,12 +399,12 @@
         }
       }
     },
-    "style-map": {
+    "theme-map-drawing": {
       "DebugFiles": [
-        "debug/style/map/images.js"
+        "debug/theme/map/drawing/images.js"
       ],
       "ReleaseFiles": [
-        "release/style/map/images.js"
+        "release/theme/map/drawing/images.js"
       ],
       "Libraries": {
         "controls.js": {

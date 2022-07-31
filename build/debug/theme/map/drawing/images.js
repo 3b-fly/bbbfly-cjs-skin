@@ -7,10 +7,11 @@
 
 var bbbfly = bbbfly || {};
 bbbfly.morph = bbbfly.morph || {};
-bbbfly.morph.style = bbbfly.morph.style || {};
-bbbfly.morph.style.map = bbbfly.morph.style.map || {};
-bbbfly.morph.style.map.images = {};
-bbbfly.morph.style.map.images._icons = function(def){
+bbbfly.morph.theme = bbbfly.morph.theme || {};
+bbbfly.morph.theme.map = bbbfly.morph.theme.map || {};
+bbbfly.morph.theme.map.drawing = bbbfly.morph.theme.map.drawing || {};
+bbbfly.morph.theme.map.drawing.images = {};
+bbbfly.morph.theme.map.drawing.images._icons = function(def){
   for(var size in def){
     var imgs = def[size];
 
@@ -21,7 +22,7 @@ bbbfly.morph.style.map.images._icons = function(def){
   }
   return def;
 };
-bbbfly.morph.style.map.Images = {
+bbbfly.morph.theme.map.drawing.Images = {
 
   Sources: function(){
     return {
@@ -160,5 +161,5 @@ bbbfly.morph.style.map.Images = {
       }
     });
   },
-  Icons: bbbfly.morph.style.map.images._icons
+  Icons: bbbfly.morph.theme.map.drawing.images._icons
 };

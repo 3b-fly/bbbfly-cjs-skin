@@ -3,7 +3,7 @@
  * @author Jan Nejedly [support@3b-fly.eu]
  * @copyright Jan Nejedly
  *
- * @inpackage style-map
+ * @inpackage theme-map-drawing
  */
 
 /** @ignore */
@@ -11,15 +11,17 @@ var bbbfly = bbbfly || {};
 /** @ignore */
 bbbfly.morph = bbbfly.morph || {};
 /** @ignore */
-bbbfly.morph.style = bbbfly.morph.style || {};
+bbbfly.morph.theme = bbbfly.morph.theme || {};
 /** @ignore */
-bbbfly.morph.style.map = bbbfly.morph.style.map || {};
+bbbfly.morph.theme.map = bbbfly.morph.theme.map || {};
+/** @ignore */
+bbbfly.morph.theme.map.drawing = bbbfly.morph.theme.map.drawing || {};
 
 /** @ignore */
-bbbfly.morph.style.map.images = {};
+bbbfly.morph.theme.map.drawing.images = {};
 
 /** @ignore */
-bbbfly.morph.style.map.images._icons = function(def){
+bbbfly.morph.theme.map.drawing.images._icons = function(def){
   for(var size in def){
     var imgs = def[size];
 
@@ -35,12 +37,12 @@ bbbfly.morph.style.map.images._icons = function(def){
  * @class
  * @hideconstructor
  *
- * @inpackage theme-frame-medium
+ * @inpackage theme-map-drawing
  *
  * @property {object} Sources - Returns image sources definition
  * @property {function} Images - Returns images definition
  */
-bbbfly.morph.style.map.Images = {
+bbbfly.morph.theme.map.drawing.Images = {
 
   Sources: function(){
     return {
@@ -181,5 +183,5 @@ bbbfly.morph.style.map.Images = {
   },
 
   /** @private */
-  Icons: bbbfly.morph.style.map.images._icons
+  Icons: bbbfly.morph.theme.map.drawing.images._icons
 };

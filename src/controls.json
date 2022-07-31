@@ -284,8 +284,8 @@
 
     "theme-frame-medium": {
       "DebugFiles": [
-        "theme/frame/medium/images.js",
-        "theme/frame/medium/controls.js"
+        "theme/controls/frame/medium/images.js",
+        "theme/controls/frame/medium/controls.js"
       ],
       "ReleaseFiles": [
         "theme/frame/medium/images.js",
@@ -300,12 +300,12 @@
         }
       }
     },
-    "style-map": {
+    "theme-map-drawing": {
       "DebugFiles": [
-        "style/map/images.js"
+        "theme/map/drawing/images.js"
       ],
       "ReleaseFiles": [
-        "style/map/images.js"
+        "theme/map/drawing/images.js"
       ],
       "Libraries": {
         "controls.js": {
