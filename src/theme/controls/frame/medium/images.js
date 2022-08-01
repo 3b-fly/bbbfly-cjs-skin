@@ -16,7 +16,6 @@ bbbfly.morph.theme = bbbfly.morph.theme || {};
 bbbfly.morph.theme.frame = bbbfly.morph.theme.frame || {};
 /** @ignore */
 bbbfly.morph.theme.frame.medium = bbbfly.morph.theme.frame.medium || {};
-
 /** @ignore */
 bbbfly.morph.theme.frame.medium.images = {};
 

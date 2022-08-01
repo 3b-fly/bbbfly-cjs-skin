@@ -401,10 +401,12 @@
     },
     "theme-map-drawing": {
       "DebugFiles": [
-        "debug/theme/map/drawing/images.js"
+        "debug/theme/map/drawing/images.js",
+        "debug/theme/map/drawing/objects.js"
       ],
       "ReleaseFiles": [
-        "release/theme/map/drawing/images.js"
+        "release/theme/map/drawing/images.js",
+        "release/theme/map/drawing/objects.js"
       ],
       "Libraries": {
         "controls.js": {

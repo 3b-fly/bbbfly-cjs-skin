@@ -302,10 +302,12 @@
     },
     "theme-map-drawing": {
       "DebugFiles": [
-        "theme/map/drawing/images.js"
+        "theme/map/drawing/images.js",
+        "theme/map/drawing/objects.js"
       ],
       "ReleaseFiles": [
-        "theme/map/drawing/images.js"
+        "theme/map/drawing/images.js",
+        "theme/map/drawing/objects.js"
       ],
       "Libraries": {
         "controls.js": {
