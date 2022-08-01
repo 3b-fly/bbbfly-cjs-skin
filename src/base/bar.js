@@ -24,7 +24,7 @@ bbbfly.morph = bbbfly.morph || {};
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentInputBar = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyClassName(def,'ContentInputBar');
+  bbbfly.morph.misc.ApplyControlClassName(def,'ContentInputBar');
   return ngCreateControlAsType(def,'bbbfly.Bar',ref,parent);
 };
 

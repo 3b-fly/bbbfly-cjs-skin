@@ -27,7 +27,7 @@ bbbfly.morph.progress = {};
 bbbfly.morph.ProgressRing = function(def,ref,parent){
   def = def || {};
 
-  bbbfly.morph.misc.ApplyClassName(def,'ProgressRing');
+  bbbfly.morph.misc.ApplyControlClassName(def,'ProgressRing');
   return ngCreateControlAsType(def,'bbbfly.ProgressRing',ref,parent);
 };
 
@@ -45,7 +45,7 @@ bbbfly.morph.ProgressRing = function(def,ref,parent){
 bbbfly.morph.ProgressBar = function(def,ref,parent){
   def = def || {};
 
-  bbbfly.morph.misc.ApplyClassName(def,'ProgressBar');
+  bbbfly.morph.misc.ApplyControlClassName(def,'ProgressBar');
   return ngCreateControlAsType(def,'bbbfly.ProgressBar',ref,parent);
 };
 

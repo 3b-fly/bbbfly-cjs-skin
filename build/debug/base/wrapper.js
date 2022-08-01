@@ -8,7 +8,7 @@
 var bbbfly = bbbfly || {};
 bbbfly.morph = bbbfly.morph || {};
 bbbfly.morph.ContentWrapper = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyClassName(def,'ContentWrapper');
+  bbbfly.morph.misc.ApplyControlClassName(def,'ContentWrapper');
   return ngCreateControlAsType(def,'bbbfly.Wrapper',ref,parent);
 };
 ngUserControls = ngUserControls || new Array();

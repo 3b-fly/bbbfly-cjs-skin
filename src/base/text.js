@@ -24,7 +24,7 @@ bbbfly.morph = bbbfly.morph || {};
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.Text = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyClassName(def,'Text');
+  bbbfly.morph.misc.ApplyControlClassName(def,'Text');
   return ngCreateControlAsType(def,'bbbfly.Text',ref,parent);
 };
 
@@ -50,7 +50,7 @@ bbbfly.morph.Label = function(def,ref,parent){
     Data: { Selectable: false }
   });
 
-  bbbfly.morph.misc.ApplyClassName(def,'Label');
+  bbbfly.morph.misc.ApplyControlClassName(def,'Label');
   return ngCreateControlAsType(def,'bbbfly.Text',ref,parent);
 };
 
@@ -79,7 +79,7 @@ bbbfly.morph.Title = function(def,ref,parent){
     }
   });
 
-  bbbfly.morph.misc.ApplyClassName(def,'Title');
+  bbbfly.morph.misc.ApplyControlClassName(def,'Title');
   return ngCreateControlAsType(def,'bbbfly.Text',ref,parent);
 };
 

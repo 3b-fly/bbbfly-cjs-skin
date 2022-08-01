@@ -63,7 +63,7 @@ bbbfly.morph.FileUploader = function(def,ref,parent){
     }
   });
 
-  bbbfly.morph.misc.ApplyClassName(def,'FileUploader');
+  bbbfly.morph.misc.ApplyControlClassName(def,'FileUploader');
   return ngCreateControlAsType(def,'bbbfly.FileUploader',ref,parent);
 };
 ngUserControls = ngUserControls || new Array();

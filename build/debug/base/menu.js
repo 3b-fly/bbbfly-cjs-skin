@@ -30,7 +30,7 @@ bbbfly.morph.PopupMenu = function(def,ref,parent){
     }
   });
 
-  bbbfly.morph.ngmisc.ApplyClassName(def,'PopupMenu');
+  bbbfly.morph.ngmisc.ApplyControlClassName(def,'PopupMenu');
   return ngCreateControlAsType(def,'bbbfly.Menu',ref,parent);
 };
 ngUserControls = ngUserControls || new Array();

@@ -44,7 +44,7 @@ bbbfly.morph.line._getFrame = function(){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentPanel = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyClassName(def,'ContentPanel');
+  bbbfly.morph.misc.ApplyControlClassName(def,'ContentPanel');
   return ngCreateControlAsType(def,'bbbfly.Panel',ref,parent);
 };
 
@@ -61,7 +61,7 @@ bbbfly.morph.ContentPanel = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentFrame = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyClassName(def,'ContentFrame');
+  bbbfly.morph.misc.ApplyControlClassName(def,'ContentFrame');
   return ngCreateControlAsType(def,'bbbfly.Frame',ref,parent);
 };
 
@@ -78,7 +78,7 @@ bbbfly.morph.ContentFrame = function(def,ref,parent){
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.InputFrame = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyClassName(def,'InputFrame');
+  bbbfly.morph.misc.ApplyControlClassName(def,'InputFrame');
   return ngCreateControlAsType(def,'bbbfly.Frame',ref,parent);
 };
 
@@ -102,7 +102,7 @@ bbbfly.morph.ContentSeparator = function(def,ref,parent){
     Methods: { GetFrame: bbbfly.morph.line._getFrame }
   });
 
-  bbbfly.morph.misc.ApplyClassName(def,'ContentSeparator');
+  bbbfly.morph.misc.ApplyControlClassName(def,'ContentSeparator');
   return ngCreateControlAsType(def,'bbbfly.Line',ref,parent);
 };
 

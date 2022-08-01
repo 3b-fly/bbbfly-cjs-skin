@@ -59,7 +59,7 @@ bbbfly.morph.MapBox = function(def,ref,parent){
     }
   });
 
-  bbbfly.morph.misc.ApplyClassName(def,'MapBox');
+  bbbfly.morph.misc.ApplyControlClassName(def,'MapBox');
   return ngCreateControlAsType(def,'bbbfly.MapBox',ref,parent);
 };
 
@@ -163,7 +163,7 @@ bbbfly.morph.MapZoomSlider = function(def,ref,parent){
   });
 
   var rail = def.Controls.Slider.Controls.Rail;
-  bbbfly.morph.misc.ApplyClassName(rail,'SliderRail');
+  bbbfly.morph.misc.ApplyControlClassName(rail,'SliderRail');
   return ngCreateControlAsType(def,'bbbfly.MapZoomSlider',ref,parent);
 };
 

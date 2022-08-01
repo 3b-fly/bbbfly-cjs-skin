@@ -19,7 +19,7 @@ bbbfly.morph.misc._getClassName = function(suffix){
 
   return cn;
 };
-bbbfly.morph.misc.ApplyClassName = function(def,className){
+bbbfly.morph.misc.ApplyControlClassName = function(def,className){
   if(!Object.isObject(def)){return;}
 
   ng_MergeDef(def,{

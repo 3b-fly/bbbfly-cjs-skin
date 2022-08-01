@@ -26,7 +26,7 @@ bbbfly.morph = bbbfly.morph || {};
 bbbfly.morph.ContentGrid = function(def,ref,parent){
   def = def || {};
 
-  bbbfly.morph.misc.ApplyClassName(def,'ContentGrid');
+  bbbfly.morph.misc.ApplyControlClassName(def,'ContentGrid');
   return ngCreateControlAsType(def,'bbbfly.Grid',ref,parent);
 };
 

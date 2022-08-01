@@ -24,9 +24,9 @@ bbbfly.morph.ngmisc._updateClassName = function(recursive){
 
   return this.Update.callParent(recursive);
 };
-bbbfly.morph.ngmisc.ApplyClassName = function(def,className){
+bbbfly.morph.ngmisc.ApplyControlClassName = function(def,className){
   if(!Object.isObject(def)){return;}
-  bbbfly.morph.misc.ApplyClassName(def,className);
+  bbbfly.morph.misc.ApplyControlClassName(def,className);
 
   ng_MergeDef(def,{
     className: className,

@@ -24,7 +24,7 @@ bbbfly.morph = bbbfly.morph || {};
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
 bbbfly.morph.ContentWrapper = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyClassName(def,'ContentWrapper');
+  bbbfly.morph.misc.ApplyControlClassName(def,'ContentWrapper');
   return ngCreateControlAsType(def,'bbbfly.Wrapper',ref,parent);
 };
 

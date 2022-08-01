@@ -8,7 +8,7 @@
 var bbbfly = bbbfly || {};
 bbbfly.morph = bbbfly.morph || {};
 bbbfly.morph.ContentInputBar = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyClassName(def,'ContentInputBar');
+  bbbfly.morph.misc.ApplyControlClassName(def,'ContentInputBar');
   return ngCreateControlAsType(def,'bbbfly.Bar',ref,parent);
 };
 ngUserControls = ngUserControls || new Array();

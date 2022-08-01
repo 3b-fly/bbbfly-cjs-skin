@@ -76,7 +76,7 @@ bbbfly.morph.ContentList = function(def,ref,parent){
     }
   });
 
-  bbbfly.morph.ngmisc.ApplyClassName(def,'ContentList');
+  bbbfly.morph.ngmisc.ApplyControlClassName(def,'ContentList');
   return ngCreateControlAsType(def,'bbbfly.List',ref,parent);
 };
 

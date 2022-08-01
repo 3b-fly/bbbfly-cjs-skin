@@ -32,13 +32,13 @@ bbbfly.morph.misc._getClassName = function(suffix){
 
 /**
  * @function
- * @name ApplyClassName
+ * @name ApplyControlClassName
  * @memberOf bbbfly.morph.misc
  *
  * @param {object} def
  * @param {string} className
  */
-bbbfly.morph.misc.ApplyClassName = function(def,className){
+bbbfly.morph.misc.ApplyControlClassName = function(def,className){
   if(!Object.isObject(def)){return;}
 
   ng_MergeDef(def,{

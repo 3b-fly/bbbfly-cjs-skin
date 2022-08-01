@@ -47,7 +47,7 @@ bbbfly.morph.TextHint = function(def,ref,parent){
     }
   }
 
-  bbbfly.morph.ngmisc.ApplyClassName(def,'TextHint');
+  bbbfly.morph.ngmisc.ApplyControlClassName(def,'TextHint');
   return ngCreateControlAsType(def,'bbbfly.TextHint',ref,parent);
 };
 bbbfly.morph.TextHint.type = {

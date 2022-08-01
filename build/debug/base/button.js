@@ -18,7 +18,7 @@ bbbfly.morph.Button = function(def,ref,parent,className){
     }
   });
 
-  bbbfly.morph.misc.ApplyClassName(def,(className || 'Button'));
+  bbbfly.morph.misc.ApplyControlClassName(def,(className || 'Button'));
   return ngCreateControlAsType(def,'bbbfly.Button',ref,parent);
 };
 bbbfly.morph.PanelButton = function(def,ref,parent){
