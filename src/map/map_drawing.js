@@ -38,6 +38,7 @@ bbbfly.morph.map.drawing.Icon = bbbfly.object.Extend(
     if(Object.isObject(options)){this.MorphOptions = options;}
     if(String.isString(theme)){this.MorphTheme = theme;}
 
+    bbbfly.morph.misc.ApplyObjectClassName(this,'Icon');
     bbbfly.Morph.OnCreateObject(this);
   }
 );
@@ -65,6 +66,7 @@ bbbfly.morph.map.drawing.Geometry = bbbfly.object.Extend(
     if(Object.isObject(options)){this.MorphOptions = options;}
     if(String.isString(theme)){this.MorphTheme = theme;}
 
+    bbbfly.morph.misc.ApplyObjectClassName(this,'Geometry');
     bbbfly.Morph.OnCreateObject(this);
   }
 );

@@ -27,3 +27,9 @@ bbbfly.morph.misc.ApplyControlClassName = function(def,className){
     Methods: { GetClassName: bbbfly.morph.misc._getClassName }
   });
 };
+bbbfly.morph.misc.ApplyObjectClassName = function(obj,className){
+  if(!Object.isObject(obj)){return;}
+
+  obj.ClassName = className;
+  obj.GetClassName = bbbfly.morph.misc._getClassName;
+};
