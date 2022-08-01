@@ -30,6 +30,7 @@ bbbfly.morph.map.drawing = bbbfly.morph.map.drawing || {};
  */
 bbbfly.morph.map.drawing.Icon = bbbfly.object.Extend(
   bbbfly.MapDrawingItem.IconStyle,function(options,theme){
+    bbbfly.MapDrawingItem.IconStyle.call(this);
 
     this.MorphOptions = null;
     this.MorphTheme = null;
@@ -37,7 +38,6 @@ bbbfly.morph.map.drawing.Icon = bbbfly.object.Extend(
     if(Object.isObject(options)){this.MorphOptions = options;}
     if(String.isString(theme)){this.MorphTheme = theme;}
 
-    bbbfly.MapDrawingItem.IconStyle.call(this);
     bbbfly.Morph.OnCreateObject(this);
   }
 );
@@ -57,6 +57,7 @@ bbbfly.morph.map.drawing.Icon = bbbfly.object.Extend(
  */
 bbbfly.morph.map.drawing.Geometry = bbbfly.object.Extend(
   bbbfly.MapDrawingItem.GeometryStyle,function(options,theme){
+    bbbfly.MapDrawingItem.GeometryStyle.call(this);
 
     this.MorphOptions = null;
     this.MorphTheme = null;
@@ -64,7 +65,6 @@ bbbfly.morph.map.drawing.Geometry = bbbfly.object.Extend(
     if(Object.isObject(options)){this.MorphOptions = options;}
     if(String.isString(theme)){this.MorphTheme = theme;}
 
-    bbbfly.MapDrawingItem.GeometryStyle.call(this);
     bbbfly.Morph.OnCreateObject(this);
   }
 );
