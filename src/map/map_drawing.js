@@ -23,14 +23,20 @@ bbbfly.morph.map.drawing.icon._getClassName = function(){
   var opts = this.MorphOptions;
 
   if(Object.isObject(opts)){
-    if(String.isString(opts.Color)){
+    if((String.isString(opts.Color) && (opts.Color !== ''))){
       cn += ' '+this.GetClassName.callParent('_'+opts.Color);
     }
-    if(String.isString(opts.Size)){
-      cn += ' '+this.GetClassName.callParent('_'+opts.Size);
+
+    var suffix = '';
+    if((String.isString(opts.Size) && (opts.Size !== ''))){
+      suffix += '_'+opts.Size;
     }
-    if(String.isString(opts.Shape)){
-      cn += ' '+this.GetClassName.callParent('_'+opts.Shape);
+    if((String.isString(opts.Shape) && (opts.Shape !== ''))){
+      suffix += '_'+opts.Shape;
+    }
+
+    if(suffix){
+      cn += ' '+this.GetClassName.callParent(suffix);
     }
   }
 
@@ -60,7 +66,7 @@ bbbfly.morph.map.drawing.Icon = bbbfly.object.Extend(
     if(Object.isObject(options)){this.MorphOptions = options;}
     if(String.isString(theme)){this.MorphTheme = theme;}
 
-    bbbfly.morph.misc.ApplyObjectClassName(this,'Icon');
+    bbbfly.morph.misc.ApplyObjectClassName(this,'MapIcon');
 
     ng_OverrideMethod(this,'GetClassName',
       bbbfly.morph.map.drawing.icon._getClassName
@@ -93,7 +99,7 @@ bbbfly.morph.map.drawing.Geometry = bbbfly.object.Extend(
     if(Object.isObject(options)){this.MorphOptions = options;}
     if(String.isString(theme)){this.MorphTheme = theme;}
 
-    bbbfly.morph.misc.ApplyObjectClassName(this,'Geometry');
+    bbbfly.morph.misc.ApplyObjectClassName(this,'MapGeometry');
     bbbfly.Morph.OnCreateObject(this);
   }
 );
