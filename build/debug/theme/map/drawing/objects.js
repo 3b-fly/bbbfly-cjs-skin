@@ -22,13 +22,11 @@ bbbfly.morph.theme.map.drawing.objects.Icon = function(obj,colors,imgs){
   if(!Object.isObject(opts)){return;}
 
   var images = [];
-  var className = 'bbbfly_mapIcon';
 
   var colorName = opts.Color;
 
   if(String.isString(colorName)){
     var colorDef = colors[colorName];
-    className += ' bbbfly_mapIcon_'+colorName;
 
     if(Object.isObject(colorDef)){
       var order = colorDef.Order;
@@ -40,7 +38,6 @@ bbbfly.morph.theme.map.drawing.objects.Icon = function(obj,colors,imgs){
 
         if(String.isString(size) && String.isString(shape)){
           var icon = imgs[size] ? imgs[size][shape] : null;
-          className += ' bbbfly_mapIcon_'+size+shape;
 
           if(Object.isObject(icon)){
             icon = ng_CopyVar(icon);
@@ -63,8 +60,7 @@ bbbfly.morph.theme.map.drawing.objects.Icon = function(obj,colors,imgs){
   }
 
   obj.SetStyle({
-    images: images,
-    className: className
+    images: images
   });
 };
 bbbfly.morph.theme.map.drawing.objects.Geometry = function(obj,colors){
