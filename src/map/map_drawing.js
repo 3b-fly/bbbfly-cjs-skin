@@ -15,6 +15,28 @@ bbbfly.morph.map = bbbfly.morph.map || {};
 /** @ignore */
 bbbfly.morph.map.drawing = bbbfly.morph.map.drawing || {};
 
+bbbfly.morph.map.drawing.icon = {};
+
+/** @ignore */
+bbbfly.morph.map.drawing.icon._getClassName = function(){
+  var cn = this.GetClassName.callParent();
+  var opts = this.MorphOptions;
+
+  if(Object.isObject(opts)){
+    if(String.isString(opts.Color)){
+      cn += ' '+this.GetClassName.callParent('_'+opts.Color);
+    }
+    if(String.isString(opts.Size)){
+      cn += ' '+this.GetClassName.callParent('_'+opts.Size);
+    }
+    if(String.isString(opts.Shape)){
+      cn += ' '+this.GetClassName.callParent('_'+opts.Shape);
+    }
+  }
+
+  return cn;
+};
+
 /**
  * @class Icon
  * @memberof bbbfly.morph.map.drawing
@@ -39,6 +61,11 @@ bbbfly.morph.map.drawing.Icon = bbbfly.object.Extend(
     if(String.isString(theme)){this.MorphTheme = theme;}
 
     bbbfly.morph.misc.ApplyObjectClassName(this,'Icon');
+
+    ng_OverrideMethod(this,'GetClassName',
+      bbbfly.morph.map.drawing.icon._getClassName
+    );
+
     bbbfly.Morph.OnCreateObject(this);
   }
 );
