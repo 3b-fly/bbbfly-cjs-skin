@@ -20,13 +20,31 @@ bbbfly.morph.theme.map.drawing = bbbfly.morph.theme.map.drawing || {};
 bbbfly.morph.theme.map.drawing.images = {};
 
 /** @ignore */
-bbbfly.morph.theme.map.drawing.images._icons = function(def){
+bbbfly.morph.theme.map.drawing.images._icons = function(def,colors){
   for(var size in def){
     var imgs = def[size];
 
     for(var shape in imgs){
       var img = imgs[shape];
+      var indent = img.Indent;
+
       img.Src = {Img:size, Anchor:shape};
+      delete img.Indent;
+
+      var icons = {};
+
+      for(var name in colors){
+        var color = colors[name];
+        var order = color.Order;
+        var icon = ng_CopyVar(img);
+
+        if(Number.isInteger(order)){
+          icon.L = ((icon.W + indent) * order);
+        }
+        icons[name] = icon;
+      }
+
+      imgs[shape] = icons;
     }
   }
   return def;
@@ -88,7 +106,7 @@ bbbfly.morph.theme.map.drawing.Images = {
     };
   },
 
-  Images: function(){
+  Images: function(colors){
     return this.Icons({
       tiny: {
         drop: {
@@ -178,7 +196,7 @@ bbbfly.morph.theme.map.drawing.Images = {
           Anchor: { L:20, T:20 }, Indent:4
         }
       }
-    });
+    },colors);
   },
 
   /** @private */
