@@ -11,56 +11,38 @@ bbbfly.morph.theme = bbbfly.morph.theme || {};
 bbbfly.morph.theme.map = bbbfly.morph.theme.map || {};
 bbbfly.morph.theme.map.drawing = bbbfly.morph.theme.map.drawing || {};
 bbbfly.morph.theme.map.drawing.objects = {};
-bbbfly.morph.theme.map.drawing.objects.Icon = function(obj,colors,imgs){
-  if(
-    !Object.isObject(obj)
-    || !Object.isObject(colors)
-    || !Object.isObject(imgs)
-  ){return;}
-
-  var opts = obj.MorphOptions;
-  if(!Object.isObject(opts)){return;}
-
+bbbfly.morph.theme.map.drawing.objects._iconImages = function(opts,imgs){
   var images = [];
 
-  var colorName = opts.Color;
+  if(Object.isObject(opts) && Object.isObject(imgs)){
+    imgs = imgs[opts.Size];
 
-  if(String.isString(colorName)){
-    var colorDef = colors[colorName];
+    if(Object.isObject(imgs)){
+      imgs = imgs[opts.Shape];
 
-    if(Object.isObject(colorDef)){
-      var order = colorDef.Order;
-      var color = colorDef.Value;
+      if(Object.isObject(imgs)){
+        imgs = imgs[opts.Color];
 
-      if(String.isString(color)){
-        var size = opts.Size;
-        var shape = opts.Shape;
-
-        if(String.isString(size) && String.isString(shape)){
-          var icon = imgs[size] ? imgs[size][shape] : null;
-
-          if(Object.isObject(icon)){
-            icon = ng_CopyVar(icon);
-
-            if(Number.isInteger(order)){
-              icon.L = ((icon.W + icon.Indent) * order);
-            }
-
-            delete icon.Indent;
-            images.push(icon);
-          }
+        if(Object.isObject(imgs)){
+          images.push(imgs);
         }
       }
     }
-
-    var img = opts.FrontImg;
-    if(Object.isObject(img)){
-      images.push(img);
-    }
   }
 
-  obj.SetStyle({
-    images: images
+  if(Object.isObject(opts.FrontImg)){
+    images.push(opts.FrontImg);
+ }
+
+  return images;
+};
+bbbfly.morph.theme.map.drawing.objects.Icon = function(obj,imgs){
+  if(!Object.isObject(obj)){return;}
+
+  ng_OverrideMethod(obj,'GetImages',function(){
+    return bbbfly.morph.theme.map.drawing.objects._iconImages(
+      obj.MorphOptions,imgs
+    );
   });
 };
 bbbfly.morph.theme.map.drawing.objects.Geometry = function(obj,colors){
@@ -95,7 +77,7 @@ bbbfly.morph.theme.map.drawing.objects.SkinObject = function(obj,colors,imgs){
   ){return;}
 
   if(obj instanceof bbbfly.morph.map.drawing.Icon){
-      this.Icon(obj,colors,imgs);
+      this.Icon(obj,imgs);
   }
   else if(obj instanceof bbbfly.morph.map.drawing.Geometry){
       this.Geometry(obj,colors);
