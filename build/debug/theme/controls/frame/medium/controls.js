@@ -311,6 +311,16 @@ bbbfly.morph.theme.frame.medium.controls.MapCopyrights = function(def,imgs){
     }
   });
 };
+bbbfly.morph.theme.frame.medium.controls.MapDrawBar = function(def,imgs){
+  ng_MergeDef(def,{
+    W:32,
+    Data: {
+      FrameDef: {
+        L:0,R:0
+      }
+    }
+  });
+};
 bbbfly.morph.theme.frame.medium.controls.MapLayers = function(def,imgs){
   ng_MergeDef(def,{
     Controls: {
@@ -422,6 +432,9 @@ bbbfly.morph.theme.frame.medium.controls.SkinControl = function(def,imgs){
     break;
     case 'bbbfly.morph.MapCopyrights':
       this.MapCopyrights(def,imgs);
+    break;
+    case 'bbbfly.morph.MapDrawBar':
+      this.MapDrawBar(def,imgs);
     break;
     case 'bbbfly.morph.MapLayers':
       this.MapLayers(def,imgs);
