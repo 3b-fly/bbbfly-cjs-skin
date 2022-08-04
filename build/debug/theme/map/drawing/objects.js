@@ -36,6 +36,28 @@ bbbfly.morph.theme.map.drawing.objects._iconImages = function(opts,imgs){
 
   return images;
 };
+bbbfly.morph.theme.map.drawing.objects._geomStyle = function(opts,colors,cn){
+  var lColor = '#000000';
+  var fColor = '#000000';
+
+  if(Object.isObject(opts) && Object.isObject(colors)){
+    var colorDef = colors[opts.Color];
+
+    if(Object.isObject(colorDef)){
+      lColor = colorDef.Value;
+      fColor = colorDef.Value;
+    }
+  }
+
+  return {
+    weight: 2,
+    color: lColor,
+    opacity: 1,
+    fillColor: fColor,
+    fillOpacity: 0.2,
+    className: cn
+  };
+};
 bbbfly.morph.theme.map.drawing.objects.Icon = function(obj,imgs){
   if(!Object.isObject(obj)){return;}
 
@@ -46,28 +68,13 @@ bbbfly.morph.theme.map.drawing.objects.Icon = function(obj,imgs){
   });
 };
 bbbfly.morph.theme.map.drawing.objects.Geometry = function(obj,colors){
-  if(
-    !Object.isObject(obj)
-    || !Object.isObject(colors)
-  ){return;}
+  if(!Object.isObject(obj)){return;}
 
-  var opts = obj.MorphOptions;
-  if(!Object.isObject(opts)){return;}
-
-  var colorName = opts.Color;
-  var colorDef = colors[colorName];
-
-  if(Object.isObject(colorDef)){
-    var color = colorDef.Value;
-
-    if(String.isString(color)){
-      obj.SetStyle({
-        weight: 2,
-        color: color,
-        fillColor: color
-      });
-    }
-  }
+  ng_OverrideMethod(obj,'GetStyle',function(){
+    return bbbfly.morph.theme.map.drawing.objects._geomStyle(
+      obj.MorphOptions,colors,this.GetClassName()
+    );
+  });
 };
 bbbfly.morph.theme.map.drawing.objects.SkinObject = function(obj,colors,imgs){
   if(
