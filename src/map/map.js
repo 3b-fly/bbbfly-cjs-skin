@@ -223,6 +223,47 @@ bbbfly.morph.MapCopyrights = function(def,ref,parent){
 /**
  * @class
  * @type control
+ * @extends bbbfly.MapDrawBar
+ * @implements bbbfly.Morph.Control
+ *
+ * @inpackage map
+ *
+ * @param {object} [def=undefined] - Descendant definition
+ * @param {object} [ref=undefined] - Reference owner
+ * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
+ */
+bbbfly.morph.MapDrawBar = function(def,ref,parent){
+  def = def || {};
+
+  ng_MergeDef(def,{
+    CreteFromType: 'bbbfly.morph.ContentWrapper',
+    style: { zIndex: 3 },
+    Data: {
+      WrapperOptions:{
+        AutoSize: true,
+        TrackChanges: true
+      },
+      FrameDef: {
+        Type: 'bbbfly.Wrapper',
+        Data: {
+          WrapperOptions: {
+            AutoSize: true,
+            TrackChanges: true
+          }
+        }
+      },
+      ButtonDef: {
+        Type: 'bbbfly.morph.ContentIconButton'
+      }
+    }
+  });
+
+  return ngCreateControlAsType(def,'bbbfly.MapDrawBar',ref,parent);
+};
+
+/**
+ * @class
+ * @type control
  * @extends bbbfly.MapLayers
  * @implements bbbfly.Morph.Control
  *
@@ -319,6 +360,9 @@ ngUserControls['bbbfly_morph_map'] = {
     );
     bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.MapCopyrights',bbbfly.morph.MapCopyrights
+    );
+    bbbfly.Morph.RegisterControlType(
+      'bbbfly.morph.MapDrawBar',bbbfly.morph.MapDrawBar
     );
     bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.MapLayers',bbbfly.morph.MapLayers

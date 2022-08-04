@@ -163,6 +163,34 @@ bbbfly.morph.MapCopyrights = function(def,ref,parent){
 
   return ngCreateControlAsType(def,'bbbfly.MapCopyrights',ref,parent);
 };
+bbbfly.morph.MapDrawBar = function(def,ref,parent){
+  def = def || {};
+
+  ng_MergeDef(def,{
+    CreteFromType: 'bbbfly.morph.ContentWrapper',
+    style: { zIndex: 3 },
+    Data: {
+      WrapperOptions:{
+        AutoSize: true,
+        TrackChanges: true
+      },
+      FrameDef: {
+        Type: 'bbbfly.Wrapper',
+        Data: {
+          WrapperOptions: {
+            AutoSize: true,
+            TrackChanges: true
+          }
+        }
+      },
+      ButtonDef: {
+        Type: 'bbbfly.morph.ContentIconButton'
+      }
+    }
+  });
+
+  return ngCreateControlAsType(def,'bbbfly.MapDrawBar',ref,parent);
+};
 bbbfly.morph.MapLayers = function(def,ref,parent){
   def = def || {};
 
@@ -235,6 +263,9 @@ ngUserControls['bbbfly_morph_map'] = {
     );
     bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.MapCopyrights',bbbfly.morph.MapCopyrights
+    );
+    bbbfly.Morph.RegisterControlType(
+      'bbbfly.morph.MapDrawBar',bbbfly.morph.MapDrawBar
     );
     bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.MapLayers',bbbfly.morph.MapLayers
