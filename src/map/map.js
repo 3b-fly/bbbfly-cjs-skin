@@ -36,6 +36,18 @@ bbbfly.morph.MapBox = function(def,ref,parent){
       Map: { L:0,R:0,T:0,B:0 }
     },
     ModifyControls: {
+      Copyrights:{
+        Type: 'bbbfly.morph.MapCopyrights',
+        IgnoreModifyIfMissing: true
+      },
+      Layers:{
+        Type: 'bbbfly.morph.MapLayers',
+        IgnoreModifyIfMissing: true
+      },
+      DrawBar:{
+        Type: 'bbbfly.morph.MapDrawBar',
+        IgnoreModifyIfMissing: true
+      },
       ModeBar:{
         Type: 'bbbfly.morph.MapModeBar',
         IgnoreModifyIfMissing: true
@@ -46,14 +58,6 @@ bbbfly.morph.MapBox = function(def,ref,parent){
       },
       ZoomSlider: {
         Type: 'bbbfly.morph.MapZoomSlider',
-        IgnoreModifyIfMissing: true
-      },
-      Copyrights:{
-        Type: 'bbbfly.morph.MapCopyrights',
-        IgnoreModifyIfMissing: true
-      },
-      Layers:{
-        Type: 'bbbfly.morph.MapLayers',
         IgnoreModifyIfMissing: true
       }
     }

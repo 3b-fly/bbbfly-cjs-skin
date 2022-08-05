@@ -283,6 +283,10 @@ bbbfly.morph.theme.frame.medium.controls.MapBox = function(def,imgs){
         R:30,W:320,T:-1,B:-1,
         IgnoreModifyIfMissing: true
       },
+      DrawBar:{
+        R:-1,T:-1,
+        IgnoreModifyIfMissing: true
+      },
       ModeBar:{
         R:-1,T:-1,
         IgnoreModifyIfMissing: true
