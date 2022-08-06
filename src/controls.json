@@ -288,8 +288,8 @@
         "theme/controls/frame/medium/controls.js"
       ],
       "ReleaseFiles": [
-        "theme/frame/medium/images.js",
-        "theme/frame/medium/controls.js"
+        "theme/controls/frame/medium/images.js",
+        "theme/controls/frame/medium/controls.js"
       ],
       "Libraries": {
         "controls.js": {

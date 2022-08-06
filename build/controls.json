@@ -383,8 +383,8 @@
         "debug/theme/controls/frame/medium/controls.js"
       ],
       "ReleaseFiles": [
-        "release/theme/frame/medium/images.js",
-        "release/theme/frame/medium/controls.js"
+        "release/theme/controls/frame/medium/images.js",
+        "release/theme/controls/frame/medium/controls.js"
       ],
       "Libraries": {
         "controls.js": {
