@@ -122,6 +122,7 @@
  * @version 1.0.2
  *
  * @requires {@link https://controlsjs.com/|controls.js (5.0.0)}
+ * @requires {@link https://3b-fly.github.io/bbbfly-cjs/packages.html#package:renderer|bbbfly-cjs (2.0.0): renderer}
  * @requires {@link https://3b-fly.github.io/bbbfly-cjs-controls/packages.html#package:file|bbbfly-cjs-controls (2.0.0): file}
  * @requires {@link package:core|bbbfly-cjs-morph (1.0.2): core}
  * @requires {@link package:button|bbbfly-cjs-morph (1.0.2): button}

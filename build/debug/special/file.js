@@ -14,7 +14,10 @@ bbbfly.morph.FileUploader = function(def,ref,parent){
     Controls: {
       ButtonsPanel: {
         L:8,R:7,H:38,T:0,
-        ScrollBars: ssDefault,
+        Data: {
+          OverflowX: bbbfly.Renderer.overflow.visible,
+          OverflowY: bbbfly.Renderer.overflow.visible
+        },
         Controls: {
           AddFiles: {
             Type: 'bbbfly.morph.ContentButton',
