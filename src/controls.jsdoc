@@ -131,6 +131,15 @@
  * @requires {@link package:text|bbbfly-cjs-morph (1.0.2): text}
  */
 
+ /**
+ * @package html
+ *
+ * @version 1.0.2
+ *
+ * @requires {@link https://controlsjs.com/|controls.js (5.0.0)}
+ * @requires {@link package:core|bbbfly-cjs-morph (1.0.2): core}
+ */
+
 /**
  * @package map
  *

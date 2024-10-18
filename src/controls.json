@@ -243,6 +243,22 @@
         }
       }
     },
+    "html": {
+      "DebugFiles": [
+        "special/html.js"
+      ],
+      "ReleaseFiles": [
+        "special/html.js"
+      ],
+      "Libraries": {
+        "controls.js": {
+          "Packages": ["Controls.js"]
+        },
+        "bbbfly-cjs-morph": {
+          "Packages": ["core"]
+        }
+      }
+    },
     "map": {
       "DebugFiles": [
         "map/map.js"
