@@ -14,18 +14,28 @@ bbbfly.morph = bbbfly.morph || {};
 /**
  * @class
  * @type control
- * @extends bbbfly.HTMLContentPanel
+ * @extends bbbfly.Frame
  * @implements bbbfly.Morph.Control
  *
  * @inpackage file
  *
- * @param {bbbfly.Panel.Definition} [def=undefined] - Descendant definition
+ * @param {bbbfly.Frame.Definition} [def=undefined] - Descendant definition
  * @param {object} [ref=undefined] - Reference owner
  * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
  */
-bbbfly.morph.HTMLContentPanel = function(def,ref,parent){
-  bbbfly.morph.misc.ApplyControlClassName(def,'HTMLContentPanel');
-  return ngCreateControlAsType(def,'bbbfly.Panel',ref,parent);
+bbbfly.morph.HTMLContentFrame = function(def,ref,parent){
+  def = def || {};
+
+  ng_MergeDef(def,{
+    ControlsPanel: {
+      Data: {
+        OverflowY: bbbfly.Renderer.overflow.scroll
+      }
+    }
+  });
+
+  bbbfly.morph.misc.ApplyControlClassName(def,'HTMLContentFrame');
+  return ngCreateControlAsType(def,'bbbfly.Frame',ref,parent);
 };
 
 /** @ignore */
@@ -33,7 +43,7 @@ ngUserControls = ngUserControls || new Array();
 ngUserControls['bbbfly_morph_html'] = {
   OnInit: function(){
     bbbfly.Morph.RegisterControlType(
-      'bbbfly.morph.HTMLContentPanel',bbbfly.morph.HTMLContentPanel
+      'bbbfly.morph.HTMLContentFrame',bbbfly.morph.HTMLContentFrame
     );
   }
 };

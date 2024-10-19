@@ -5,4 +5,4 @@
  * @license see license in 'LICENSE' file
 */
 
-var bbbfly=bbbfly||{};bbbfly.morph=bbbfly.morph||{};bbbfly.morph.HTMLContentPanel=function(a,b,c){bbbfly.morph.misc.ApplyControlClassName(a,"HTMLContentPanel");return ngCreateControlAsType(a,"bbbfly.Panel",b,c)};ngUserControls=ngUserControls||[];ngUserControls.bbbfly_morph_html={OnInit:function(){bbbfly.Morph.RegisterControlType("bbbfly.morph.HTMLContentPanel",bbbfly.morph.HTMLContentPanel)}};
+var bbbfly=bbbfly||{};bbbfly.morph=bbbfly.morph||{};bbbfly.morph.HTMLContentFrame=function(a,b,c){a=a||{};ng_MergeDef(a,{ControlsPanel:{Data:{OverflowY:bbbfly.Renderer.overflow.scroll}}});bbbfly.morph.misc.ApplyControlClassName(a,"HTMLContentFrame");return ngCreateControlAsType(a,"bbbfly.Frame",b,c)};ngUserControls=ngUserControls||[];ngUserControls.bbbfly_morph_html={OnInit:function(){bbbfly.Morph.RegisterControlType("bbbfly.morph.HTMLContentFrame",bbbfly.morph.HTMLContentFrame)}};

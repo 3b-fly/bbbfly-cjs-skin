@@ -332,6 +332,11 @@
             "Controls.js"
           ]
         },
+        "bbbfly-cjs": {
+          "Packages": [
+            "renderer"
+          ]
+        },
         "bbbfly-cjs-morph": {
           "Packages": [
             "core"
