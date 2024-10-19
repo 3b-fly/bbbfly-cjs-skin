@@ -425,6 +425,9 @@ bbbfly.morph.theme.frame.medium.controls.SkinControl = function(def,imgs){
     case 'bbbfly.morph.PopupMenu':
       this.PopupMenu(def,imgs);
     break;
+    case 'bbbfly.morph.HTMLContentFrame':
+      this.InputFrame(def,imgs);
+    break;
     case 'bbbfly.morph.MapBox':
       this.MapBox(def,imgs);
     break;
