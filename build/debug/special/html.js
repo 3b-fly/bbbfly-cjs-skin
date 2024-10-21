@@ -13,7 +13,7 @@ bbbfly.morph.HTMLContentFrame = function(def,ref,parent){
   ng_MergeDef(def,{
     ControlsPanel: {
       Data: {
-        OverflowY: bbbfly.Renderer.overflow.scroll
+        OverflowY: bbbfly.Renderer.overflow.auto
       }
     }
   });
