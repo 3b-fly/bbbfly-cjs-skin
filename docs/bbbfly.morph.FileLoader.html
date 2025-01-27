@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Namespace: misc</title>
+    <title>Class: FileLoader</title>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -922,46 +922,36 @@
   }
 })();</script>
     <div class="main">
-<section class="kind-namespace">
+<section class="kind-class">
 <header>
     <h1 class="name">
-        misc
+        FileLoader
   <span class="types">
-      <span class="type-signature namespace">
-        namespace
+      <span class="type-signature class">
+        class
+      </span>
+      <span class="type-signature control">
+        control
       </span>
   </span>
     </h1>
 </header>
 <article>
     <div class="container-overview">
-<dl class="details">
-</dl>
-    </div>
-        <h3>In Packages</h3>
-        <ul>
-              <li><a href="packages.html#package:core">core</a></li>
-        </ul>
-        <h3>Methods</h3>
-        <dl>
 <dt>
     <div class="nameContainer">
-        <h4 id=".ApplyControlClassName">
-  <span class="attribs">
-      <span class="type-signature static">
-        static
-      </span>
-  </span>
-          bbbfly.morph.misc.ApplyControlClassName
-          <span class="signature">(def, className)</span>
-        </h4>
+        <h2 id="FileLoader">
+          new 
+          bbbfly.morph.FileLoader
+          <span class="signature">(<span class="optional">def</span>, <span class="optional">ref</span>, <span class="optional">parent</span>)</span>
+        </h2>
         <div class="tag-source">
-          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/misc.js#L33">core/misc.js, line 33</a>
+          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/special/file.js#L109">special/file.js, line 109</a>
         </div>
     </div>
 </dt>
 <dd>
-        <h5>Parameters:</h5>
+        <h3>Parameters</h3>
 <table class="params">
     <thead>
 	<tr>
@@ -976,19 +966,37 @@
                   <span class="param-name">def</span>
                 </td>
             <td class="type">
-<span class="param-type">object</span>
+<span class="param-type">bbbfly.Frame.Definition</span>
             </td>
             <td class="description last">
+                        <span class="optional">optional</span>
+                Descendant definition
             </td>
         </tr>
         <tr>
                 <td class="name">
-                  <span class="param-name">className</span>
+                  <span class="param-name">ref</span>
                 </td>
             <td class="type">
+<span class="param-type">object</span>
+            </td>
+            <td class="description last">
+                        <span class="optional">optional</span>
+                Reference owner
+            </td>
+        </tr>
+        <tr>
+                <td class="name">
+                  <span class="param-name">parent</span>
+                </td>
+            <td class="type">
+<span class="param-type">object</span>
+|
 <span class="param-type">string</span>
             </td>
             <td class="description last">
+                        <span class="optional">optional</span>
+                Parent DIV element or it's ID
             </td>
         </tr>
 	</tbody>
@@ -996,59 +1004,19 @@
 <dl class="details">
 </dl>
 </dd>
-<dt>
-    <div class="nameContainer">
-        <h4 id=".ApplyObjectClassName">
-  <span class="attribs">
-      <span class="type-signature static">
-        static
-      </span>
-  </span>
-          bbbfly.morph.misc.ApplyObjectClassName
-          <span class="signature">(obj, className)</span>
-        </h4>
-        <div class="tag-source">
-          <a target="_blank" href="https://github.com/3b-fly/bbbfly-cjs-morph/blob/master/src/core/misc.js#L50">core/misc.js, line 50</a>
-        </div>
     </div>
-</dt>
-<dd>
-        <h5>Parameters:</h5>
-<table class="params">
-    <thead>
-	<tr>
-		<th>Name</th>
-		<th>Type</th>
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	<tbody>
-        <tr>
-                <td class="name">
-                  <span class="param-name">obj</span>
-                </td>
-            <td class="type">
-<span class="param-type">object</span>
-            </td>
-            <td class="description last">
-            </td>
-        </tr>
-        <tr>
-                <td class="name">
-                  <span class="param-name">className</span>
-                </td>
-            <td class="type">
-<span class="param-type">string</span>
-            </td>
-            <td class="description last">
-            </td>
-        </tr>
-	</tbody>
-</table>
-<dl class="details">
-</dl>
-</dd>
-        </dl>
+        <h3>Extends</h3>
+        <ul>
+            <li>bbbfly.FileLoader</li>
+        </ul>
+        <h3>Implements</h3>
+  <ul>
+      <li><a href="bbbfly.Morph.Control.html">bbbfly.Morph.Control</a></li>
+  </ul>
+        <h3>In Packages</h3>
+        <ul>
+              <li><a href="packages.html#package:file">file</a></li>
+        </ul>
 </article>
 </section>
         <footer>
