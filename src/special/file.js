@@ -11,19 +11,8 @@ var bbbfly = bbbfly || {};
 /** @ignore */
 bbbfly.morph = bbbfly.morph || {};
 
-/**
- * @class
- * @type control
- * @extends bbbfly.FileUploader
- * @implements bbbfly.Morph.Control
- *
- * @inpackage file
- *
- * @param {bbbfly.Panel.Definition} [def=undefined] - Descendant definition
- * @param {object} [ref=undefined] - Reference owner
- * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
- */
-bbbfly.morph.FileUploader = function(def,ref,parent){
+/** @ignore */
+bbbfly.morph._fileUploader = function(def,ref,parent,className,type){
   def = def || {};
 
   ng_MergeDef(def,{
@@ -82,8 +71,46 @@ bbbfly.morph.FileUploader = function(def,ref,parent){
     }
   });
 
-  bbbfly.morph.misc.ApplyControlClassName(def,'FileUploader');
-  return ngCreateControlAsType(def,'bbbfly.FileUploader',ref,parent);
+  bbbfly.morph.misc.ApplyControlClassName(def,className);
+  return ngCreateControlAsType(def,type,ref,parent);
+};
+
+/**
+ * @class
+ * @type control
+ * @extends bbbfly.FileUploader
+ * @implements bbbfly.Morph.Control
+ *
+ * @inpackage file
+ *
+ * @param {bbbfly.Frame.Definition} [def=undefined] - Descendant definition
+ * @param {object} [ref=undefined] - Reference owner
+ * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
+ */
+bbbfly.morph.FileUploader = function(def,ref,parent){
+  return bbbfly.morph._fileUploader(
+    def,ref,parent,
+    'FileUploader','bbbfly.FileUploader'
+  );
+};
+
+/**
+ * @class
+ * @type control
+ * @extends bbbfly.FileLoader
+ * @implements bbbfly.Morph.Control
+ *
+ * @inpackage file
+ *
+ * @param {bbbfly.Frame.Definition} [def=undefined] - Descendant definition
+ * @param {object} [ref=undefined] - Reference owner
+ * @param {object|string} [parent=undefined] - Parent DIV element or it's ID
+ */
+bbbfly.morph.FileLoader = function(def,ref,parent){
+  return bbbfly.morph._fileUploader(
+    def,ref,parent,
+    'FileUploader','bbbfly.FileLoader'
+  );
 };
 
 /** @ignore */
@@ -92,6 +119,9 @@ ngUserControls['bbbfly_morph_file'] = {
   OnInit: function(){
     bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.FileUploader',bbbfly.morph.FileUploader
+    );
+    bbbfly.Morph.RegisterControlType(
+      'bbbfly.morph.FileLoader',bbbfly.morph.FileLoader
     );
   }
 };

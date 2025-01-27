@@ -7,7 +7,7 @@
 
 var bbbfly = bbbfly || {};
 bbbfly.morph = bbbfly.morph || {};
-bbbfly.morph.FileUploader = function(def,ref,parent){
+bbbfly.morph._fileUploader = function(def,ref,parent,className,type){
   def = def || {};
 
   ng_MergeDef(def,{
@@ -66,14 +66,29 @@ bbbfly.morph.FileUploader = function(def,ref,parent){
     }
   });
 
-  bbbfly.morph.misc.ApplyControlClassName(def,'FileUploader');
-  return ngCreateControlAsType(def,'bbbfly.FileUploader',ref,parent);
+  bbbfly.morph.misc.ApplyControlClassName(def,className);
+  return ngCreateControlAsType(def,type,ref,parent);
+};
+bbbfly.morph.FileUploader = function(def,ref,parent){
+  return bbbfly.morph._fileUploader(
+    def,ref,parent,
+    'FileUploader','bbbfly.FileUploader'
+  );
+};
+bbbfly.morph.FileLoader = function(def,ref,parent){
+  return bbbfly.morph._fileUploader(
+    def,ref,parent,
+    'FileUploader','bbbfly.FileLoader'
+  );
 };
 ngUserControls = ngUserControls || new Array();
 ngUserControls['bbbfly_morph_file'] = {
   OnInit: function(){
     bbbfly.Morph.RegisterControlType(
       'bbbfly.morph.FileUploader',bbbfly.morph.FileUploader
+    );
+    bbbfly.Morph.RegisterControlType(
+      'bbbfly.morph.FileLoader',bbbfly.morph.FileLoader
     );
   }
 };
